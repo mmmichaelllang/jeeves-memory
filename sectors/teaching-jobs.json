@@ -1,0 +1,35 @@
+{
+  "sector": "teaching-jobs",
+  "enabled": true,
+  "output_section": "Sector 2 — The Domestic Calendar",
+  "heading": "Teaching Jobs (HS English / History, 30mi radius)",
+  "dedup_policy": "no_dedup",
+  "search_tool": "WebSearch",
+  "search_queries": [
+    "high school English teacher jobs 2026 Edmonds Shoreline Mukilteo Everett Northshore Lake Washington Bellevue Snohomish Marysville Monroe Lake Stevens Renton Highline Mercer Island Issaquah Riverview Tukwila school district",
+    "Seattle Public Schools high school English teacher positions 2026",
+    "applitrack edmonds frontline secondary teacher openings"
+  ],
+  "search_strategy": "Freshness over novelty. Repetition ALLOWED and ENCOURAGED — Mr. Lang needs up-to-the-day information on HS English/History teaching positions within ~30 miles of Edmonds for the 2026-2027 academic year. Re-report active listings daily. Prioritize new postings, updated closing dates, and any site-specific openings (vs. district pool notices).",
+  "districts_in_range": [
+    "Edmonds School District", "Shoreline School District", "Mukilteo School District",
+    "Everett School District", "Northshore School District", "Lake Washington School District",
+    "Bellevue School District", "Snohomish School District", "Marysville School District",
+    "Monroe School District", "Lake Stevens School District", "Renton School District",
+    "Highline School District", "Mercer Island School District", "Issaquah School District",
+    "Riverview School District", "Tukwila School District", "Seattle Public Schools"
+  ],
+  "known_recent_listings": [
+    {"id": "sps-language-arts-social-studies-pool-2026-27", "district": "Seattle Public Schools", "title": "Language Arts / Social Studies Teacher (Pool, 2026-27)", "salary": "$75,000-$146,000", "url": "https://www.seattleschools.org/departments/hr/careers/", "first_seen": "2026-03-29", "last_seen": "2026-04-15", "status": "active"},
+    {"id": "edmonds-sd-secondary-7-12-2026-27", "district": "Edmonds School District", "title": "Secondary Teachers 7-12 (Frontline applicant tracking)", "url": "https://www.applitrack.com/edmonds/onlineapp/", "first_seen": "2026-04-08", "last_seen": "2026-04-15", "status": "active"},
+    {"id": "lake-washington-sd-application-started-2026-27", "district": "Lake Washington School District", "title": "Teacher openings 2026-2027 — APPLICATION STARTED", "url": "https://www.lwsd.org/", "first_seen": "2026-04-08", "last_seen": "2026-04-15", "status": "application_in_progress", "note": "Mr. Lang started LWSD application 2026-04-15."},
+    {"id": "seattle-christian-school-hs-lang-arts-2026", "district": "Seattle Christian School", "title": "HS Language Arts Teacher", "url": "", "first_seen": "2026-04-15", "last_seen": "2026-04-15", "status": "active"},
+    {"id": "kings-schools-shoreline-2026", "district": "King's Schools (Shoreline)", "title": "Secondary English / Language Arts", "url": "", "first_seen": "2026-04-15", "last_seen": "2026-04-15", "status": "active"}
+  ],
+  "standing_reminders": [
+    "Mr. Lang's SPS interest card is miscategorized as Kitchen Assistant Manager rather than HS English — report as a standing reminder until fixed.",
+    "Mr. Lang started LWSD application 2026-04-15 — follow up on completion and submission status in subsequent briefings."
+  ],
+  "ongoing_narrative": "Teaching jobs is a no-dedup sector — Mr. Lang needs fresh daily intelligence, and repetition of active listings is a feature. Spring 2026-27 hiring window is open. Mr. Lang started the Lake Washington School District application on April 15, 2026 — this is a positive development and subsequent briefings should check completion/submission status. Two new private-school listings surfaced today: Seattle Christian School HS Language Arts and King's Schools Shoreline. Districts to check daily: Edmonds, Shoreline, Mukilteo, Everett, Northshore, Lake Washington, Bellevue, SPS. Aggregators: Glassdoor (224-340 HS English positions in Seattle area), WEA district job pages, SchoolSpring, applitrack.com. Each run: verify SPS pool status, scan Edmonds SD applitrack, report NEW site-specific postings (not just district-pool notices), flag application-window closures, repeat the SPS miscategorization standing reminder, and follow up on LWSD application status.",
+  "last_updated": "2026-04-15"
+}
