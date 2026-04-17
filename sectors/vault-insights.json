@@ -1,0 +1,19 @@
+{
+  "sector": "vault-insights",
+  "enabled": true,
+  "output_section": "Sector 6 — From the Library Stacks",
+  "heading": "From the Library Stacks",
+  "description": "Weekly counterintuitive insights surfaced from Mr. Lang's Obsidian vault by a dedicated Haiku analysis agent. Newsletter reads from this queue — one insight per briefing.",
+  "queue": [],
+  "used": [],
+  "agent_config": {
+    "model": "claude-haiku-4-5-20251001",
+    "schedule": "weekly",
+    "sample_size": 50,
+    "insights_per_run": 3,
+    "vault_path": "/Users/frederickyudin/Documents/WIKI",
+    "skill_path": "/Users/frederickyudin/Documents/Claude/Scheduled/News-Jeeves/vault-analysis-skill.md"
+  },
+  "last_agent_run": null,
+  "last_updated": "2026-04-15"
+}
