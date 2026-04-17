@@ -1,0 +1,11 @@
+{
+  "_comment": "Written by News-Jeeves and Correspondence-Jeeves at end of run. Maps slip text → ISO date of last use. Step 0 filters the slip pool to drop anything used within the pool's cooldown_days. Entries older than 60 days are pruned on write.",
+  "used": {
+    "torrential downpour of pure, unadulterated horse-piss": "2026-04-15",
+    "A dripping, infectious bum-sore on the face of polite society, Sir": "2026-04-15",
+    "A total and utter shitshow": "2026-04-15",
+    "a total balls-up of the ledger": "2026-04-15",
+    "Like a total cock-womble": "2026-04-15",
+    "a collection of high-functioning fuck-wits": "2026-04-15"
+  }
+}
