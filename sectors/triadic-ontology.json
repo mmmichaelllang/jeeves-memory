@@ -1,0 +1,32 @@
+{
+  "sector": "triadic-ontology",
+  "enabled": true,
+  "output_section": "Sector 4 — Specific Enquiries",
+  "heading": "Theological Physics & Triadic Ontology",
+  "dedup_policy": "strict_no_repeat",
+  "search_tool": "tavily_research",
+  "search_queries": [
+    "Relational ontologies 2026",
+    "Triadic logic new paper",
+    "Quantum perichoresis",
+    "Non-linear triadic dynamics",
+    "Trinitarian metaphysics 2026"
+  ],
+  "search_strategy": "Walk newest-first. The Verlag Alber / Triertium / PhilArchive / Rome 2026 conference / Migliorini / Gorsuch network is already covered. Prefer publications from the past 30 days or upcoming conferences not yet in memory. If all surfaced papers are in covered[], synthesize across them in the ongoing_narrative rather than re-report.",
+  "covered": [
+    {"id": "verlag-alber-triadic-series", "title": "Verlag Alber 'Studies on Triadic Ontology' series", "author_or_venue": "Verlag Karl Alber", "pub_date": "2026", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-08", "one_line_summary": "German-language book series on triadic ontology."},
+    {"id": "triertium-raffaelli-2026-02", "title": "Triertium / Raffaelli February 2026 paper", "author_or_venue": "Triertium", "pub_date": "2026-02", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-08", "one_line_summary": "Raffaelli contribution in Triertium."},
+    {"id": "kinder-der-trinitaet", "title": "Kinder der Trinität", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-07", "one_line_summary": "German Trinitarian philosophical work."},
+    {"id": "gorsuch-perichoresis-philpapers", "title": "Gorsuch on Perichoresis (PhilPapers)", "author_or_venue": "PhilPapers", "pub_date": "2026", "url": "https://philpapers.org/", "first_covered": "2026-04-05", "last_referenced": "2026-04-07", "one_line_summary": "Perichoresis analysis."},
+    {"id": "migliorini-relational-ontologies", "title": "Migliorini — Relational Ontologies", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "one_line_summary": "Relational ontology framework."},
+    {"id": "brown-new-trinitarian-ontologies", "title": "Brown — New Trinitarian Ontologies (Modern Theology)", "author_or_venue": "Modern Theology", "pub_date": "2026", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-06", "one_line_summary": "Essay in Modern Theology."},
+    {"id": "bailey-relational-cosmos", "title": "Bailey — Relational Cosmos", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-05", "one_line_summary": "Cosmology-theology crossover."},
+    {"id": "spinoza-draft", "title": "Spinoza-related draft", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "one_line_summary": "Draft paper on Spinoza's relational metaphysics."},
+    {"id": "yamamoto-open-relational", "title": "Yamamoto — Open-Relational", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-07", "last_referenced": "2026-04-07", "one_line_summary": "Open-relational ontology."},
+    {"id": "unfixing-the-real", "title": "Unfixing the Real", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-07", "last_referenced": "2026-04-07", "one_line_summary": "Book/essay on non-fixed realism."},
+    {"id": "relational-ontology-research-journal", "title": "Relational Ontology Research (journal)", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-08", "last_referenced": "2026-04-08", "one_line_summary": "Dedicated journal on relational ontology."},
+    {"id": "rome-2026-nature-lost-regained", "title": "Rome June 2026 — 'Nature Lost, Nature Regained' conference", "author_or_venue": "Rome 2026", "pub_date": "2026-06", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "one_line_summary": "Conference on relational/ecological metaphysics."}
+  ],
+  "ongoing_narrative": "The triadic-ontology thread through mid-April 2026 has found two unexpected current-events resonances worth noting. The Brothers Karamazov reading-group synthesis (Ivan/Alyosha/Dmitri as three irreducible relational positions — the sceptic, the mystic, the sensualist, none resolving into the others) operates as an applied triadic ontology in literary form, running in parallel with the formal philosophical literature. And the Trump–Pope Leo confrontation surfaced in this week's briefing as a structurally triadic collision: populist nationalism, institutional Catholicism, and a silenced third term (the global south/migrant position Pope Leo was defending). These applied readings should inform the next synthesis in the narrative rather than be treated as off-topic intrusions. Formally: the Verlag Alber / Triertium / Raffaelli / Gorsuch / Migliorini / Brown / Bailey / Yamamoto cluster remains the bibliographic spine. Rome June 2026 ('Nature Lost, Nature Regained') is the calendar anchor. Next to hunt: peer-reviewed work post-April, new Relational Ontology Research journal entries, process-theology crossovers, physics-side perichoresis papers.",
+  "last_updated": "2026-04-15"
+}
