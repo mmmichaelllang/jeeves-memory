@@ -1,0 +1,28 @@
+{
+  "sector": "uap-disclosure",
+  "enabled": true,
+  "output_section": "Sector 4 — Specific Enquiries",
+  "heading": "UAP Disclosure",
+  "dedup_policy": "strict_no_repeat",
+  "search_tool": "tavily_research",
+  "search_queries": [
+    "UAP disclosure document release",
+    "UAP international government action",
+    "Galileo Project Avi Loeb 2026",
+    "UAP FOIA release new"
+  ],
+  "search_strategy": "HEAVILY OVER-COVERED sector. The Trump Feb 20 directive, AARO 2000 cases, Burlison SCIF strategy, H.R.1187, Grusch, 25-year framework, Pentagon April 14 missed deadline, DoD IG whistleblower reprisal report, H.R.5060 are all in covered[]. Hunt for NEW angles only — actual document releases, international UAP actions (UK, France, Brazil, Japan), academic publications (Galileo Project, Avi Loeb), fresh FOIA releases, new whistleblower testimony. If nothing new surfaces, synthesize across covered items in the ongoing_narrative.",
+  "covered": [
+    {"id": "trump-feb20-2026-directive", "title": "Trump Feb 20 2026 UAP directive", "author_or_venue": "White House", "pub_date": "2026-02-20", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-08", "one_line_summary": "Executive directive on UAP reporting. OVER-CITED."},
+    {"id": "aaro-2000-cases", "title": "AARO 2000-cases catalog", "author_or_venue": "AARO", "pub_date": "2026", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-08", "one_line_summary": "AARO public case log. OVER-CITED."},
+    {"id": "burlison-scif-whistleblower-strategy", "title": "Sen. Burlison SCIF whistleblower strategy", "author_or_venue": "Sen. Burlison office", "pub_date": "2026", "url": "", "first_covered": "2026-03-29", "last_referenced": "2026-04-08", "one_line_summary": "Secure-facility whistleblower intake. OVER-CITED."},
+    {"id": "hr-1187", "title": "H.R.1187 — UAP disclosure legislation", "author_or_venue": "US House", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-08", "one_line_summary": "Pending House UAP disclosure bill. OVER-CITED."},
+    {"id": "grusch-testimony", "title": "David Grusch testimony resurfacing", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-07", "one_line_summary": "Returning to Grusch's 2023 claims. OVER-CITED."},
+    {"id": "25-year-disclosure-framework", "title": "25-year declassification framework", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "one_line_summary": "Proposed phased framework. OVER-CITED."},
+    {"id": "pentagon-april14-deadline-missed-46-videos", "title": "Pentagon missed April 14 2026 disclosure deadline — 46 UAP videos withheld", "author_or_venue": "DoD / Congressional oversight", "pub_date": "2026-04-14", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Pentagon failed statutory April 14 deadline; 46 UAP videos remain classified."},
+    {"id": "dod-ig-whistleblower-reprisal-report-2026", "title": "DoD Inspector General whistleblower reprisal report 2026", "author_or_venue": "DoD IG", "pub_date": "2026", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "DoD IG documented reprisals against UAP whistleblowers; findings support legislative reform push."},
+    {"id": "hr-5060-uap-2026", "title": "H.R.5060 — new UAP disclosure legislation", "author_or_venue": "US House", "pub_date": "2026", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "New House bill expanding UAP disclosure obligations beyond H.R.1187's scope."}
+  ],
+  "ongoing_narrative": "The UAP disclosure thread through mid-April 2026 has produced its first genuinely new primary-source developments in weeks. The Pentagon missed its statutory April 14, 2026 disclosure deadline — 46 UAP videos remain classified — marking the first time an executive-branch agency has visibly failed a congressionally-mandated UAP transparency deadline. The DoD Inspector General's whistleblower reprisal report independently corroborates the pressure patterns Grusch described in 2023 and gives the legislative reform effort (H.R.1187 and the newly introduced H.R.5060) a fresh factual hook. These three developments — deadline miss, IG reprisal findings, H.R.5060 — are the first items in this sector not recycled from the Trump Feb 20 / AARO / Burlison loop. International and academic angles remain the best frontier: UK Defence Secretary questions, French CNES bulletins, Japan Diet queries, Galileo Project quarterly reports, fresh FOIA document releases. Report those the moment they surface.",
+  "last_updated": "2026-04-15"
+}
