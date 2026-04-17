@@ -1,0 +1,59 @@
+{
+  "sector": "toddler-activities",
+  "enabled": true,
+  "output_section": "Sector 2 — The Domestic Calendar",
+  "heading": "Toddler Activities for Piper",
+  "dedup_policy": "diverse_venue",
+  "search_tool": "WebSearch",
+  "search_queries": [
+    "Shoreline library baby toddler story time",
+    "Imagine Children's Museum Everett toddler events",
+    "KidsQuest Bellevue toddler activities",
+    "Kelsey Creek Farm Park Bellevue events",
+    "Music Together Edmonds Mill Creek class schedule",
+    "Willis Tucker Park Snohomish family events"
+  ],
+  "search_strategy": "Dedup key = venue + event_type. ROTATE venues within 30 miles of Edmonds (47.810652, -122.377355). Any item in covered[] with cite_count ≥ 3 in past 14 days gets cooldown_days=7 (computed effective cooldown = last_referenced + cooldown_days). Prefer venues from venue_diversification_targets[] that are not in covered[] or whose effective cooldown has elapsed. If nothing new in a day, walk the full 30mi radius rather than re-cite Edmonds Library.",
+  "venue_diversification_targets": [
+    "Seattle Aquarium", "Woodland Park Zoo", "Pacific Science Center", "KidsQuest Children's Museum (Bellevue)",
+    "Imagine Children's Museum (Everett)", "Museum of Flight toddler programs", "MoPOP family days",
+    "Seattle Children's Theatre", "Seattle Children's Museum", "Northwest Trek Wildlife Park",
+    "Point Defiance Zoo & Aquarium", "Cougar Mountain Zoo", "Discovery Park Visitor Center",
+    "Washington Park Arboretum", "Kubota Garden", "Kruckeberg Botanic Garden (Shoreline)",
+    "Edmonds Marsh / Beach Rangers", "Olympic Sculpture Park", "Carkeek Park + Salmon Hatchery",
+    "Green Lake Park", "Gas Works Park", "Farrel-McWhirter Farm (Redmond)", "Forterra Farm (Fall City)",
+    "Kelsey Creek Farm Park (Bellevue)", "Bellevue Botanical Garden", "Mercer Slough Environmental Education Center",
+    "Mountlake Terrace Library Friendship Club", "Shoreline Library Baby/Toddler Story Time",
+    "Lynnwood Library programs", "Brier/Woodway/Mukilteo Sno-Isle branches", "Lake Forest Park Library (KCLS)",
+    "Wallingford/Ballard/Greenwood/Magnolia/Fremont SPL branches", "ARC Recreation Center (Edmonds) open gym",
+    "Lynnwood Recreation Center toddler time", "Mountlake Terrace Rec Pavilion", "Lynndale Park",
+    "Meadowdale Playfield & Beach", "Mathay Ballinger Park", "Ballinger Lake Park", "Brackett's Landing Edmonds",
+    "Olympic Beach Edmonds", "Willis Tucker Community Park (Snohomish)", "McCollum Park (Everett)",
+    "Forest Park (Everett)", "Green Kids indoor play (Mill Creek)", "Jungle Playland (Lynnwood)",
+    "PlayDate Seattle", "Flying Squirrel Sports Trampoline Park", "Seattle Drum School toddler classes",
+    "Kindermusik classes (Edmonds/Mill Creek/Mountlake Terrace)", "Music Together classes",
+    "Glazed and Amazed pottery (Edmonds)", "ArtWorks Edmonds", "Edmonds Historical Museum",
+    "Shoreline Historical Museum", "Heritage Park Lynnwood", "Puget Sound Model Railroad Society"
+  ],
+  "covered": [
+    {"id": "edmonds-library-toddler-storytime", "title": "Edmonds Library Toddler Storytime", "venue": "Edmonds Library — 650 Main St", "event_type": "storytime", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "cite_count": 4, "cooldown_days": 14, "one_line_summary": "Recurring toddler storytime. Cited 4x in past 2 weeks — on cooldown until 2026-04-22."},
+    {"id": "shoreline-library-baby-toddler-story", "title": "Shoreline Library Baby + Toddler Story Time", "venue": "Shoreline Library — 345 NE 175th St", "event_type": "storytime", "first_covered": "2026-03-29", "last_referenced": "2026-03-29", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Baby 10am, Toddler 11am. 15min from Edmonds."},
+    {"id": "mountlake-terrace-friendship-club", "title": "Mountlake Terrace Library Friendship Club", "venue": "Mountlake Terrace Library — 23300 58th Ave W", "event_type": "play_group", "first_covered": "2026-03-29", "last_referenced": "2026-03-29", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Mondays 10:30am parallel-play."},
+    {"id": "artworks-edmonds-monday-open-studio", "title": "ArtWorks Edmonds Monday Open Studio", "venue": "ArtWorks Edmonds", "event_type": "art_studio", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Monday 11am open studio."},
+    {"id": "edmonds-historical-museum-trains", "title": "Edmonds Historical Museum model trains", "venue": "Edmonds Historical Museum", "event_type": "museum_exhibit", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Model train layout + collections."},
+    {"id": "glazed-amazed-pottery", "title": "Glazed and Amazed pottery + storytime", "venue": "Glazed and Amazed — Edmonds", "event_type": "art_studio", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Pottery + glass-fusing; 3-7 storytime-adjacent."},
+    {"id": "kindermusik-edmonds-area", "title": "Kindermusik — Edmonds / Mill Creek / Mountlake Terrace", "venue": "Multiple studios", "event_type": "music_class", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Parent-toddler music classes."},
+    {"id": "wonderland-play-group-mountlake-terrace", "title": "Wonderland Play Group — Mountlake Terrace Library", "venue": "Mountlake Terrace Library", "event_type": "play_group", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "New play-group session at Mountlake Terrace Library; fresh venue not previously cited."},
+    {"id": "family-storytime-miss-alayna-brier-library", "title": "Family Storytime with Miss Alayna — Brier Library", "venue": "Brier Library (Sno-Isle)", "event_type": "storytime", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "cite_count": 1, "cooldown_days": 0, "one_line_summary": "Storytime at Brier Library with Miss Alayna; first appearance of this branch."}
+  ],
+  "cooldown_rules": {
+    "_comment": "Applied at Step 6.5 when updating covered[]. Rule: any item whose cite_count reaches the threshold gets cooldown_days bumped to the specified value.",
+    "cite_count_threshold_high": 3,
+    "cooldown_days_high": 14,
+    "cite_count_threshold_mid": 2,
+    "cooldown_days_mid": 7,
+    "default_cooldown_days": 0
+  },
+  "ongoing_narrative": "Toddler-activities coverage through mid-April 2026 has improved venue rotation. The April 15 briefing introduced two fresh venues not previously cited: Wonderland Play Group at Mountlake Terrace Library and Family Storytime with Miss Alayna at Brier Library (Sno-Isle branch) — both first appearances. Edmonds Library Toddler Storytime (cite_count: 4) remains on cooldown until 2026-04-22. Going forward: enforce cooldown_days + cite_count via computed effective cooldown. Prefer venues from venue_diversification_targets, rotating across storytime / play_group / art_studio / music_class / nature / splash / indoor_play / museum / farm. If nothing new in a day, walk the full 30mi radius. If still nothing, acknowledge scarcity in Jeeves's voice rather than re-cite Edmonds Library.",
+  "last_updated": "2026-04-15"
+}
