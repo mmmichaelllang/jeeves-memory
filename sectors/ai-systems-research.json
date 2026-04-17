@@ -1,0 +1,34 @@
+{
+  "sector": "ai-systems-research",
+  "enabled": true,
+  "output_section": "Sector 4 — Specific Enquiries",
+  "heading": "AI Systems Research",
+  "dedup_policy": "strict_no_repeat",
+  "search_tool": "tavily_research",
+  "search_queries": [
+    "multi-agent research systems arxiv",
+    "reasoning models LLM 2026",
+    "autonomous research pipelines",
+    "prompt engineering advances 2026"
+  ],
+  "search_strategy": "Prefer arXiv papers from past 14 days, new benchmarks, new safety research. AgentsNet, arXiv 2504.19678, BioMedAgent, o3-mini distillation, Nested Learning, Genie 3, Frontier Model Forum, Broadcom-Google-Anthropic $21B, arXiv 2601.10825, CASCADE, GRASP, personal wiki memory cluster are covered — skip unless material new development.",
+  "covered": [
+    {"id": "agentsnet-arxiv-2507-08616", "title": "AgentsNet (arXiv 2507.08616)", "author_or_venue": "arXiv", "pub_date": "2026", "url": "https://arxiv.org/abs/2507.08616", "first_covered": "2026-03-29", "last_referenced": "2026-04-07", "one_line_summary": "Multi-agent coordination network benchmark."},
+    {"id": "arxiv-2504-19678-llm-agents", "title": "arXiv 2504.19678 — LLM → Agents review", "author_or_venue": "arXiv", "pub_date": "2026", "url": "https://arxiv.org/abs/2504.19678", "first_covered": "2026-03-29", "last_referenced": "2026-04-05", "one_line_summary": "Survey of LLM-to-agent scaffolding literature."},
+    {"id": "biomedagent-nature", "title": "BioMedAgent (Nature)", "author_or_venue": "Nature", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-06", "one_line_summary": "Biomedical multi-agent pipeline in Nature."},
+    {"id": "inference-time-scaling-reasoning", "title": "Inference-time scaling reasoning models", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "one_line_summary": "Test-time compute scaling for reasoning."},
+    {"id": "adaline-consolidation-2026", "title": "Adaline 2026 consolidation analysis", "author_or_venue": "Adaline", "pub_date": "2026", "url": "", "first_covered": "2026-04-05", "last_referenced": "2026-04-05", "one_line_summary": "Industry consolidation commentary."},
+    {"id": "o3-mini-distillation", "title": "o3-mini distillation", "author_or_venue": "OpenAI", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "one_line_summary": "Distilled reasoning model."},
+    {"id": "google-nested-learning", "title": "Google Nested Learning", "author_or_venue": "Google", "pub_date": "2026", "url": "", "first_covered": "2026-04-07", "last_referenced": "2026-04-07", "one_line_summary": "Hierarchical learning architecture."},
+    {"id": "genie3-worldlabs-world-models", "title": "Genie 3 / World Labs world models", "author_or_venue": "Google / World Labs", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-08", "one_line_summary": "Generative world-model research."},
+    {"id": "frontier-model-forum", "title": "Frontier Model Forum update", "author_or_venue": "FMF", "pub_date": "2026", "url": "https://www.frontiermodelforum.org/", "first_covered": "2026-03-29", "last_referenced": "2026-04-05", "one_line_summary": "Frontier lab safety coalition updates."},
+    {"id": "broadcom-google-anthropic-21b", "title": "Broadcom-Google-Anthropic $21B compute deal", "author_or_venue": "", "pub_date": "2026", "url": "", "first_covered": "2026-04-07", "last_referenced": "2026-04-08", "one_line_summary": "$21B multi-year compute commitment."},
+    {"id": "elevenlabs-ibm-watsonx", "title": "ElevenLabs + IBM watsonx partnership", "author_or_venue": "ElevenLabs / IBM", "pub_date": "2026", "url": "", "first_covered": "2026-04-06", "last_referenced": "2026-04-06", "one_line_summary": "Voice AI in enterprise watsonx stack."},
+    {"id": "arxiv-2601-10825-societies-of-thought", "title": "Reasoning Models Generate Societies of Thought (arXiv 2601.10825)", "author_or_venue": "arXiv", "pub_date": "2026", "url": "https://arxiv.org/abs/2601.10825", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Reasoning models spawning multi-agent 'societies' of sub-reasoners at inference time."},
+    {"id": "cascade-multi-agent-framework", "title": "CASCADE multi-agent framework", "author_or_venue": "arXiv", "pub_date": "2026", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Cascaded agent delegation framework for complex reasoning tasks."},
+    {"id": "grasp-agent-memory", "title": "GRASP agent memory architecture", "author_or_venue": "arXiv", "pub_date": "2026", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Graph-based retrieval-augmented agent memory system."},
+    {"id": "personal-wiki-memory-cluster", "title": "Personal wiki / external memory cluster for LLM agents", "author_or_venue": "arXiv", "pub_date": "2026", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Persistent personal knowledge graph as external agent memory."}
+  ],
+  "ongoing_narrative": "The AI-systems-research thread through mid-April 2026 has developed a compelling fourth wave to complement the three already tracked: (4) emergent meta-cognition architectures — arXiv 2601.10825 ('Reasoning Models Generate Societies of Thought') shows chain-of-thought spawning autonomous sub-agents at inference time, while CASCADE (cascaded delegation), GRASP (graph-based agent memory), and personal-wiki-as-external-memory cluster together as the 'agent remembers and delegates' paradigm. Waves 1–3 remain live: multi-agent pipelines (AgentsNet, BioMedAgent, 2504.19678) maturing to reproducible benchmark; inference-time scaling + distillation (o3-mini, Nested Learning) pushing reasoning without new pretraining; and compute consolidation (Broadcom-Google-Anthropic $21B, Adaline, FMF) shaping the competitive floor. Genie 3 / World Labs keep the world-model branch warm. Next to hunt: safety red-team papers for reasoning models specifically, fresh MLPerf-style benchmarks, any independent outcome studies reporting objective gains from multi-agent setups in real tasks.",
+  "last_updated": "2026-04-15"
+}
