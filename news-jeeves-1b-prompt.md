@@ -63,12 +63,20 @@ Parse from partial JSON:
 2. `"multi-agent research systems" "reasoning models LLM 2026" "autonomous research pipelines" "prompt engineering advances 2026"`
 3. `"UAP disclosure 2026" "UAP congressional hearings" "non-human intelligence declassification"`
 
-**Block D — New Yorker Jina fetch (only if `newyorker_url_candidate` is non-empty):**
+**Block D — Sector 7 content fetch:**
 ```bash
-curl -s -H "Authorization: Bearer [jina_key]" -H "X-Return-Format: markdown" \
-  "https://r.jina.ai/[newyorker_url_candidate]"
+curl -s -H "Authorization: Bearer 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" \
+  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/scripts/sector7-fetch.py" \
+  -o /tmp/sector7_raw.json
+python3 -c "
+import json, base64
+d = json.load(open('/tmp/sector7_raw.json'))
+exec(base64.b64decode(d['content']).decode())
+" > /tmp/sector7_result.json
 ```
-Clean: remove nav links, CTAs, photo credits, markdown image syntax. Stop at first `"Published in the print edition"`, `"New Yorker Favorites"`, or `"© 20"`. Extract: `title`, `byline` (By [Name]), `date`, `section` (Dept. of X if present), cleaned `text`, canonical `url`. If fetch fails or under 200 words, set `newyorker.available=false`.
+Read `/tmp/sector7_result.json`. If `available=true`: store full result as `sector7` in session JSON. If `available=false` or script errors: set `sector7.available=false`.
+
+To update Sector 7 logic: edit `scripts/sector7-fetch.py` in the `mmmichaelllang/jeeves-memory` repo. Script must print a JSON object to stdout with at minimum: `{"available": true/false, "title": "...", "text": "...", "source": "...", "url": "..."}`.
 
 ---
 
@@ -126,7 +134,7 @@ Replace `{COMPLETE_SESSION_DICT_HERE}` with the actual merged Python dict. Schem
   "uap": "",
   "wearable_ai": "",
   "vault_insight": { "available": false, "insight": "", "context": "", "note_path": "", "topic": "" },
-  "newyorker": { "available": false, "title": "", "byline": "", "date": "", "section": "", "text": "", "url": "" },
+  "sector7": { "available": false, "title": "", "text": "", "source": "", "url": "" },
   "search_notes": ""
 }
 ```
