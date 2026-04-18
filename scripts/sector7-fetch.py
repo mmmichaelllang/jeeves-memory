@@ -141,5 +141,5 @@ def main():
         # Optionally log the exception to stderr so stdout remains clean JSON
         sys.stderr.write(f"Error: {e}\n")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
