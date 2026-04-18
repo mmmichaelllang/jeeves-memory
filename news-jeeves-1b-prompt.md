@@ -152,18 +152,11 @@ If save fails: write `{"status":"failed","phase":"1b","date":"[TODAY]","error":"
 
 ---
 
-### STEP 4 — CHAIN TO WRITE PHASE
+### STEP 4 — DONE
 
-Immediately fetch and execute the write phase. Do not stop, summarize, or wait.
+Complete session JSON saved. Stop here. The monitoring session will detect the complete JSON and fire the write phase immediately with a fresh context window.
 
-```bash
-curl -s -H "Authorization: Bearer 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" \
-  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/news-jeeves-write-prompt.md" \
-  -o /tmp/write_prompt.json
-python3 -c "import json,base64; d=json.load(open('/tmp/write_prompt.json')); print(base64.b64decode(d['content']).decode())"
-```
-
-Read the decoded output as your next instructions. Execute immediately — do not pause, recap, or acknowledge this handoff.
+Do not fetch or execute any more prompts. Your work for Phase 1b is complete.
 
 ---
 
