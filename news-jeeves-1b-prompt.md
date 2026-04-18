@@ -63,20 +63,29 @@ Parse from partial JSON:
 2. `"multi-agent research systems" "reasoning models LLM 2026" "autonomous research pipelines" "prompt engineering advances 2026"`
 3. `"UAP disclosure 2026" "UAP congressional hearings" "non-human intelligence declassification"`
 
-**Block D — Sector 7 content fetch:**
+**Block D — Sector 7 content fetch (only if `newyorker_url_candidate` is non-empty):**
+
+Step 1: Download script from GitHub:
 ```bash
 curl -s -H "Authorization: Bearer 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" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/scripts/sector7-fetch.py" \
   -o /tmp/sector7_raw.json
-python3 -c "
-import json, base64
-d = json.load(open('/tmp/sector7_raw.json'))
-exec(base64.b64decode(d['content']).decode())
-" > /tmp/sector7_result.json
+python3 -c "import json,base64; open('/tmp/sector7-fetch.py','w').write(base64.b64decode(json.load(open('/tmp/sector7_raw.json'))['content']).decode())"
 ```
-Read `/tmp/sector7_result.json`. If `available=true`: store full result as `sector7` in session JSON. If `available=false` or script errors: set `sector7.available=false`.
 
-To update Sector 7 logic: edit `scripts/sector7-fetch.py` in the `mmmichaelllang/jeeves-memory` repo. Script must print a JSON object to stdout with at minimum: `{"available": true/false, "title": "...", "text": "...", "source": "...", "url": "..."}`.
+Step 2: Run with URL via env var (stdout = JSON result):
+```bash
+SECTOR7_URL="[newyorker_url_candidate]" python3 /tmp/sector7-fetch.py > /tmp/sector7_result.json 2>/tmp/sector7_err.txt
+```
+
+Step 3: Parse result:
+```bash
+python3 -c "import json; d=json.load(open('/tmp/sector7_result.json')); print(json.dumps(d, indent=2))"
+```
+
+If `available=true`: store full result as `sector7` in session JSON. If `available=false` or file missing: set `sector7={"available": false}`.
+
+To update Sector 7 logic: edit `scripts/sector7-fetch.py` in `mmmichaelllang/jeeves-memory`. Script reads URL from `SECTOR7_URL` env var and prints JSON to stdout.
 
 ---
 
