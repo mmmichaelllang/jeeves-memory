@@ -257,6 +257,21 @@ If the save fails: write a minimal failure JSON `{"status":"failed","date":"[TOD
 
 ---
 
+## STEP 5 — CHAIN TO WRITE PHASE
+
+After saving the session JSON in Step 4, immediately fetch and execute the write phase. Do not stop, summarize, or wait.
+
+```bash
+curl -s -H "Authorization: Bearer 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" \
+  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/news-jeeves-write-prompt.md" \
+  | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
+```
+
+Read the decoded output above as your next set of instructions. Execute every step in it exactly as written. Begin immediately — do not pause, recap, or acknowledge this handoff.
+
+---
+
 ## BEGIN
 
-Execute Steps 0 through 4 in strict order. Begin now.
+Execute Steps 0 through 5 in strict order. Begin now.
+
