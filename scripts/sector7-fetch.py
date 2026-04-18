@@ -1,21 +1,14 @@
 import argparse
-import hashlib
 import json
+import os
 import pathlib
-import re
 import sys
 import time
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
-from urllib.parse import quote, urlparse
 
-# --- Dependencies (with friendly error messages) ---
-try:
-    import feedparser
-except ImportError:
-    sys.exit("Missing dep: pip install feedparser")
-
+# --- Dependencies ---
 try:
     from curl_cffi import requests as cffi_requests
 except ImportError:
@@ -27,16 +20,10 @@ except ImportError:
     sys.exit("Missing dep: pip install selectolax")
 
 # --- Config ---
-TNY_RSS = "https://www.newyorker.com/feed/magazine"
-TNY_TOTT_RSS = "https://www.newyorker.com/feed/tags/department/the-talk-of-the-town"
 ARCHIVE_BASE = "https://archive.ph"
-
-REQUEST_DELAY_SEC = 3.0               # be polite to archive.ph
+REQUEST_DELAY_SEC = 3.0
 REQUEST_TIMEOUT = 45
 MAX_RETRIES = 3
-
-OUTPUT_DIR = pathlib.Path("output")
-CACHE_DIR = pathlib.Path("cache")
 
 CF_CHALLENGE_SIGNATURES = (
     "Just a moment...",
@@ -44,6 +31,34 @@ CF_CHALLENGE_SIGNATURES = (
     "cf-browser-verification",
     "challenge-platform",
 )
+
+# New Yorker CSS selector fallback chains
+TITLE_SELECTORS = [
+    'h1[class*="Hed"]', 'h1[class*="hed"]', 'h1[class*="title"]',
+    'h1[class*="Title"]', 'h1',
+]
+DEK_SELECTORS = [
+    '[class*="Dek"]', '[class*="dek"]', 'h2[class*="sub"]',
+    '.article__dek', 'h2',
+]
+AUTHOR_SELECTORS = [
+    '[class*="Byline"] a', '[class*="byline"] a',
+    '[class*="ContributorLink"]', '[rel="author"]',
+    '[class*="Byline"]', '[class*="byline"]',
+]
+DATE_SELECTORS = [
+    'time[datetime]', 'time', '[class*="publish-date"]',
+    '[class*="PublishDate"]', '[class*="DateTime"]',
+]
+BODY_SELECTORS = [
+    'div[class*="BodyContent"] p',
+    'div[class*="ArticleBody"] p',
+    'div[class*="article-body"] p',
+    'div[class*="body-content"] p',
+    'article p',
+    'div[class*="content"] p',
+]
+
 
 # --- Data model ---
 @dataclass
@@ -63,83 +78,151 @@ class Article:
         if self.author or self.published:
             meta = " | ".join(filter(None, [self.author, self.published]))
             lines.append(f"{meta}\n")
-        
         lines.append(self.body)
         return "\n".join(lines)
 
-    def print_target_json(self, available: bool = True, source: str = "The New Yorker") -> None:
-        """
-        Constructs and prints the specific JSON object to stdout.
-        Keys: available, title, text, source, url
-        """
-        payload = {
-            "available": available,
+    def to_json(self, source: str = "The New Yorker") -> dict:
+        return {
+            "available": True,
             "title": self.title,
             "text": self.as_markdown(),
             "source": source,
-            "url": self.url
+            "url": self.url,
         }
-        # Print JSON directly to stdout
-        sys.stdout.write(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
-# --- Core Logic ---
+def _first_text(tree: HTMLParser, selectors: list) -> str:
+    for sel in selectors:
+        node = tree.css_first(sel)
+        if node:
+            text = node.text(strip=True)
+            if text:
+                return text
+    return ""
+
+
+def _first_attr(tree: HTMLParser, selectors: list, attr: str) -> str:
+    for sel in selectors:
+        node = tree.css_first(sel)
+        if node and node.attributes.get(attr, ""):
+            return node.attributes[attr]
+    return ""
+
+
+# --- Core scraping ---
 def fetch_archive_snapshot(url: str) -> Optional[Article]:
-    """
-    Placeholder for the actual curl_cffi / selectolax scraping logic.
-    Replace the stub data below with your DOM extraction logic.
-    """
-    # Example setup for curl_cffi impersonating a browser
-    # session = cffi_requests.Session(impersonate="chrome110")
-    # response = session.get(f"{ARCHIVE_BASE}/newest/{url}", timeout=REQUEST_TIMEOUT)
-    # tree = HTMLParser(response.text)
-    
-    # ... extraction logic goes here ...
-    
-    # Mocking a successful extraction for structural completeness
+    session = cffi_requests.Session(impersonate="chrome124")
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
+        "Cache-Control": "no-cache",
+    }
+
+    archive_url = f"{ARCHIVE_BASE}/newest/{url}"
+    resp = None
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = session.get(
+                archive_url, headers=headers,
+                timeout=REQUEST_TIMEOUT, allow_redirects=True
+            )
+            if any(sig in resp.text for sig in CF_CHALLENGE_SIGNATURES):
+                sys.stderr.write(f"CF challenge on attempt {attempt + 1}\n")
+                time.sleep(REQUEST_DELAY_SEC * 2)
+                continue
+            if resp.status_code == 404:
+                sys.stderr.write("No archive snapshot found for this URL\n")
+                return None
+            if resp.status_code == 200:
+                break
+            sys.stderr.write(f"HTTP {resp.status_code} on attempt {attempt + 1}\n")
+            time.sleep(REQUEST_DELAY_SEC)
+        except Exception as e:
+            sys.stderr.write(f"Request error attempt {attempt + 1}: {e}\n")
+            if attempt == MAX_RETRIES - 1:
+                return None
+            time.sleep(REQUEST_DELAY_SEC)
+    else:
+        return None
+
+    snapshot_url = str(resp.url)
+    tree = HTMLParser(resp.text)
+
+    title = _first_text(tree, TITLE_SELECTORS)
+    dek = _first_text(tree, DEK_SELECTORS)
+    author = _first_text(tree, AUTHOR_SELECTORS)
+
+    # Date: prefer datetime attr, fall back to text
+    published = _first_attr(tree, ['time[datetime]'], 'datetime')
+    if not published:
+        published = _first_text(tree, DATE_SELECTORS)
+
+    # Body paragraphs
+    body_paragraphs = []
+    for sel in BODY_SELECTORS:
+        nodes = tree.css(sel)
+        candidates = [n.text(strip=True) for n in nodes if n.text(strip=True)]
+        if len(candidates) > 2:
+            body_paragraphs = candidates
+            break
+
+    body = "\n\n".join(body_paragraphs)
+
+    if not title or not body:
+        sys.stderr.write(
+            f"Extraction incomplete — title={bool(title)}, paragraphs={len(body_paragraphs)}\n"
+            f"Snapshot URL: {snapshot_url}\n"
+        )
+        return None
+
     return Article(
         url=url,
-        snapshot_url=f"{ARCHIVE_BASE}/mock-snapshot-id",
-        title="Sample Retrieved Article",
-        dek="A fascinating subtitle about the topic.",
-        author="Jane Doe",
-        published=datetime.now().strftime("%Y-%m-%d"),
-        body="This is the main text of the article extracted from selectolax."
+        snapshot_url=snapshot_url,
+        title=title,
+        dek=dek,
+        author=author,
+        published=published,
+        body=body,
     )
 
-def emit_fallback_json(url: str, source: str = "The New Yorker"):
-    """Prints a failure state JSON object to stdout if the article is unavailable."""
-    payload = {
-        "available": False,
-        "title": "",
-        "text": "",
-        "source": source,
-        "url": url
-    }
-    sys.stdout.write(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
-# --- Execution ---
-def main():
-    parser = argparse.ArgumentParser(description="Scrape TNY articles from archive.ph and output JSON")
-    parser.add_argument("--url", type=str, required=True, help="Original article URL to process")
-    parser.add_argument("--source", type=str, default="The New Yorker", help="Source publication name")
+# --- Output helpers ---
+def emit_fallback(url: str, source: str = "The New Yorker") -> None:
+    sys.stdout.write(json.dumps(
+        {"available": False, "title": "", "text": "", "source": source, "url": url},
+        ensure_ascii=False, indent=2
+    ) + "\n")
+
+
+# --- URL resolution: env var (exec mode) or argparse (CLI mode) ---
+def resolve_url_and_source() -> tuple:
+    env_url = os.environ.get("SECTOR7_URL", "")
+    env_source = os.environ.get("SECTOR7_SOURCE", "The New Yorker")
+    if env_url:
+        return env_url, env_source
+
+    parser = argparse.ArgumentParser(description="Fetch TNY article via archive.ph, output JSON")
+    parser.add_argument("--url", required=True, help="Article URL to fetch")
+    parser.add_argument("--source", default="The New Yorker", help="Source label")
     args = parser.parse_args()
+    return args.url, args.source
 
-    # Ensure output directory exists (if you plan to use it later)
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+# --- Entry point ---
+def main() -> None:
+    url, source = resolve_url_and_source()
 
     try:
-        article = fetch_archive_snapshot(args.url)
+        article = fetch_archive_snapshot(url)
         if article:
-            article.print_target_json(available=True, source=args.source)
+            sys.stdout.write(json.dumps(article.to_json(source), ensure_ascii=False, indent=2) + "\n")
         else:
-            emit_fallback_json(args.url, source=args.source)
+            emit_fallback(url, source)
     except Exception as e:
-        # Silently fail data retrieval and print the fallback unavailable JSON
-        emit_fallback_json(args.url, source=args.source)
-        # Optionally log the exception to stderr so stdout remains clean JSON
-        sys.stderr.write(f"Error: {e}\n")
+        sys.stderr.write(f"Fatal error: {e}\n")
+        emit_fallback(url, source)
+
 
 if __name__ == "__main__":
     main()
