@@ -1,6 +1,6 @@
 # JEEVES DAILY INTELLIGENCE — RESEARCH PHASE 1a (Cloud v2.0)
 
-**TASK:** Research phase 1 of 2. Run Gmail + WebSearch blocks only. Save partial session JSON. Phase 1b (Tavily) fires 25 min after this trigger.
+**TASK:** Research phase 1 of 2. Run Gmail + WebSearch blocks only. Save partial session JSON to GitHub. Stop — monitoring session fires 1b.
 
 ---
 
@@ -9,31 +9,33 @@
 **Repo:** `mmmichaelllang/jeeves-memory`
 **Token:** `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`
 
-**Read a file:**
+**Upload a local file to GitHub:**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
-  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH" \
-  -o /tmp/gh_out.json
-python3 -c "import json,base64; d=json.load(open('/tmp/gh_out.json')); print(base64.b64decode(d['content']).decode())"
+python3 /tmp/gh_upload.py PATH_IN_REPO /tmp/local_file.json "commit message"
 ```
 
-**Write a file:**
+Setup the uploader once at the start (STEP 0 — first thing):
 ```bash
-python3 -c "
-import json, base64, urllib.request
+cat > /tmp/gh_upload.py << 'PYEOF'
+import sys, json, base64, urllib.request
 TOKEN = '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'
-URL = 'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH'
+REPO = 'mmmichaelllang/jeeves-memory'
+path, local_file, msg = sys.argv[1], sys.argv[2], sys.argv[3]
+url = f'https://api.github.com/repos/{REPO}/contents/{path}'
+data = open(local_file, 'rb').read()
+content_b64 = base64.b64encode(data).decode()
 try:
-    req = urllib.request.Request(URL, headers={'Authorization': f'Bearer {TOKEN}'})
+    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {TOKEN}'})
     with urllib.request.urlopen(req) as r: sha = json.load(r).get('sha', '')
 except: sha = ''
-content_b64 = base64.b64encode(CONTENT_BYTES).decode()
-body = {'message': 'COMMIT_MSG', 'content': content_b64}
+body = {'message': msg, 'content': content_b64}
 if sha: body['sha'] = sha
-req = urllib.request.Request(URL, data=json.dumps(body).encode(),
+req = urllib.request.Request(url, data=json.dumps(body).encode(),
     headers={'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}, method='PUT')
-with urllib.request.urlopen(req) as r: print('ok:', json.load(r).get('content',{}).get('sha'))
-"
+with urllib.request.urlopen(req) as r:
+    result = json.load(r)
+    print('uploaded:', result.get('content', {}).get('sha', 'unknown'))
+PYEOF
 ```
 
 ---
@@ -46,13 +48,35 @@ You are Jeeves, butler to Mister Michael Lang, conducting pre-briefing research 
 
 ## STEPS (execute in strict order)
 
-### STEP 0 — DEDUP CHECK
+### STEP 0 — BOOTSTRAP
 
-`gmail_search_messages` for `subject:"📜 Daily Intelligence" newer_than:7d`. Read up to 4 with `gmail_read_message`. For each, parse the `<!-- COVERAGE_LOG: [...] -->` HTML comment to extract covered URLs and headlines. Store as `covered_urls[]` and `covered_headlines[]`.
+Run the uploader setup Bash block above. Then immediately write a heartbeat file so the monitoring session knows you're alive:
+
+Use the **Write tool** to create `/tmp/session_partial.json`:
+```json
+{
+  "status": "running",
+  "phase": "1a",
+  "date": "REPLACE_WITH_TODAY"
+}
+```
+Replace `REPLACE_WITH_TODAY` with today's date (e.g. `2026-04-18`).
+
+Then upload it:
+```bash
+python3 /tmp/gh_upload.py "sessions/session-2026-04-18-partial.json" /tmp/session_partial.json "jeeves 1a heartbeat"
+```
+(Replace date in path with today's actual date.)
 
 ---
 
-### STEP 0.5 — LOAD GITHUB CONFIG (run all three Bash calls in parallel)
+### STEP 1 — DEDUP CHECK
+
+`gmail_search_messages` for `subject:"📜 Daily Intelligence" newer_than:7d`. Read up to **2** with `gmail_read_message`. For each, parse the `<!-- COVERAGE_LOG: [...] -->` HTML comment to extract covered URLs and headlines. Store as `covered_urls[]` and `covered_headlines[]`.
+
+---
+
+### STEP 2 — LOAD GITHUB CONFIG (run all three Bash calls in parallel)
 
 **A) vault-insights.json:**
 ```bash
@@ -61,7 +85,7 @@ curl -s -H "Authorization: Bearer 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" \
   -o /tmp/vault.json
 python3 -c "import json,base64; d=json.load(open('/tmp/vault.json')); print(base64.b64decode(d['content']).decode())"
 ```
-Find first item with `"status":"pending"` in `queue[]`. Store its `insight`, `context`, `note_path`, derive a short `topic` label.
+Find first item with `"status":"pending"` in `queue[]`. Store `insight`, `context`, `note_path`, derive short `topic` label.
 
 **B) newyorker-talk.json:**
 ```bash
@@ -70,7 +94,7 @@ curl -s -H "Authorization: Bearer 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" \
   -o /tmp/nyt.json
 python3 -c "import json,base64; d=json.load(open('/tmp/nyt.json')); print(base64.b64decode(d['content']).decode())"
 ```
-Extract `covered[].url` list. Store for New Yorker dedup.
+Extract `covered[].url` list for New Yorker dedup.
 
 **C) Jina API key:**
 ```bash
@@ -83,108 +107,101 @@ Store as JINA_KEY.
 
 ---
 
-### STEP 1 — GMAIL NEWS INGESTION
+### STEP 3 — GMAIL NEWS INGESTION
 
-`gmail_search_messages` with query `"label:NEWS newer_than:2d"`. `gmail_read_message` on each. Collect article links and summaries.
+`gmail_search_messages` with query `"label:NEWS newer_than:2d"`. `gmail_read_message` on each (limit 8). Collect article links and summaries.
 
 ---
 
-### STEP 1b — CORRESPONDENCE BRIEF
+### STEP 4 — CORRESPONDENCE BRIEF
 
 `gmail_search_messages` for `subject:"Correspondence —" newer_than:2d (in:drafts OR in:sent)`.
 
-- **If found:** read it, extract full narrative. Set `correspondence.found=true`, `correspondence.fallback_used=false`, store full text.
-- **If not found:** `get_unread_imessages` (limit=20) and `gmail_search_messages` with `is:unread newer_than:2d -label:promotions -label:spam` (maxResults=30). Set `correspondence.found=false`, `correspondence.fallback_used=true`. Summarize findings.
+- **If found:** read it, extract full narrative. Set `correspondence.found=true`, `correspondence.fallback_used=false`.
+- **If not found:** `gmail_search_messages` with `is:unread newer_than:2d -label:promotions -label:spam` (maxResults=15). Set `correspondence.found=false`, `correspondence.fallback_used=true`. Summarize.
 
 ---
 
-### STEP 2 — WEBSEARCH (Block A) — run all in parallel
+### STEP 5 — WEBSEARCH (run all in parallel)
 
-- Weather: `"weather forecast Edmonds Washington today"`
-- Local 1: `"Edmonds Snohomish Seattle local news this week" site:seattletimes.com OR site:myedmondsnews.com OR site:crosscut.com OR site:kuow.org OR site:lynnwoodtimes.com`
-- Local 2: `"Edmonds Washington city council meeting" [CURRENT_MONTH] [CURRENT_YEAR]`
-- Local 3: `"Edmonds Washington public safety crime report" [CURRENT_MONTH] [CURRENT_YEAR]`
-- Career 1: `"high school English teacher jobs" [CURRENT_YEAR] "Edmonds Shoreline Mukilteo Everett Northshore Lake Washington Bellevue Snohomish Marysville Monroe Lake Stevens Renton Highline" school district`
-- Career 2: `"Seattle Public Schools high school English teacher positions" [CURRENT_YEAR]`
-- Choir: `"Seattle Puget Sound choir auditions" OR "Washington state choir auditions" [CURRENT_MONTH] [CURRENT_YEAR]`
-- Toddler: `"toddler activities Edmonds WA" [CURRENT_MONTH] [CURRENT_YEAR] (library OR zoo OR children's museum OR storytime)`
-- National 1: `"BBC breaking news"`, `"CNN top stories"`, `"Al Jazeera breaking news"`, `"The Guardian breaking"`, `"NPR headlines"`
-- National 2: `"Memeorandum recent"`, `"New York Times today"`, `"New York Review of Books recent"`, `"New Yorker recent articles"`
-- Intellectual 1: `"Aeon essays recent"`, `"The Marginalian recent"`, `"Kottke.org recent"`, `"ProPublica recent investigations"`, `"The Intercept recent"`, `"Scientific American recent"`
-- Intellectual 2: `"London Review recent"`, `"Arts & Letters recent"`, `"3 Quarks Daily recent"`, `"New Statesman recent"`, `"Big Think recent"`, `"Wait But Why recent"`, `"Jacobin recent"`, `"Andrew Sullivan recent"`
-- AI voice: `"AI voice hardware 2026"`
-- NYer TOC: `site:newyorker.com/magazine "talk of the town" 2026`
+1. `"weather forecast Edmonds Washington today"`
+2. `"Edmonds Seattle local news today" site:seattletimes.com OR site:myedmondsnews.com OR site:kuow.org`
+3. `"Edmonds Washington city council OR public safety" April 2026`
+4. `"high school English teacher jobs 2026 Edmonds Shoreline Mukilteo Everett Northshore Bellevue Snohomish"`
+5. `"Seattle Puget Sound choir auditions April May 2026"`
+6. `"toddler activities Edmonds WA April 2026 library storytime"`
+7. `"BBC CNN Guardian NPR breaking news today"`
+8. `"New York Times New Yorker Aeon Marginalian recent articles today"`
+9. `"AI voice hardware wearable pendant 2026"`
+10. `site:newyorker.com/magazine "talk of the town" 2026`
 
-After Block A: identify up to 8 most novel article URLs not in `covered_urls[]`. Store as `block_a_top_urls[]`. Identify most recent New Yorker Talk of the Town URL not in newyorker `covered[]` — store as `newyorker_url_candidate` (empty string if none found).
+After all return: identify up to 6 most novel URLs not in `covered_urls[]`. Store as `block_a_top_urls[]`. Identify most recent New Yorker Talk of Town URL not in newyorker `covered[]` → `newyorker_url_candidate` (empty string if none).
 
 ---
 
-### STEP 3 — SAVE PARTIAL SESSION JSON
+### STEP 6 — SAVE PARTIAL SESSION JSON
 
-```bash
-python3 -c "
-import json, base64, urllib.request
+Use the **Write tool** to create `/tmp/session_partial.json` with this exact structure (fill in all fields with actual research data):
 
-TODAY = '$(date +%Y-%m-%d)'
-TOKEN = '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'
-PATH = f'sessions/session-{TODAY}-partial.json'
-URL = f'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/{PATH}'
-
-session = {PARTIAL_SESSION_DICT_HERE}
-
-content_b64 = base64.b64encode(json.dumps(session, indent=2, ensure_ascii=False).encode()).decode()
-try:
-    req = urllib.request.Request(URL, headers={'Authorization': f'Bearer {TOKEN}'})
-    with urllib.request.urlopen(req) as r: sha = json.load(r).get('sha', '')
-except: sha = ''
-body = {'message': f'jeeves 1a {TODAY}', 'content': content_b64}
-if sha: body['sha'] = sha
-req = urllib.request.Request(URL, data=json.dumps(body).encode(),
-    headers={'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}, method='PUT')
-with urllib.request.urlopen(req) as r:
-    print('Saved:', json.load(r).get('content', {}).get('sha', 'unknown'))
-"
-```
-
-Replace `{PARTIAL_SESSION_DICT_HERE}` with the actual Python dict:
 ```json
 {
   "status": "partial",
-  "date": "TODAY_DATE",
-  "dedup": { "covered_urls": [], "covered_headlines": [] },
-  "correspondence": { "found": false, "fallback_used": false, "text": "" },
+  "date": "2026-04-18",
+  "dedup": {
+    "covered_urls": [],
+    "covered_headlines": []
+  },
+  "correspondence": {
+    "found": false,
+    "fallback_used": false,
+    "text": ""
+  },
   "weather": "",
   "local_news": "",
   "career": "",
-  "family": { "choir": "", "toddler": "" },
+  "family": {
+    "choir": "",
+    "toddler": ""
+  },
   "global_news": "",
   "intellectual_journals": "",
   "block_a_top_urls": [],
   "newyorker_url_candidate": "",
   "jina_key": "",
-  "vault_insight": { "available": false, "insight": "", "context": "", "note_path": "", "topic": "" }
+  "vault_insight": {
+    "available": false,
+    "insight": "",
+    "context": "",
+    "note_path": "",
+    "topic": ""
+  }
 }
 ```
 
-If save fails: write `{"status":"failed","phase":"1a","date":"TODAY_DATE","error":"..."}` to same path.
+Replace all `""` and `[]` and `false` values with actual data from Steps 1–5.
+
+Then upload to GitHub:
+```bash
+python3 /tmp/gh_upload.py "sessions/session-2026-04-18-partial.json" /tmp/session_partial.json "jeeves 1a 2026-04-18 complete"
+```
+
+If upload fails, write error to `/tmp/session_partial.json` and retry once.
 
 ---
 
-## STEP 4 — DONE
+### STEP 7 — DONE
 
-Partial session JSON saved. Stop here. The monitoring session will detect the partial JSON and fire Phase 1b immediately with a fresh context window.
-
-Do not fetch or execute any more prompts. Your work for Phase 1a is complete.
+Stop here. Do not fetch or run any more prompts.
 
 ---
 
 ## SEARCH BUDGET
-- `gmail_search_messages` / `gmail_read_message` / `get_unread_imessages`: unlimited
-- `WebSearch`: unlimited (Block A)
-- No Tavily calls in this phase.
+- `gmail_search_messages` / `gmail_read_message`: unlimited
+- `WebSearch`: 10 queries (Step 5)
+- No Tavily, no `get_unread_imessages`
 
 ---
 
 ## BEGIN
 
-Execute Steps 0 through 4 in strict order. Begin now.
+Execute Steps 0 through 7 in strict order. Begin now.
