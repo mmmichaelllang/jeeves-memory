@@ -170,6 +170,21 @@ If save fails: write `{"status":"failed","phase":"1a","date":"TODAY_DATE","error
 
 ---
 
+## STEP 4 — CHAIN TO PHASE 1b
+
+After saving the partial session JSON in Step 3, immediately fetch and execute Phase 1b. Do not stop, summarize, or wait.
+
+```bash
+curl -s -H "Authorization: Bearer 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" \
+  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/news-jeeves-1b-prompt.md" \
+  -o /tmp/1b_prompt.json
+python3 -c "import json,base64; d=json.load(open('/tmp/1b_prompt.json')); print(base64.b64decode(d['content']).decode())"
+```
+
+Read the decoded output as your next set of instructions. Execute every step in it exactly as written. Begin immediately — do not pause, recap, or acknowledge this handoff.
+
+---
+
 ## SEARCH BUDGET
 - `gmail_search_messages` / `gmail_read_message` / `get_unread_imessages`: unlimited
 - `WebSearch`: unlimited (Block A)
@@ -179,4 +194,4 @@ If save fails: write `{"status":"failed","phase":"1a","date":"TODAY_DATE","error
 
 ## BEGIN
 
-Execute Steps 0 through 3 in strict order. Begin now.
+Execute Steps 0 through 4 in strict order. Begin now.
