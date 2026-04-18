@@ -71,6 +71,12 @@ gmail_create_draft(
 ```
 Stop. Do not proceed.
 
+**If `write_complete` is `true` in the session JSON:**
+```
+Output: "Write phase already completed for [date]. Briefing was already sent. Exiting."
+```
+Stop. Do not create a duplicate draft.
+
 ---
 
 ## STEP 2 — WRITE BRIEFING HTML
@@ -258,6 +264,38 @@ with urllib.request.urlopen(req) as r:
 
 ---
 
+## STEP 6 — MARK WRITE COMPLETE
+
+After `gmail_create_draft` succeeds and all sector files are updated, write `write_complete: true` back to the session JSON to prevent duplicate sends if the scheduled trigger fires later.
+
+```bash
+python3 -c "
+import json, base64, urllib.request
+
+TODAY = '[TODAY_DATE]'
+TOKEN = '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'
+URL = f'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sessions/session-{TODAY}.json'
+
+req = urllib.request.Request(URL, headers={'Authorization': f'Bearer {TOKEN}'})
+with urllib.request.urlopen(req) as r:
+    raw = json.load(r)
+    sha = raw['sha']
+    session = json.loads(base64.b64decode(raw['content']).decode())
+
+session['write_complete'] = True
+
+content_b64 = base64.b64encode(json.dumps(session, indent=2, ensure_ascii=False).encode()).decode()
+body = {'message': f'jeeves write {TODAY}: mark complete', 'content': content_b64, 'sha': sha}
+req = urllib.request.Request(URL, data=json.dumps(body).encode(),
+    headers={'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}, method='PUT')
+with urllib.request.urlopen(req) as r:
+    print('write_complete marked:', json.load(r).get('content',{}).get('sha'))
+"
+```
+
+---
+
 ## BEGIN
 
 Read the session JSON now. Then immediately write `<!DOCTYPE html>` and keep going.
+
