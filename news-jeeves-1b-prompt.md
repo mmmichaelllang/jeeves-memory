@@ -75,7 +75,7 @@ python3 -c "import json,base64; open('/tmp/sector7-fetch.py','w').write(base64.b
 
 Step 2: Run with URL via env var (stdout = JSON result):
 ```bash
-SECTOR7_URL="[newyorker_url_candidate]" python3 /tmp/sector7-fetch.py > /tmp/sector7_result.json 2>/tmp/sector7_err.txt
+SECTOR7_URL="[newyorker_url_candidate]" JINA_API_KEY="[jina_key]" python3 /tmp/sector7-fetch.py > /tmp/sector7_result.json 2>/tmp/sector7_err.txt
 ```
 
 Step 3: Parse result:
