@@ -1,227 +1,225 @@
+"""
+sector7-fetch.py — Fetch New Yorker Talk of the Town articles.
+
+Primary:  Jina Reader API (auth bypasses paywall, works from any IP, no extra deps)
+Fallback: archive.ph via curl_cffi (works in CCR from server IPs, rate-limited from home)
+
+Usage (either mode):
+  SECTOR7_URL="https://..." python3 sector7-fetch.py
+  python3 sector7-fetch.py --url "https://..."
+
+Jina key: JINA_API_KEY env var, or read from JINA_KEY_FILE path.
+"""
+
 import argparse
 import json
 import os
 import pathlib
 import sys
 import time
+import urllib.request
+import urllib.error
 from dataclasses import dataclass
-from datetime import datetime
 from typing import Optional
 
-# --- Dependencies ---
-try:
-    from curl_cffi import requests as cffi_requests
-except ImportError:
-    sys.exit("Missing dep: pip install curl_cffi")
-
-try:
-    from selectolax.parser import HTMLParser
-except ImportError:
-    sys.exit("Missing dep: pip install selectolax")
-
 # --- Config ---
+JINA_KEY_FILE = "/Users/frederickyudin/Documents/Claude/Scheduled/News-Jeeves/config/jina-api-key.txt"
 ARCHIVE_BASE = "https://archive.ph"
-REQUEST_DELAY_SEC = 3.0
 REQUEST_TIMEOUT = 45
 MAX_RETRIES = 3
-
-CF_CHALLENGE_SIGNATURES = (
-    "Just a moment...",
-    "Checking your browser",
-    "cf-browser-verification",
-    "challenge-platform",
-)
-
-# New Yorker CSS selector fallback chains
-TITLE_SELECTORS = [
-    'h1[class*="Hed"]', 'h1[class*="hed"]', 'h1[class*="title"]',
-    'h1[class*="Title"]', 'h1',
-]
-DEK_SELECTORS = [
-    '[class*="Dek"]', '[class*="dek"]', 'h2[class*="sub"]',
-    '.article__dek', 'h2',
-]
-AUTHOR_SELECTORS = [
-    '[class*="Byline"] a', '[class*="byline"] a',
-    '[class*="ContributorLink"]', '[rel="author"]',
-    '[class*="Byline"]', '[class*="byline"]',
-]
-DATE_SELECTORS = [
-    'time[datetime]', 'time', '[class*="publish-date"]',
-    '[class*="PublishDate"]', '[class*="DateTime"]',
-]
-BODY_SELECTORS = [
-    'div[class*="BodyContent"] p',
-    'div[class*="ArticleBody"] p',
-    'div[class*="article-body"] p',
-    'div[class*="body-content"] p',
-    'article p',
-    'div[class*="content"] p',
-]
 
 
 # --- Data model ---
 @dataclass
 class Article:
     url: str
-    snapshot_url: str
     title: str
-    dek: str
-    author: str
-    published: str
-    body: str
+    text: str  # full markdown body as-is from fetch
+    source: str = "The New Yorker"
 
-    def as_markdown(self) -> str:
-        lines = [f"# {self.title}"]
-        if self.dek:
-            lines.append(f"*{self.dek}*\n")
-        if self.author or self.published:
-            meta = " | ".join(filter(None, [self.author, self.published]))
-            lines.append(f"{meta}\n")
-        lines.append(self.body)
-        return "\n".join(lines)
-
-    def to_json(self, source: str = "The New Yorker") -> dict:
+    def to_json(self) -> dict:
         return {
             "available": True,
             "title": self.title,
-            "text": self.as_markdown(),
-            "source": source,
+            "text": self.text,
+            "source": self.source,
             "url": self.url,
         }
 
 
-def _first_text(tree: HTMLParser, selectors: list) -> str:
-    for sel in selectors:
-        node = tree.css_first(sel)
-        if node:
-            text = node.text(strip=True)
-            if text:
-                return text
+def emit_fallback(url: str) -> None:
+    sys.stdout.write(json.dumps(
+        {"available": False, "title": "", "text": "", "source": "The New Yorker", "url": url},
+        ensure_ascii=False, indent=2,
+    ) + "\n")
+
+
+# --- Method 1: Jina Reader API ---
+def _load_jina_key() -> str:
+    key = os.environ.get("JINA_API_KEY", "").strip()
+    if key:
+        return key
+    try:
+        return pathlib.Path(JINA_KEY_FILE).read_text().strip()
+    except Exception:
+        return ""
+
+
+def _extract_title_from_markdown(text: str) -> str:
+    """Pull first # heading or Title: line from Jina markdown."""
+    for line in text.splitlines():
+        line = line.strip()
+        if line.startswith("# "):
+            return line[2:].strip()
+        if line.lower().startswith("title:"):
+            return line.split(":", 1)[1].strip()
     return ""
 
 
-def _first_attr(tree: HTMLParser, selectors: list, attr: str) -> str:
-    for sel in selectors:
-        node = tree.css_first(sel)
-        if node and node.attributes.get(attr, ""):
-            return node.attributes[attr]
-    return ""
+def fetch_via_jina(url: str) -> Optional[Article]:
+    """Jina Reader: authenticated call bypasses NYer paywall. No curl_cffi needed."""
+    key = _load_jina_key()
+    if not key:
+        sys.stderr.write("Jina key not found — skipping Jina\n")
+        return None
 
-
-# --- Core scraping ---
-def fetch_archive_snapshot(url: str) -> Optional[Article]:
-    session = cffi_requests.Session(impersonate="chrome124")
-    headers = {
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Cache-Control": "no-cache",
-    }
-
-    archive_url = f"{ARCHIVE_BASE}/newest/{url}"
-    resp = None
+    jina_url = f"https://r.jina.ai/{url}"
+    req = urllib.request.Request(
+        jina_url,
+        headers={
+            "Authorization": f"Bearer {key}",
+            "User-Agent": "curl/8.4.0",
+        },
+    )
 
     for attempt in range(MAX_RETRIES):
         try:
-            resp = session.get(
-                archive_url, headers=headers,
-                timeout=REQUEST_TIMEOUT, allow_redirects=True
-            )
-            if any(sig in resp.text for sig in CF_CHALLENGE_SIGNATURES):
-                sys.stderr.write(f"CF challenge on attempt {attempt + 1}\n")
-                time.sleep(REQUEST_DELAY_SEC * 2)
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+                raw = resp.read().decode("utf-8", errors="replace").strip()
+            # Detect 404/paywall/empty responses
+            if not raw or len(raw) < 300:
+                sys.stderr.write(f"Jina response too short ({len(raw)} chars)\n")
+                return None
+            if "Page Not Found" in raw or "404: Not Found" in raw:
+                sys.stderr.write("Jina returned NYer 404 page — bad URL\n")
+                return None
+            if "Manage your consent" in raw and len(raw) < 2000:
+                sys.stderr.write("Jina returned consent wall — possible paywall\n")
+                return None
+            title = _extract_title_from_markdown(raw)
+            return Article(url=url, title=title or "Talk of the Town", text=raw)
+        except urllib.error.HTTPError as e:
+            sys.stderr.write(f"Jina HTTP {e.code} attempt {attempt + 1}\n")
+            if e.code in (401, 403):
+                return None  # bad key, don't retry
+            time.sleep(2)
+        except Exception as e:
+            sys.stderr.write(f"Jina error attempt {attempt + 1}: {e}\n")
+            if attempt == MAX_RETRIES - 1:
+                return None
+            time.sleep(2)
+
+    return None
+
+
+# --- Method 2: archive.ph fallback (requires curl_cffi + selectolax) ---
+def fetch_via_archive(url: str) -> Optional[Article]:
+    try:
+        from curl_cffi import requests as cffi_requests
+        from selectolax.parser import HTMLParser
+    except ImportError:
+        sys.stderr.write("curl_cffi/selectolax not installed — archive.ph fallback unavailable\n")
+        return None
+
+    CF_SIGS = ("Just a moment...", "Checking your browser", "cf-browser-verification", "challenge-platform")
+    BODY_SELECTORS = [
+        'div[class*="BodyContent"] p', 'div[class*="ArticleBody"] p',
+        'div[class*="article-body"] p', 'article p', 'div[class*="content"] p',
+    ]
+    TITLE_SELECTORS = ['h1[class*="Hed"]', 'h1[class*="hed"]', 'h1[class*="title"]', 'h1']
+
+    session = cffi_requests.Session(impersonate="chrome124")
+    archive_url = f"{ARCHIVE_BASE}/newest/{url}"
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = session.get(archive_url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+            if any(s in resp.text for s in CF_SIGS):
+                sys.stderr.write(f"CF challenge attempt {attempt + 1}\n")
+                time.sleep(6)
                 continue
             if resp.status_code == 404:
-                sys.stderr.write("No archive snapshot found for this URL\n")
+                sys.stderr.write("No archive snapshot\n")
+                return None
+            if resp.status_code == 429:
+                sys.stderr.write("archive.ph rate-limited (home IP)\n")
                 return None
             if resp.status_code == 200:
                 break
-            sys.stderr.write(f"HTTP {resp.status_code} on attempt {attempt + 1}\n")
-            time.sleep(REQUEST_DELAY_SEC)
+            time.sleep(3)
         except Exception as e:
-            sys.stderr.write(f"Request error attempt {attempt + 1}: {e}\n")
+            sys.stderr.write(f"archive.ph error attempt {attempt + 1}: {e}\n")
             if attempt == MAX_RETRIES - 1:
                 return None
-            time.sleep(REQUEST_DELAY_SEC)
+            time.sleep(3)
     else:
         return None
 
-    snapshot_url = str(resp.url)
     tree = HTMLParser(resp.text)
 
-    title = _first_text(tree, TITLE_SELECTORS)
-    dek = _first_text(tree, DEK_SELECTORS)
-    author = _first_text(tree, AUTHOR_SELECTORS)
+    title = ""
+    for sel in TITLE_SELECTORS:
+        node = tree.css_first(sel)
+        if node and node.text(strip=True):
+            title = node.text(strip=True)
+            break
 
-    # Date: prefer datetime attr, fall back to text
-    published = _first_attr(tree, ['time[datetime]'], 'datetime')
-    if not published:
-        published = _first_text(tree, DATE_SELECTORS)
-
-    # Body paragraphs
-    body_paragraphs = []
+    paragraphs = []
     for sel in BODY_SELECTORS:
         nodes = tree.css(sel)
         candidates = [n.text(strip=True) for n in nodes if n.text(strip=True)]
         if len(candidates) > 2:
-            body_paragraphs = candidates
+            paragraphs = candidates
             break
 
-    body = "\n\n".join(body_paragraphs)
-
-    if not title or not body:
-        sys.stderr.write(
-            f"Extraction incomplete — title={bool(title)}, paragraphs={len(body_paragraphs)}\n"
-            f"Snapshot URL: {snapshot_url}\n"
-        )
+    if not title or not paragraphs:
         return None
 
-    return Article(
-        url=url,
-        snapshot_url=snapshot_url,
-        title=title,
-        dek=dek,
-        author=author,
-        published=published,
-        body=body,
-    )
+    body = "\n\n".join(paragraphs)
+    text = f"# {title}\n\n{body}"
+    return Article(url=url, title=title, text=text)
 
 
-# --- Output helpers ---
-def emit_fallback(url: str, source: str = "The New Yorker") -> None:
-    sys.stdout.write(json.dumps(
-        {"available": False, "title": "", "text": "", "source": source, "url": url},
-        ensure_ascii=False, indent=2
-    ) + "\n")
-
-
-# --- URL resolution: env var (exec mode) or argparse (CLI mode) ---
-def resolve_url_and_source() -> tuple:
-    env_url = os.environ.get("SECTOR7_URL", "")
-    env_source = os.environ.get("SECTOR7_SOURCE", "The New Yorker")
+# --- URL resolution ---
+def resolve_url() -> str:
+    env_url = os.environ.get("SECTOR7_URL", "").strip()
     if env_url:
-        return env_url, env_source
-
-    parser = argparse.ArgumentParser(description="Fetch TNY article via archive.ph, output JSON")
-    parser.add_argument("--url", required=True, help="Article URL to fetch")
-    parser.add_argument("--source", default="The New Yorker", help="Source label")
-    args = parser.parse_args()
-    return args.url, args.source
+        return env_url
+    parser = argparse.ArgumentParser(description="Fetch TNY article, output JSON")
+    parser.add_argument("--url", required=True)
+    return parser.parse_args().url
 
 
 # --- Entry point ---
 def main() -> None:
-    url, source = resolve_url_and_source()
+    url = resolve_url()
+    if not url:
+        sys.stderr.write("No URL provided\n")
+        emit_fallback("")
+        return
 
-    try:
-        article = fetch_archive_snapshot(url)
-        if article:
-            sys.stdout.write(json.dumps(article.to_json(source), ensure_ascii=False, indent=2) + "\n")
-        else:
-            emit_fallback(url, source)
-    except Exception as e:
-        sys.stderr.write(f"Fatal error: {e}\n")
-        emit_fallback(url, source)
+    # Try Jina first
+    article = fetch_via_jina(url)
+
+    # Fallback to archive.ph
+    if not article:
+        sys.stderr.write("Jina failed — trying archive.ph\n")
+        article = fetch_via_archive(url)
+
+    if article:
+        sys.stdout.write(json.dumps(article.to_json(), ensure_ascii=False, indent=2) + "\n")
+    else:
+        emit_fallback(url)
 
 
 if __name__ == "__main__":
