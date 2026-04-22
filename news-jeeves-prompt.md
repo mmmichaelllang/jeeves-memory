@@ -7,11 +7,11 @@
 ## GITHUB CONFIG
 
 **Repo:** `mmmichaelllang/jeeves-memory`
-**Token:** `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`
+**Token:** `$JEEVES_GITHUB_TOKEN`
 
 **Read a file from GitHub (Bash pattern):**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
@@ -20,7 +20,7 @@ Always store the `sha` field from the raw response — needed for writes.
 **Write a file to GitHub (Bash pattern):**
 ```bash
 # Get sha first if file may already exist
-SHA=$(curl -s -H "Authorization: Bearer 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" \
+SHA=$(curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH" \
   | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('sha',''))" 2>/dev/null)
 
@@ -38,7 +38,7 @@ import urllib.request
 req = urllib.request.Request(
   'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH',
   data=json.dumps(body).encode(),
-  headers={'Authorization': 'Bearer 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', 'Content-Type': 'application/json'},
+  headers={'Authorization': 'Bearer $JEEVES_GITHUB_TOKEN', 'Content-Type': 'application/json'},
   method='PUT'
 )
 with urllib.request.urlopen(req) as r:
@@ -67,7 +67,7 @@ You are Jeeves, butler to Mister Michael Lang, conducting pre-briefing research 
 
 **A) vault-insights.json:**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/vault-insights.json" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
@@ -75,7 +75,7 @@ Find first item with `"status":"pending"` in `queue[]`. Store its `insight`, `co
 
 **B) newyorker-talk.json:**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/newyorker-talk.json" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
@@ -83,7 +83,7 @@ Extract `covered[].url` list. Store for New Yorker dedup.
 
 **C) Jina API key:**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/jina-api-key.txt" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode().strip())"
 ```
@@ -133,12 +133,26 @@ Store as JINA_KEY.
 2. `"multi-agent research systems" "reasoning models LLM 2026" "autonomous research pipelines" "prompt engineering advances 2026"`
 3. `"UAP disclosure 2026" "UAP congressional hearings" "non-human intelligence declassification"`
 
-**Block D — New Yorker Jina fetch (if uncovered article URL found in Block A):**
+**Block D — New Yorker fetcher (stdlib, no Jina dependency):**
 ```bash
-curl -s -H "Authorization: Bearer [JINA_KEY]" -H "X-Return-Format: markdown" \
-  "https://r.jina.ai/[ARTICLE_URL]"
+# Download fetcher from repo
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
+  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/scripts/fetch_talk_of_the_town.py" \
+  | python3 -c "import sys,json,base64; d=json.load(sys.stdin); open('/tmp/fetch_tot.py','w').write(base64.b64decode(d['content']).decode())"
+
+# Run with covered URLs from newyorker-talk.json (comma-separated)
+COVERED="[comma-separated URLs from newyorker covered[] list]"
+python3 /tmp/fetch_tot.py --covered "$COVERED" --out /tmp/news-jeeves-newyorker.json
+echo "TOT_EXIT=$?"
+cat /tmp/news-jeeves-newyorker.json | python3 -c "import json,sys; d=json.load(sys.stdin); print('TOT_AVAILABLE='+str(d['available']).lower(), 'title='+repr(d['title']), 'chars='+str(len(d['text'])), 'err='+repr(d.get('error')))"
 ```
-Clean the markdown: remove nav links, CTAs, photo credits, markdown image syntax. Stop at first occurrence of `"Published in the print edition"`, `"New Yorker Favorites"`, or `"© 20"`. Extract: `title`, `byline` (By [Name]), `date`, `section` (Dept. of X if present), cleaned `text`, `url` (canonical newyorker.com URL, not Jina URL). If fetch fails or returns empty/truncated content under 200 words, set `newyorker.available=false`.
+
+If `TOT_AVAILABLE=true`: read `/tmp/news-jeeves-newyorker.json`. Set `newyorker.available=true`, populate `newyorker.title`, `newyorker.text` (prepend `section + dek` if present), `newyorker.url`, `newyorker.byline`, `newyorker.date`, `newyorker.section`.
+
+**Fallback — only if exit code 2:**
+1. WebSearch: `site:newyorker.com/magazine "talk of the town" 2026` — find newest uncovered URL.
+2. `tavily_extract` on that URL.
+3. If all fail: `newyorker.available=false`.
 
 If no Tavily tool responds: fall back to WebSearch for that category. Note in session JSON under `search_notes`.
 
@@ -208,7 +222,7 @@ python3 -c "
 import json, base64, urllib.request
 
 TODAY = '[TODAY_DATE]'
-TOKEN = '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'
+TOKEN = '$JEEVES_GITHUB_TOKEN'
 PATH = f'sessions/session-{TODAY}.json'
 URL = f'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/{PATH}'
 
@@ -262,7 +276,7 @@ If the save fails: write a minimal failure JSON `{"status":"failed","date":"[TOD
 After saving the session JSON in Step 4, immediately fetch and execute the write phase. Do not stop, summarize, or wait.
 
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/news-jeeves-write-prompt.md" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
