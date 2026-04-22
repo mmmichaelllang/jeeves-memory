@@ -241,29 +241,11 @@ Set FILE_WRITE_SUCCESS=true if the draft was saved. Set FILE_WRITE_SUCCESS=false
 
 ---
 
-## STEP 5 — CHAIN WRITE PHASE
+## STEP 5 — HANDOFF
 
-Proceed only if FILE_WRITE_SUCCESS=true. If false, stop — the fallback cron at 5:50 AM handles recovery.
+No explicit chain call is needed. The `news-jeeves-write` trigger has its own cron (`30 12 * * *` UTC) and will fire 30 minutes after this research run begins. It reads the `🔬 Jeeves Session [SESSION_DATE]` Gmail draft saved in Step 4.
 
-Load the scheduled tasks update tool:
-```
-ToolSearch: {"query": "select:mcp__scheduled-tasks__update_scheduled_task", "max_results": 1}
-```
-
-Compute a cron expression for 5 minutes from now in local time:
-```bash
-python3 -c "from datetime import datetime, timedelta; f=datetime.now()+timedelta(minutes=5); print(f'{f.minute} {f.hour} * * *')"
-```
-
-Call the update tool:
-```
-mcp__scheduled-tasks__update_scheduled_task({
-  "taskId": "news-jeeves-write",
-  "cronExpression": "[output from python above, e.g. '18 5 * * *']"
-})
-```
-
-Note: cron is used instead of a one-shot fireAt because fireAt events are sometimes silently dropped by the scheduler. A cron entry is evaluated every minute and cannot be skipped.
+If FILE_WRITE_SUCCESS=false, do nothing — the write phase will detect the missing draft and emit its own failure draft.
 
 ---
 
