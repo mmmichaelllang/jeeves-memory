@@ -128,9 +128,14 @@ Substitute [CURRENT_MONTH] and [CURRENT_YEAR] with actual current values.
 
 **BLOCK F — NEW YORKER TALK OF THE TOWN:**
 
-WebSearch: `"site:newyorker.com/magazine talk of the town 2026"`
+Run these WebSearches in parallel:
+- `"site:newyorker.com/magazine/2026 talk of the town"`
+- `"newyorker.com \"Talk of the Town\" [CURRENT_MONTH] [CURRENT_YEAR]"`
+- `"site:newyorker.com/magazine/talk-of-the-town"`
 
-From the search result set, identify the most recent article URL matching `https://www.newyorker.com/magazine/YYYY/MM/DD/[slug]` that is NOT in NYR_COVERED. Record `ARTICLE_URL`, `ARTICLE_TITLE`, and `ARTICLE_SNIPPET` (the search result's excerpt) — the snippet is the guaranteed-available fallback.
+From the combined results, pick the first URL that (a) is on `newyorker.com/magazine/`, (b) is NOT in NYR_COVERED, and (c) appears to be a single article (not the index `/talk-of-the-town` page and not `/news/...`). **Prefer** `YYYY/MM/DD/[slug]` format but do not require it — any `newyorker.com/magazine/...` article URL is acceptable. Record `ARTICLE_URL`, `ARTICLE_TITLE`, and `ARTICLE_SNIPPET` (the search result's excerpt) — the snippet is the guaranteed-available fallback.
+
+If NO article URL passes the filter, still record the highest-relevance search result's `title + snippet` as `ARTICLE_TITLE` and `ARTICLE_SNIPPET` with `ARTICLE_URL=""` and skip the fetch cascade — go straight to the snippet-fallback populate branch below (set `fetch_method="search_result"`, `available=true`).
 
 **Fetch full text — robust cascade, try in order, stop at first success (text ≥ 800 chars):**
 1. If TAVILY_AVAILABLE=true AND TAVILY_QUOTA_OK=true: `tavily_extract({"urls":[ARTICLE_URL]})`.
@@ -141,7 +146,7 @@ From the search result set, identify the most recent article URL matching `https
 **Populate the newyorker object:**
 - Success (any of 1–4 returned ≥ 800 chars of article body): `newyorker = {available:true, title:ARTICLE_TITLE, text:<fetched>, source:"The New Yorker", url:ARTICLE_URL, fetch_method:"tavily|jina|direct|cache"}`.
 - All four failed: use the WebSearch snippet — `newyorker = {available:true, title:ARTICLE_TITLE, text:"[SNIPPET ONLY — full article unavailable from cloud IP] " + ARTICLE_SNIPPET, source:"The New Yorker", url:ARTICLE_URL, fetch_method:"snippet"}`. **Never set available=false if a URL was identified** — the write phase renders the snippet verbatim, which is better than omitting the sector.
-- No article URL identified at all (WebSearch empty or every URL already in NYR_COVERED): `newyorker.available=false`.
+- Only set `newyorker.available=false` if ALL three WebSearches returned zero results. Otherwise always populate with at least snippet-level content.
 
 **BLOCK G — VAULT INSIGHT:**
 Use data already loaded in Step 0 (vault_insight fields).
