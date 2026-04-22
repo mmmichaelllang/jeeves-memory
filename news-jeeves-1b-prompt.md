@@ -7,11 +7,11 @@
 ## GITHUB CONFIG
 
 **Repo:** `mmmichaelllang/jeeves-memory`
-**Token:** `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`
+**Token:** `$JEEVES_GITHUB_TOKEN`
 
 **Read a file:**
 ```bash
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/PATH" \
   -o /tmp/gh_out.json
 python3 -c "import json,base64; d=json.load(open('/tmp/gh_out.json')); print(base64.b64decode(d['content']).decode())"
@@ -25,7 +25,7 @@ python3 -c "import json,base64; d=json.load(open('/tmp/gh_out.json')); print(bas
 
 ```bash
 TODAY=$(date +%Y-%m-%d)
-curl -s -H "Authorization: Bearer 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" \
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sessions/session-${TODAY}-partial.json" \
   -o /tmp/partial_raw.json
 python3 -c "
@@ -63,29 +63,27 @@ Parse from partial JSON:
 2. `"multi-agent research systems" "reasoning models LLM 2026" "autonomous research pipelines" "prompt engineering advances 2026"`
 3. `"UAP disclosure 2026" "UAP congressional hearings" "non-human intelligence declassification"`
 
-**Block D — Sector 7 content fetch (only if `newyorker_url_candidate` is non-empty):**
+**Block D — New Yorker fetcher (stdlib, no Jina dependency; only if `newyorker_url_candidate` is non-empty):**
 
-Step 1: Download script from GitHub:
+Step 1: Download fetcher from GitHub:
 ```bash
-curl -s -H "Authorization: Bearer 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" \
-  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/scripts/sector7-fetch.py" \
-  -o /tmp/sector7_raw.json
-python3 -c "import json,base64; open('/tmp/sector7-fetch.py','w').write(base64.b64decode(json.load(open('/tmp/sector7_raw.json'))['content']).decode())"
+curl -s -H "Authorization: Bearer $JEEVES_GITHUB_TOKEN" \
+  "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/scripts/fetch_talk_of_the_town.py" \
+  -o /tmp/fetch_tot_raw.json
+python3 -c "import json,base64; open('/tmp/fetch_tot.py','w').write(base64.b64decode(json.load(open('/tmp/fetch_tot_raw.json'))['content']).decode())"
 ```
 
-Step 2: Run with URL via env var (stdout = JSON result):
+Step 2: Run with covered URLs from partial session (comma-separated):
 ```bash
-SECTOR7_URL="[newyorker_url_candidate]" JINA_API_KEY="[jina_key]" python3 /tmp/sector7-fetch.py > /tmp/sector7_result.json 2>/tmp/sector7_err.txt
+COVERED="[comma-separated covered[] URLs from newyorker-talk.json, loaded in Phase 1a]"
+python3 /tmp/fetch_tot.py --covered "$COVERED" --out /tmp/news-jeeves-newyorker.json
+echo "TOT_EXIT=$?"
+cat /tmp/news-jeeves-newyorker.json | python3 -c "import json,sys; d=json.load(sys.stdin); print('TOT_AVAILABLE='+str(d['available']).lower(), 'title='+repr(d['title']), 'chars='+str(len(d['text'])), 'err='+repr(d.get('error')))"
 ```
 
 Step 3: Parse result:
-```bash
-python3 -c "import json; d=json.load(open('/tmp/sector7_result.json')); print(json.dumps(d, indent=2))"
-```
-
-If `available=true`: store full result as `sector7` in session JSON. If `available=false` or file missing: set `sector7={"available": false}`.
-
-To update Sector 7 logic: edit `scripts/sector7-fetch.py` in `mmmichaelllang/jeeves-memory`. Script reads URL from `SECTOR7_URL` env var and prints JSON to stdout.
+If `TOT_AVAILABLE=true`: read `/tmp/news-jeeves-newyorker.json`. Set `newyorker.available=true`, populate `newyorker.title`, `newyorker.text`, `newyorker.url`, `newyorker.byline`, `newyorker.section`.
+If exit code 2 or file missing: set `newyorker={"available": false}`.
 
 ---
 
@@ -104,7 +102,7 @@ python3 -c "
 import json, base64, urllib.request
 
 TODAY = '$(date +%Y-%m-%d)'
-TOKEN = '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'
+TOKEN = '$JEEVES_GITHUB_TOKEN'
 PATH = f'sessions/session-{TODAY}.json'
 URL = f'https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/{PATH}'
 
@@ -143,7 +141,7 @@ Replace `{COMPLETE_SESSION_DICT_HERE}` with the actual merged Python dict. Schem
   "uap": "",
   "wearable_ai": "",
   "vault_insight": { "available": false, "insight": "", "context": "", "note_path": "", "topic": "" },
-  "sector7": { "available": false, "title": "", "text": "", "source": "", "url": "" },
+  "newyorker": { "available": false, "title": "", "byline": "", "section": "", "text": "", "url": "" },
   "search_notes": ""
 }
 ```
