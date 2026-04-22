@@ -17,10 +17,13 @@ Execute ALL three ToolSearch calls in parallel as your FIRST action:
 **Rules:**
 - Record the EXACT tool names returned (they are UUID-prefixed and vary by session).
 - Set `GMAIL_AVAILABLE=true` only if ToolSearch("gmail") returned at least one tool.
-- Set `TAVILY_AVAILABLE=true` only if ToolSearch("tavily") returned at least one tool.
+- Set `TAVILY_AVAILABLE=true` only if ToolSearch("tavily") returned at least one tool. Also set `TAVILY_QUOTA_OK=true`.
 - Set `IMESSAGE_AVAILABLE=true` only if ToolSearch("imessage") returned at least one tool.
 - Do not call any tool not returned by ToolSearch — calling non-existent tools aborts the pipeline.
 - If all three return empty: continue in WebSearch-only mode.
+
+**DYNAMIC TAVILY DOWNGRADE (applies to every tavily_* call in this pipeline):**
+If ANY tavily_search / tavily_research / tavily_extract call returns a quota, rate-limit, usage-limit, 429, or "plan limit exceeded" error, immediately set `TAVILY_QUOTA_OK=false`. For the remainder of the pipeline treat `TAVILY_AVAILABLE=true AND TAVILY_QUOTA_OK=true` as the gate — if either is false, use the WebSearch / WebFetch fallback branch. Do not retry Tavily after a quota failure.
 
 ---
 
@@ -127,14 +130,18 @@ Substitute [CURRENT_MONTH] and [CURRENT_YEAR] with actual current values.
 
 WebSearch: `"site:newyorker.com/magazine talk of the town 2026"`
 
-Identify the most recent article URL matching `https://www.newyorker.com/magazine/YYYY/MM/DD/[slug]` that is NOT in NYR_COVERED.
+From the search result set, identify the most recent article URL matching `https://www.newyorker.com/magazine/YYYY/MM/DD/[slug]` that is NOT in NYR_COVERED. Record `ARTICLE_URL`, `ARTICLE_TITLE`, and `ARTICLE_SNIPPET` (the search result's excerpt) — the snippet is the guaranteed-available fallback.
 
-Fetch full text — try in order:
-1. If TAVILY_AVAILABLE=true: use tavily_extract on the article URL.
-2. If step 1 unavailable or fails: WebFetch `https://r.jina.ai/[ARTICLE_URL]`
-3. If both fail: set `newyorker.available=false`.
+**Fetch full text — robust cascade, try in order, stop at first success (text ≥ 800 chars):**
+1. If TAVILY_AVAILABLE=true AND TAVILY_QUOTA_OK=true: `tavily_extract({"urls":[ARTICLE_URL]})`.
+2. `WebFetch("https://r.jina.ai/" + ARTICLE_URL)` — Jina anonymous reader.
+3. `WebFetch(ARTICLE_URL)` — direct fetch (often paywalled but try).
+4. `WebFetch("https://webcache.googleusercontent.com/search?q=cache:" + ARTICLE_URL)` — Google cache.
 
-If content retrieved: set `newyorker.available=true`, store full text.
+**Populate the newyorker object:**
+- Success (any of 1–4 returned ≥ 800 chars of article body): `newyorker = {available:true, title:ARTICLE_TITLE, text:<fetched>, source:"The New Yorker", url:ARTICLE_URL, fetch_method:"tavily|jina|direct|cache"}`.
+- All four failed: use the WebSearch snippet — `newyorker = {available:true, title:ARTICLE_TITLE, text:"[SNIPPET ONLY — full article unavailable from cloud IP] " + ARTICLE_SNIPPET, source:"The New Yorker", url:ARTICLE_URL, fetch_method:"snippet"}`. **Never set available=false if a URL was identified** — the write phase renders the snippet verbatim, which is better than omitting the sector.
+- No article URL identified at all (WebSearch empty or every URL already in NYR_COVERED): `newyorker.available=false`.
 
 **BLOCK G — VAULT INSIGHT:**
 Use data already loaded in Step 0 (vault_insight fields).
@@ -143,20 +150,26 @@ Use data already loaded in Step 0 (vault_insight fields).
 
 ## STEP 3 — ENRICHMENT
 
-From all search results, identify 5 most important or novel articles not in the dedup set.
+From all search results, identify the **3** most important or novel articles not in the dedup set. For each, record `url`, `title`, and `snippet` (the WebSearch result excerpt) before attempting fetch — the snippet is the guaranteed-available fallback.
 
-- If TAVILY_AVAILABLE=true: use tavily_extract on those 5 URLs.
-- If TAVILY_AVAILABLE=false: use WebFetch on those 5 URLs. If WebFetch fails for a URL, skip it and note `fetch_failed=true`.
+**Robust cascade per URL, stop at first success (text ≥ 600 chars):**
+1. If TAVILY_AVAILABLE=true AND TAVILY_QUOTA_OK=true: `tavily_extract({"urls":[URL]})` (may batch up to 3 URLs in one call to save budget).
+2. `WebFetch("https://r.jina.ai/" + URL)`.
+3. `WebFetch(URL)` direct.
+4. Fallback: set `text = "[SNIPPET ONLY] " + snippet`, `fetch_method = "snippet"`. Never skip the entry — always populate all three slots so the write phase has material.
+
+Always emit exactly 3 entries in `enriched_articles`. Never fewer.
 
 ---
 
 ## FIELD TRUNCATION — APPLY BEFORE STEP 4
 
-Truncate every `findings`, `text`, and `insight` field before assembling the session JSON:
-- Maximum 2,500 characters per field. If exceeded: keep first 2,500 chars, append ` [TRUNCATED]`.
-- Exception: `newyorker.text` maximum is 8,000 characters.
-- Apply to: all `findings` in local_news, global_news, intellectual_journals, wearable_ai; career fields; family fields; weather; triadic_ontology.findings; ai_systems.findings; uap.findings; vault_insight.insight; every `text` in enriched_articles; newyorker.text.
-- This keeps the total JSON under 40KB and prevents Gmail draft timeouts.
+Truncate every `findings`, `text`, and `insight` field before assembling the session JSON. Limits are tightened to keep total JSON under ~25 KB and prevent stream-idle timeouts during the create_draft tool call:
+- Default maximum: **1,500 characters** per field. If exceeded: keep first 1,500 chars, append ` [TRUNCATED]`.
+- `enriched_articles[].text`: maximum **1,200 characters** each.
+- `newyorker.text`: maximum **4,000 characters**.
+- `correspondence.text`: maximum **2,000 characters**.
+- Apply to: all `findings` in local_news, global_news, intellectual_journals, wearable_ai; career fields; family fields; weather; triadic_ontology.findings; ai_systems.findings; uap.findings; vault_insight.insight; every `text` in enriched_articles; newyorker.text; correspondence.text.
 
 ---
 
@@ -215,22 +228,27 @@ Build the session JSON with actual research data (all fields filled):
   "newyorker": {"available": false, "title": "", "text": "", "source": "The New Yorker", "url": ""},
   "vault_insight": {"available": false, "insight": "", "context": "", "note_path": ""},
   "enriched_articles": [
-    {"url": "", "title": "", "text": ""},
-    {"url": "", "title": "", "text": ""},
-    {"url": "", "title": "", "text": ""},
-    {"url": "", "title": "", "text": ""},
-    {"url": "", "title": "", "text": ""}
-  ]
+    {"url": "", "title": "", "text": "", "fetch_method": ""},
+    {"url": "", "title": "", "text": "", "fetch_method": ""},
+    {"url": "", "title": "", "text": "", "fetch_method": ""}
+  ],
+  "write_complete": false
 }
 ```
 
-Fill every field with actual research data. Apply the truncation rules above before calling the draft tool.
+══════════════════════════════════════════════
+CRITICAL ANTI-IDLE RULE — READ BEFORE PROCEEDING
+══════════════════════════════════════════════
+After truncation, your NEXT action is the create_draft tool call. Do NOT pause to summarize, reflect, review, or narrate. Do NOT output analysis prose before the tool call. Emit the tool invocation immediately. A stream idle of more than 60 seconds aborts the session. Continuous token production during JSON assembly prevents timeout.
+══════════════════════════════════════════════
 
-**If GMAIL_AVAILABLE=true:** Call the gmail create_draft tool:
+Fill every field with actual research data. Apply the truncation rules above. Then emit the tool call on the very next turn.
+
+**If GMAIL_AVAILABLE=true:** Call the gmail create_draft tool in ONE invocation:
 - subject: `🔬 Jeeves Session [SESSION_DATE]`
 - to: lang.mc@gmail.com
 - contentType: text/plain
-- body: JSON string of the completed object above
+- body: the complete JSON string of the object above
 
 **If GMAIL_AVAILABLE=false:** Write to `/tmp/session-[SESSION_DATE].json` using the Write tool.
 
