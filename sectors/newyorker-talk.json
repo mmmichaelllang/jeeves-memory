@@ -1,9 +1,9 @@
 {
   "sector": "newyorker-talk",
   "enabled": true,
-  "output_section": "Sector 7 — Talk of the Town",
+  "output_section": "Sector 7 \u2014 Talk of the Town",
   "heading": "The Talk of the Town",
-  "description": "The New Yorker's Talk of the Town, fetched verbatim via authenticated Jina reader. Traversed backwards in time — most recent first, each article featured once and never repeated.",
+  "description": "The New Yorker's Talk of the Town, fetched verbatim via authenticated Jina reader. Traversed backwards in time \u2014 most recent first, each article featured once and never repeated.",
   "jina_config": {
     "key_file": "/Users/frederickyudin/Documents/Claude/Scheduled/News-Jeeves/config/jina-api-key.txt",
     "toc_url": "https://www.newyorker.com/magazine/talk-of-the-town",
@@ -12,8 +12,32 @@
   },
   "dedup_policy": "strict_no_repeat",
   "covered": [
-    {"id": "pay-later-e-tammy-kim-apr20-2026", "title": "Pay Later", "author_or_venue": "E. Tammy Kim / The New Yorker", "pub_date": "2026-04-20", "url": "https://www.newyorker.com/magazine/2026/04/20/pay-later", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "E. Tammy Kim on deferred financial pain — buy-now-pay-later economy and its structural costs to working families."},
-    {"id": "bird-flu-canada-geese-apr13-2026", "title": "Bird Flu / Canada Geese piece", "author_or_venue": "The New Yorker", "pub_date": "2026-04-13", "url": "", "first_covered": "2026-04-15", "last_referenced": "2026-04-15", "one_line_summary": "Talk of the Town piece on avian flu spread via migratory Canada geese — ecological anxiety in the urban-wild interface."}
+    {
+      "id": "pay-later-e-tammy-kim-apr20-2026",
+      "title": "Pay Later",
+      "author_or_venue": "E. Tammy Kim / The New Yorker",
+      "pub_date": "2026-04-20",
+      "url": "https://www.newyorker.com/magazine/2026/04/20/pay-later",
+      "first_covered": "2026-04-15",
+      "last_referenced": "2026-04-15",
+      "one_line_summary": "E. Tammy Kim on deferred financial pain \u2014 buy-now-pay-later economy and its structural costs to working families."
+    },
+    {
+      "id": "bird-flu-canada-geese-apr13-2026",
+      "title": "Bird Flu / Canada Geese piece",
+      "author_or_venue": "The New Yorker",
+      "pub_date": "2026-04-13",
+      "url": "",
+      "first_covered": "2026-04-15",
+      "last_referenced": "2026-04-15",
+      "one_line_summary": "Talk of the Town piece on avian flu spread via migratory Canada geese \u2014 ecological anxiety in the urban-wild interface."
+    },
+    {
+      "title": "When Soul Food Met Daniel Boulud",
+      "url": "https://www.newyorker.com/magazine/2026/04/27/when-soul-food-met-daniel-boulud",
+      "date": "2026-04-27",
+      "first_featured": "2026-04-23"
+    }
   ],
-  "last_updated": "2026-04-15"
+  "last_updated": "2026-04-23"
 }
