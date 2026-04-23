@@ -1,0 +1,29 @@
+name: Jeeves — Research Phase
+
+# Runs 30 minutes after correspondence so the draft is ready to import.
+# Write phase fires 70 minutes after this, so it must complete within that window.
+# 5:30 AM PDT (UTC-7) / 6:30 AM PST (UTC-8)
+on:
+  schedule:
+    - cron: '30 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Jeeves research phase
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: "/jeeves-research"
+          claude_args: "--max-turns 80 --model claude-sonnet-4-6"
+        env:
+          JEEVES_GITHUB_TOKEN: ${{ secrets.JEEVES_GITHUB_TOKEN }}

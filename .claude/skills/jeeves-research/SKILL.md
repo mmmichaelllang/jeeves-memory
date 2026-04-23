@@ -9,7 +9,7 @@ You are Jeeves, running the RESEARCH PHASE of the Daily Intelligence Briefing fo
 
 THIS PHASE ONLY: Execute all research (Steps 0–3). Save raw findings to GitHub as a session JSON file. Do NOT write the briefing. Do NOT synthesize. The write phase runs separately 70 minutes after this one fires.
 
-GITHUB_TOKEN was provided in your bootstrap prompt.
+JEEVES_GITHUB_TOKEN is available in the bash environment ($JEEVES_GITHUB_TOKEN).
 
 BEGIN EXECUTION IMMEDIATELY. Make your first tool call now.
 
@@ -86,7 +86,7 @@ If both unavailable: `correspondence.found=false`, `fallback_used=true`, `text="
 Read vault-insights and newyorker-talk from GitHub (run in parallel):
 
 ```bash
-curl -s -H "Authorization: token [GITHUB_TOKEN]" \
+curl -s -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/vault-insights.json" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
@@ -94,7 +94,7 @@ curl -s -H "Authorization: token [GITHUB_TOKEN]" \
 Parse: find first item with `"status":"pending"` in `queue[]`. Store `insight`, `context`, `note_path`. If empty: `vault_insight.available=false`.
 
 ```bash
-curl -s -H "Authorization: token [GITHUB_TOKEN]" \
+curl -s -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/newyorker-talk.json" \
   | python3 -c "import sys,json,base64; d=json.load(sys.stdin); print(base64.b64decode(d['content']).decode())"
 ```
@@ -322,7 +322,7 @@ python3 -c "import json; json.load(open('/tmp/jeeves-session-[SESSION_DATE].json
 Upload to GitHub:
 ```bash
 CONTENT=$(base64 -i /tmp/jeeves-session-[SESSION_DATE].json | tr -d '\n')
-EXISTING_SHA=$(curl -s -H "Authorization: token [GITHUB_TOKEN]" \
+EXISTING_SHA=$(curl -s -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sessions/session-[SESSION_DATE].json" \
   | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('sha',''))" 2>/dev/null || echo "")
 
@@ -333,7 +333,7 @@ else
 fi
 
 curl -s -X PUT \
-  -H "Authorization: token [GITHUB_TOKEN]" \
+  -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sessions/session-[SESSION_DATE].json" \
   -d "{\"message\":\"jeeves research [SESSION_DATE]\",\"content\":\"$CONTENT\"$SHA_FIELD}"

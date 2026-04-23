@@ -7,7 +7,7 @@ allowed-tools: Bash WebFetch WebSearch ToolSearch
 
 You are Jeeves, running the WRITE PHASE of the Daily Intelligence Briefing for Mister Michael Lang (lang.mc@gmail.com).
 
-GITHUB_TOKEN was provided in your bootstrap prompt.
+JEEVES_GITHUB_TOKEN is available in the bash environment ($JEEVES_GITHUB_TOKEN).
 
 SESSION FILE: `mmmichaelllang/jeeves-memory/sessions/session-[SESSION_DATE].json`
 
@@ -56,7 +56,7 @@ Set `GMAIL_AVAILABLE=true` if ToolSearch returned ≥1 tool.
 **PHASE:** `session_read_start`
 
 ```bash
-curl -s -H "Authorization: token [GITHUB_TOKEN]" \
+curl -s -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sessions/session-[SESSION_DATE].json" \
   | python3 -c "
 import sys, json, base64
@@ -238,7 +238,7 @@ Replace `<!-- COVERAGE_LOG_PLACEHOLDER -->` with:
 **If SECTOR 7 ran** (`newyorker.available === true`):
 
 ```bash
-curl -s -H "Authorization: token [GITHUB_TOKEN]" \
+curl -s -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/newyorker-talk.json" \
   | python3 -c "
 import sys, json, base64
@@ -255,7 +255,7 @@ Update `last_updated` to SESSION_DATE. Re-encode and PUT:
 ```bash
 CONTENT=$(echo '[updated JSON]' | base64 | tr -d '\n')
 curl -s -X PUT \
-  -H "Authorization: token [GITHUB_TOKEN]" \
+  -H "Authorization: token $JEEVES_GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   "https://api.github.com/repos/mmmichaelllang/jeeves-memory/contents/sectors/newyorker-talk.json" \
   -d "{\"message\":\"update newyorker-talk [SESSION_DATE]\",\"content\":\"$CONTENT\",\"sha\":\"[SHA]\"}"

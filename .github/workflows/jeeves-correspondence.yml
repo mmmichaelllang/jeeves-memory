@@ -1,0 +1,26 @@
+name: Jeeves — Correspondence Phase
+
+# Runs first so the research phase can import the correspondence draft.
+# 5:00 AM PDT (UTC-7) / 6:00 AM PST (UTC-8)
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  correspondence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Jeeves correspondence phase
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: "/jeeves-correspondence"
+          claude_args: "--max-turns 40 --model claude-sonnet-4-6"
