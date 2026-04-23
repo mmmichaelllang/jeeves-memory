@@ -301,15 +301,6 @@ Read vault-insights.json SHA + content (same curl pattern). Find used item in `q
 
 **PHASE:** `write_done`
 
-If GMAIL_AVAILABLE=true, save diagnostic draft:
-```bash
-tail -c 6000 /tmp/news-jeeves-write-phases.log
-```
-- subject: `🔍 Jeeves Write Diag [SESSION_DATE]`
-- to: lang.mc@gmail.com
-- contentType: text/plain
-- body: the tailed phase log
-
 ---
 
 ## BEGIN

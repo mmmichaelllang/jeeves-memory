@@ -356,15 +356,6 @@ No explicit chain call needed. The `news-jeeves-write` trigger fires on its own 
 Output exactly:
 `RESEARCH COMPLETE: [SESSION_DATE] | enriched=[count] | tavily=[yes/no] | vault=[available/unavailable] | newyorker=[available/unavailable]`
 
-If GMAIL_AVAILABLE=true, save diagnostic draft:
-```bash
-tail -c 6000 /tmp/news-jeeves-phases.log
-```
-- subject: `🔍 Jeeves Diag [SESSION_DATE]`
-- to: lang.mc@gmail.com
-- contentType: text/plain
-- body: the tailed phase log
-
 ---
 
 ## TOOL BUDGET
