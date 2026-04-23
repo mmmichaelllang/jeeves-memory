@@ -3,231 +3,151 @@
   "status": "complete",
   "dedup": {
     "covered_urls": [],
-    "covered_headlines": []
+    "covered_headlines": [],
+    "note": "GMAIL_AVAILABLE=false, dedup set empty"
   },
   "correspondence": {
     "found": false,
     "fallback_used": true,
     "text": "No correspondence integrations available."
   },
-  "weather": "Edmonds WA, April 23 2026: Partly cloudy, high 55F / low 44F. Showers and slight chance of thunderstorms in the evening, then chance of rain late evening and early morning. Rainfall amounts 0.1–0.25 inches possible, higher amounts possible in thunderstorms.",
+  "weather": "Edmonds, WA — April 23, 2026. Mostly sunny. Current: 45°F. High: 67°F, Low: 46°F. Fair conditions. Sources: AccuWeather, NWS (forecast.weather.gov for 47.81N 122.38W).",
   "local_news": [
     {
-      "source": "myedmondsnews.com",
-      "headline": "Edmonds City Council April 7 meeting recap",
-      "findings": "Council approved personnel changes, contract approvals and budget amendments unanimously. Key actions: voluntarily dismissed counterpetition in Redelfs landmark tree case (33-inch tree removed without permit; $102,245 fine levied on Richard Henry Redelfs, tree replanting ordered) — passed 5-1, Councilmember Susan Paine voting no. Budget amendments include advancing money for Edmonds Marsh (awaiting grant for 30% design), park impact fee study, IT support. Mayor Mike Rosen proclaimed April 9 as Local News Day. Council meetings broadcast Tuesdays 7 PM."
+      "category": "Edmonds Community",
+      "findings": "Edmonds Fishing Pier underwater scuba maintenance April 19 (11am–4pm). NAACP Snohomish County Freedom Fund Gala April 25 at Edward D. Hansen Conference Center (theme: 'Turning Dreams Into Reality'). City's Movies in the Park returning summer 2026. Asian Service Center elected 2026 board — Alison Alfonzo Pence (chair), Michael Chong (treasurer). South County Fire Chief Shaughn Maxwell sworn in to lead Snohomish County's largest fire agency. Sources: myedmondsnews.com"
     },
     {
-      "source": "myedmondsnews.com",
-      "headline": "Edmonds community events April 2026",
-      "findings": "NAACP Snohomish County Annual Freedom Fund Gala, themed 'Turning Dreams Into Reality,' April 25 at Edward D. Hansen Conference Center. Movies in the Park series returning this summer — businesses and community partners invited. Edmonds Waterfront Center hosted multi-generational community events. Edmonds School District Board passed policy changes at April 14 regular meeting."
+      "category": "City Council",
+      "findings": "April 7, 2026 business meeting: Council approved key contracts, personnel changes, budget amendments (all unanimous). Voted 5-1 to voluntarily dismiss counterpetition in Redelfs matter (tree litigation). Proclaimed April 9 Local News Day. Two executive sessions held. Meetings broadcast Tuesdays at 7:00pm. Source: myedmondsnews.com"
     },
     {
-      "source": "myedmondsnews.com / edmondswa.gov",
-      "headline": "Edmonds Police Blotter March 30 – April 5, 2026",
-      "findings": "Incidents include: suspicious circumstances at closed business, identity theft, theft at local businesses, disorderly conduct with resisting arrest and assault, DUI arrest. General stats: Edmonds overall crime rate (30.46) below national average (33.37). Violent crime significantly lower (6.06 vs. 13.84 national). Property crime slightly higher (24.4 vs. 19.53 national). 1-in-385 chance of violent crime victimization; 1-in-34 for property crime."
-    },
-    {
-      "source": "sno-isle.org",
-      "headline": "Toddler and family activities at Edmonds Library April 2026",
-      "findings": "Toddler Storytime with Cami: Thursdays 9:00-9:45 AM (ongoing) — stories, music, movement, followed by play time or art activity. Baby Storytime: Tuesdays 9:00-9:45 AM. Online Family Pajama Storytime with Ariana: Tuesdays 7:00-7:30 PM. Age-range programs: Preschool Storytime (3-5 yrs), Toddler Storytime (18mo-3 yrs), Baby Storytime (newborn-18mo). Full schedule: sno-isle.bibliocommons.com"
-    },
-    {
-      "source": "seattlesings.org / choirofthesound.org",
-      "headline": "Puget Sound choir auditions and performances April 2026",
-      "findings": "Kirkland Choral Society: performance April 26 at 3 PM, Bastyr University Chapel, Kenmore WA. Puget Soundworks: performance April 26 at 3 PM, Behnke Center for Contemporary Performance, Seattle. Choir of the Sound: auditions by email (auditions@choirofthesound.org). Seattle Peace Chorus: spring 2026 auditions by 20-min arrangement slots. Seattle Pro Musica: auditions each August for next season. Ensign Symphony & Chorus: auditions August and January."
+      "category": "Public Safety",
+      "findings": "Edmonds Police Blotter (March 30–April 5): suspicious circumstances at closed businesses, identity theft, theft at businesses, disorderly conduct arrest, resisting arrest, assault, DUI arrest, warrant arrest following traffic stop. Overall crime: lower than national average. Violent crime: 1 in 385. Property crime: 1 in 34. Non-emergency: 425-407-3999. Source: myedmondsnews.com"
     }
   ],
   "career": {
-    "english_teacher_jobs": "Multiple districts hiring for 2026-27: Edmonds School District contract positions running Jan 20–June 16, 2026. Lake Washington School District seeking teachers for 2026-27. Northshore SD 417 (Bothell) has listings. Key boards: Indeed (1,216+ teacher jobs Everett; 1,190+ Mukilteo), Glassdoor (340 HS English teacher jobs Seattle metro), ZipRecruiter ($52k-$148k range). WEA links to all district HR pages: washingtonea.org/educators/job-opportunities/school-district-job-pages/",
-    "seattle_public_schools": "Seattle Public Schools is actively hiring. External candidates: sign up for 'Teacher' job category alerts at seattleschools.org/departments/hr/careers/teacher-recruitment/. In late fall SPS posts 'Teacher Pools' by subject area — applicants receive updates on hiring timelines, information sessions, career fairs."
+    "english_teacher_jobs": "High school English teacher openings across Seattle-metro districts in 2026. Districts with reported openings: Northshore, Lake Washington, Bellevue, Edmonds, Mukilteo. Seattle Public Schools posts Teacher Pools by subject area; new postings weekly — apply at seattleschools.org/departments/hr/careers/. Washington Education Association maintains district job pages: washingtonea.org/educators/job-opportunities/school-district-job-pages/. Top boards: Indeed, Glassdoor, ZipRecruiter (224–340 HS English postings in Seattle area as of March 2026). SPS recommendation: sign up for Teacher job category alerts.",
+    "choir_auditions": "Puget Soundworks (auditioned adult choir, ~100 members) — performances April 25 & 26 at Behnke Center for Contemporary Performance, Seattle. Program: 'RESIST'. Rehearsals Wednesdays 6:30pm. Seattle Peace Chorus: spring 2026 auditions by arrangement, 20-min slots. Seattle Pro Musica: annual auditions each August; email auditions@seattlepromusica.org to join list for 2026–27 season. Seattle Men's Chorus / Seattle Women's Chorus: next auditions September 2026 for 2026–27 season. Source: seattlesings.org, seattlepromusica.org, seattlepeacechorus.org"
   },
   "family": {
-    "toddler_activities": "Sno-Isle Edmonds Library: Toddler Storytime Thursdays 9-9:45 AM (Cami), Baby Storytime Tuesdays 9-9:45 AM, Online Family Pajama Storytime Tuesdays 7-7:30 PM. April dates ongoing. Programs by age range. Seattle's Child lists additional area storytimes. Check sno-isle.bibliocommons.com for full schedule.",
-    "choir": "Kirkland Choral Society and Puget Soundworks both performing April 26. Seattle Peace Chorus auditions by arrangement. Seattle Pro Musica August auditions for 2026-27 season (email auditions@seattlepromusica.org). Most choir auditions are August cycle."
+    "toddler_activities": "Edmonds Library (Sno-Isle) storytimes: Toddler Storytime (18mo–3yr) with Cami — Thursdays 9:00–9:45am (stories, music, movement, art). Baby Storytime (newborn–18mo) — Tuesdays 9:00–9:45am. Preschool Storytime (3–5yr) with Kat — Wednesdays 10:00–10:45am. Online Family Pajama Storytime with Ariana — Tuesdays 7:00–7:30pm. Source: sno-isle.org/locations/edmonds/"
   },
   "global_news": [
     {
-      "source": "CNN / Al Jazeera / NPR",
-      "headline": "Trump extends Iran ceasefire; blockade tensions persist",
-      "findings": "Trump extended ceasefire with Iran via social media post, pending permanent proposal. US maintaining blockade of Iranian ports/Strait of Hormuz. Iran says ceasefire is meaningless unless blockade lifted — calling it an act of war. Iran collecting some oil tolls in yuan (petrodollar stress). IAEA chief: 'peace without nuclear oversight is an illusion.' JD Vance remained in Washington for 'additional policy meetings' instead of leading Iran talks."
+      "source": "BBC / CNN / Al Jazeera / The Guardian / NPR / NYT",
+      "findings": "IRAN-US WAR & CEASEFIRE: Trump extended Iran ceasefire indefinitely at Pakistan's request. Tehran vows retaliation; Lebanese journalist killed by Israel. Iran's IRGC captured two vessels in Hormuz. Multiple oil spills visible from space — environmental catastrophe warnings. Guardian: 3,636 killed in Iran by US-Israeli strikes (incl. 254 children); 13 US service members killed. Senate rejected war powers resolution 47-52."
     },
     {
-      "source": "CNN / Scientific American",
-      "headline": "FBI investigating deaths and disappearances of 10+ scientists linked to government projects",
-      "findings": "FBI coordinating with DOE, Pentagon, and local law enforcement investigating potential connections between deaths/disappearances of 10+ scientists. Includes retired Air Force Maj. Gen. William Neil McCasland (disappeared from Albuquerque Feb 2026 with gun and wallet). MIT professor Nuno F.G. Loureiro fatally shot near Boston Dec 2025. House Oversight Committee conducting separate inquiry. No concrete connections established beyond government ties and incidents post-2022."
+      "source": "NPR / NYT / CNN",
+      "findings": "FBI investigated NYT reporter Williamson after article on Kash Patel — concerns of retaliation. FBI director Patel files $250M defamation suit against The Atlantic. RFK Jr. grilled in two Senate hearings on vaccines, drug prices, CDC, Medicaid. Navy secretary John Phelan departed; Undersecretary Hung Cao acting secretary. Supreme Court to decide preschool funding/same-sex couples case. US military captured Maduro. TIME100 Most Influential gala in NYC today."
     },
     {
-      "source": "Memeorandum / NPR / NYT",
-      "headline": "Trump approval at 35%; Bondi fired, Chavez-DeRemer and Phelan departing",
-      "findings": "Trump approval fell to 35%, lowest since return to White House — driven by fuel price surge and Iran war disapproval (-46 on price handling). Pam Bondi fired as AG. Labor Secretary Lori Chavez-DeRemer departing (third cabinet departure, was under internal investigation). Navy Secretary John Phelan departed after 13 months amid Pentagon tensions; Undersecretary Hung Cao acting. Fed pick Kevin Warsh before Senate committee."
-    },
-    {
-      "source": "Memeorandum / NYT",
-      "headline": "Virginia redistricting blocked; Democrat wins FL Mar-a-Lago district seat",
-      "findings": "Virginia judge halted certification of voter-approved congressional redistricting map favoring Democrats — ruled referendum and enabling legislation unconstitutional. AG pledged appeal. Emily Gregory (Democrat) won special election for Florida state House district including Trump's Mar-a-Lago. FBI examined NYT reporter following coverage of Kash Patel's girlfriend; FBI not pursuing charges."
-    },
-    {
-      "source": "Al Jazeera / The Guardian",
-      "headline": "EU debates Israel deal suspension; West Bank children protest school access",
-      "findings": "Divided EU nations debating suspension of Israel trade deal as pressure mounts over rights violations in Gaza and occupied West Bank. Children from Umm al-Khair protest after settlers erected fence blocking access to their school. Senate housing bill introduced to restrict large institutional investors from owning single-family homes. Gene therapy enabling deaf children and adults up to age 32 to hear for first time — benefits persisting 2+ years."
-    },
-    {
-      "source": "NPR / OpenSecrets",
-      "headline": "Lobbying record $5B in 2025; dark money $1.9B in 2024",
-      "findings": "Lobbying spending reached record $5.08B in 2025, up 14% — largest jump since quarterly disclosures began in 2008. 15,768 organizations lobbied (up 12%). Ballard Partners led at $88.1M (ties to Trump WH Chief of Staff Susie Wiles and former AG Pam Bondi). Checkmate Government Relations earned $22.2M in first year leveraging Trump Jr. connections. Trade lobbying surged 432% on tariff concerns."
+      "source": "BBC Financial Investigation",
+      "findings": "BBC: Unusual financial trading repeatedly occurs ahead of major Trump public statements, raising insider trading concerns. OpenSecrets: 4 ballot measures in Alaska, California, Missouri targeting campaign finance reform and dark money. ProPublica: Six senators accuse Deputy AG of 'glaring' crypto conflict of interest (citing ProPublica investigation)."
     }
   ],
   "intellectual_journals": [
     {
-      "source": "New York Review of Books",
-      "headline": "NYRB April 23, 2026 issue",
-      "findings": "Issue features review of Morgan Meis's Three Paintings Trilogy; novels by Lee Clay Johnson and Carl Hiaasen. Christopher Benfey online: 'A Clearing of the Ground' (Hampshire College). Awards: Sonya Walger's debut novel 'Lion' shortlisted for Carol Shields Prize for Fiction; Gwendoline Riley one of eight 2026 Windham-Campbell prize winners; Minna Za [TRUNCATED]"
-    },
-    {
-      "source": "The New Yorker",
-      "headline": "New Yorker April 27 issue highlights",
-      "findings": "JD Vance traveled to Hungary for Viktor Orbán campaign rally with comments on Iran war. Horror novel 'Shy Girl' partly AI-generated. Exclusive dining: Charles Gabriel / Lana Lagomarsini collaboration at Charles Pan-Fried Chicken (Harlem) for $25 to-go, monthly rotating guest chefs series."
-    },
-    {
-      "source": "Aeon",
-      "headline": "Aeon recent essays",
-      "findings": "Recent: 'Fuel for thought' (Hannah Critchlow, brain bioenergetics); 'The invention of the soul' (Nicholas Humphrey); 'The house is a work of art' (Andrew Deming, Frank Lloyd Wright); 'The hypercurious mind' (Anne-Laure Le Cunff, ADHD); 'Abandoning ourselves' (Tasha Kleeman, regret and choice)."
-    },
-    {
-      "source": "The Marginalian",
-      "headline": "The Marginalian recent (Maria Popova)",
-      "findings": "Maria Popova continues 2-3x weekly publishing on literature, philosophy, science, art, psychology, history. Free, ad-free, AI-free since 2006. In Library of Congress permanent archive. ~4.6M Facebook followers. No specific recent titles surfaced in search results."
-    },
-    {
-      "source": "Kottke.org",
-      "headline": "Kottke.org recent posts",
-      "findings": "April 21: French corporation found criminally liable for enabling terrorism. Literary film adaptations poll (The Princess Bride top winner). Investigational pancreatic cancer vaccine update. NASA Curiosity rover found organic molecules on Mars. Twice-weekly newsletter (Tues/Fri)."
+      "source": "New York Review of Books (April 23, 2026 issue)",
+      "findings": "April 23 issue: Morgan Meis's Three Paintings Trilogy ('most exciting new writing about visual arts in a generation'). Novels by Lee Clay Johnson & Carl Hiaasen on violence/corruption. Iran coverage. Fintan O'Toole forthcoming: 'The Right Amount of Crazy' — Trump's strategy of feigning madness. David Adjaye's three buildings completed amid sexual m [TRUNCATED]"
     },
     {
       "source": "ProPublica",
-      "headline": "Texas abortion ban → sepsis surge 50%+; ProPublica recent investigations",
-      "findings": "Texas abortion ban caused 50%+ surge in sepsis rates for women hospitalized losing second-trimester pregnancies. Maternal mortality rose substantially in Texas as national rate dropped. Federal agents arrested 300+ protesters at immigration sweeps (charges falling apart). $2M/dose gene therapy Zolgensma taxpayer-funded, debuted at record price. Sta [TRUNCATED]"
+      "findings": "FRONTLINE/ProPublica: 300+ arrests at immigration sweeps, 1/3+ collapsed due to video debunking officer statements. Marine vet Orellana (distributing water) — charges dropped. Expert: 'arrest first, justify later.' Texas Investigative Initiative expanded to 5 newsrooms. Todd Blanche crypto conflict investigated."
     },
     {
       "source": "The Intercept",
-      "headline": "Pentagon running fake Middle Eastern news sites as propaganda operations",
-      "findings": "Two sites — Al-Fassel and Pishtaz News — are Pentagon-funded propaganda outlets posing as legitimate journalism. Connected to Trans-Regional Web Initiative (TRWI), a SOCOM psychological operations program started 2008, defunded 2014 but rebranded. Funding disclosed only in buried 'About' pages. AI-generated news anchors, CENTCOM press releases, pro [TRUNCATED]"
+      "findings": "Iran war cost could reach trillions in taxpayer burden (March 2026). Health budget cuts harming HIV programs globally. Progressive anti-war push leveraging unpopular Iran war in 2026 midterms. theintercept.com"
     },
     {
-      "source": "Scientific American",
-      "headline": "Scientific American recent: scientist deaths, heart disease, solar system origins",
-      "findings": "FBI investigating deaths/disappearances of 10+ scientists linked to government projects. May 2026 cover: 'Your Heart In Flames' — chronic inflammation and cardiovascular disease, colchicine potential. Solar system's first solids formed rapidly around baby stars (JWST). Altermagnets discovered. Declining freshwater mussels. NASA spacesuit developmen [TRUNCATED]"
+      "source": "Scientific American (April 2026)",
+      "findings": "FBI investigating deaths/disappearances of 10+ scientists with govt/sensitive-project ties. Retired USAF Maj. Gen. McCasland disappeared from Albuquerque home February 2026. Quantum time reversal achieved in lab. NASA moon suits behind schedule. April issue: algal blooms, dark matter, kidney disease. May cover story: chronic inflammation and heart  [TRUNCATED]"
     },
     {
-      "source": "London Review of Books",
-      "headline": "LRB Volume 48 No. 7",
-      "findings": "Charles Glass, 'Diary: Beirut, Now and Then' — Lebanon's civil war and ongoing impacts. Christian Lorentzen reviews Ben Lerner's 'Transcription.' James Lasdun, 'Reality Instruction' — road trip organized around courthouse trials across the US."
-    },
-    {
-      "source": "Arts & Letters Daily",
-      "headline": "Arts & Letters Daily — recent",
-      "findings": "Daily links to humanities articles and criticism; six days/week. Active on Substack (free weekly Saturday roundups, paid daily tier). Some commentary in media circles asking whether the site retains its original editorial character post-Chronicle of Higher Education ownership."
-    },
-    {
-      "source": "Big Think",
-      "headline": "Big Think recent",
-      "findings": "Mary Beard on Rome's triumph as ancient propaganda. Harvard geneticist David Reich: ancient DNA exposing myths of ancestry purity. Germany's free speech dilemma: militant democracy or creeping illiberalism? Mark Manson: 'Your suffering is a compass. Here's how to read it.'"
+      "source": "Kottke.org",
+      "findings": "Post: AI water blame misplaced — researcher's one drive for Colorado River work used 20x more water than 11 weeks of AI use. Pancreatic cancer mRNA vaccine: ~90% survival rate in immune responders. Sony robot beats elite table tennis players. Boards of Canada album 'Inferno' due May 28. VanderMeer story 'Constellations' published. Silo Season 3 tea [TRUNCATED]"
     },
     {
       "source": "Jacobin",
-      "headline": "Jacobin recent: Iran/helium, NY tax victory, LA socialist politics",
-      "findings": "Special 'Teen Jacobin' spring issue. Iran war has cut off large share of global helium supply (medical/semiconductor impact). New York movement for taxes on rich scored win against Kathy Hochul. LA socialists deliberating mayoral race, inspired by Zohran Mamdani's NYC victory. 75K print subscribers, 3M+ monthly web readers."
+      "findings": "Iran ceasefire as 'stunning defeat for militarism' — war lasted 6 weeks. Puerto Rico independence — 1940s colonialism unraveled by US military interests. Soviet economist Yakov Kronrod and democratic economic reform. Special 'Teen Jacobin' spring issue."
     },
     {
       "source": "OpenSecrets",
-      "headline": "Record $5B lobbying in 2025; dark money $1.9B in 2024",
-      "findings": "Lobbying firms took record $5.08B in 2025 (up 14%). Ballard Partners led at $88.1M revenue — triple 2024, tied to WH Chief of Staff Susie Wiles and former AG Pam Bondi. Dark money hit $1.9B in 2024 federal races. Trade-related lobbying surged 432% on tariff concerns."
+      "findings": "4 ballot measures on campaign finance reform in Alaska, California, Missouri in November 2026 elections. CA legislature referred statute to repeal 1988 ban on public campaign financing. New series: 'State of Disclosure' — campaign finance enforcement across America. opensecrets.org"
+    },
+    {
+      "source": "Big Think",
+      "findings": "Recent features: Harvard geneticist David Reich on ancient DNA and ancestry misconceptions. How the brain builds and edits identity. Over-optimization making people fragile. Energy doesn't work like a battery — rethinking fatigue and recovery."
     }
   ],
   "wearable_ai": [
     {
-      "topic": "AI voice hardware 2026",
-      "findings": "OpenAI developing voice-first AI hardware (Jony Ive design), expected to ship within ~12 months of early 2026. On-device/edge processing is dominant engineering trend away from cloud-dependency. Voice AI market projected at $47.5B by 2034 (34.8% CAGR). Maono DM40 Wireless Microphone won CES Innovation Award with LLM-powered voice transformation."
+      "topic": "Wearable AI Hardware 2026",
+      "findings": "Shift to Edge AI: on-device processing, sub-25ms latency (Neuphonic NeuTTS Air). No cloud required. Key devices: Plaud NotePin (1.5M users, transcription/notes), Bee (always-on diary summaries), LUCI Pin/Memories.ai (12MP camera, 4hr continuous recording), Limitless (acquired by Meta, unavailable). Apple accelerating 3 AI wearables: smart glasses, AI pin, camera-equipped AirPods (Qualcomm Snapdrag [TRUNCATED]"
     },
     {
-      "topic": "Wearable AI pendants/pins/lifelogging 2026",
-      "findings": "Memories.ai LUCI Pin (12MP ultra-wide, dual mics, 4hr continuous recording) standout at CES 2026. Limitless pendant acquired by Meta (late 2025, no longer sold). Apple developing AI glasses, AI pin/pendant, and camera-equipped AirPods (accelerating per Feb 2026 reports). Qualcomm launched Snapdragon Wear Elite platform for on-device AI. Rewind Pendant and Plaud NotePin also in market."
-    },
-    {
-      "topic": "AI classroom tools for high school teachers 2026",
-      "findings": "Top tools: MagicSchool AI (80+ educator tools), Khanmigo (free for verified teachers, standards-aligned lesson plans/rubrics/exit tickets), NotebookLM (synthesizes uploads into study guides), Google Gems (custom AI chatbots), Brisk Teaching, Eduaide, SchoolAI. 68% of educators report saving up to 5 hrs/week. AI handles repetitive tasks; teachers retain creativity and expertise."
-    },
-    {
-      "topic": "AI-assisted lesson plans and EdTech resources 2026",
-      "findings": "Time published 'America's Top EdTech Companies of 2026' (April 22, 2026). Brisk Teaching produces differentiated materials in hours vs. days. Khanmigo free for verified teachers. MagicSchool lesson plan generators, rubric makers, quiz tools. Cult of Pedagogy: '6 Ed Tech Tools to Try in 2026.' Ethical safeguard integration now a stated design requirement across major platforms."
+      "topic": "AI Tools for Teachers",
+      "findings": "AI saves teachers avg 5–7 hrs/week. 79% of teachers use EdTech daily; AI classroom use up 6x since 2023. Top platforms: MagicSchool AI (80+ tools), Khanmigo (free for verified teachers, standards-aligned), Brisk Teaching, Eduaide, Microsoft Copilot, Google Gemini in Classroom. TIME: Top EdTech Companies 2026 published April 22. Trend: integrated AI within existing platforms."
     }
   ],
   "triadic_ontology": {
-    "findings": "Active scholarly series: 'Studies on Triadic Ontology and Trinitarian Philosophy' (Verlag Karl Alber), edited by Markus Enders, Emmanuel Falque, John Milbank, Piero Coda, and others. Active conference group: TRIERTIUM (2025-2026). Matteo Raffaelli published in Modern Theology (Feb 2026) on Trinitarian ontology and relational metaphysics. Core thesis: the Triune God as ontological ground of relationality — being is inherently relational because God is relation. Perichoresis as structural model for relational and infinitely divisible metaphysical structures. PhilArchive papers: 'Trilism: A Triadic Systems Theory for Resolving the Hard Problem' (connecting triadic structures to philosophy of mind); 'Relational Ontologies and Trinitarian Metaphysics.' Triadic Metaphysics: Spinoza's Expression as Structural Ontology (ResearchGate)."
+    "findings": "New academic series 'Studies on Triadic Ontology and Trinitarian Philosophy' launched by Verlag Karl Alber, ed. by Markus Enders, Emmanuel Falque, John Milbank et al. Inaugural vol: 'Trinitarian Ontologies: Towards a Trinitarian Transformation of Philosophy.' Triertium Research Group (Czech): Trinitarian ontology rooted in Jan Amos Comenius's pansophy (1592–1670), 'triadic synthesis of all sciences.' Matteo Raffaelli on Triertium in Modern Theology (Feb 2026, triertium.cz). Perichoresis in contemporary metaphysics: 'Triune God is the ontological ground of relationality itself — being is relational because God is relation.' 2026: Proposal 'Trilism' — new systems theory with triadic ontological structure: Spiritual World, Mediator, Material World (PhilArchive). PhilArchive paper: 'Relational Ontologies and Trinitarian Metaphysics' (philarchive.org/archive/MIGROA-2)."
   },
   "ai_systems": {
-    "findings": "Dominant 2026 trend: enterprises moving from chatbots to multi-agent orchestration — specialized agents collaborating as 'digital teams.' Multi-model routing now standard: frontier models for reasoning-heavy tasks, lighter models for high-volume subtasks, reducing costs 40-60%. Architecture emphasis: separate reactive from deliberative systems, structured JSON-schema communication between agents (replacing free-text), observability, principled conflict resolution. Leading frameworks: LangGraph, CrewAI. arXiv cs.MA active with new papers April 2026. Core maxim: 'Agentic AI success is about smarter architecture, not smarter models.' OpenAI regrouping internal teams for voice-first hardware."
+    "findings": "2026 defined by architecture over model intelligence. Multi-agent orchestration now standard for enterprise AI. Key insight: mixing models (frontier for reasoning, lightweight for volume tasks) reduces costs 40–60%. Top frameworks: LangGraph (stateful workflows), AutoGen (multi-agent conversations), CrewAI (role-based), OpenAgents (financial), MetaGPT (software development). MAS-Orchestra: function-calling RL framework for holistic multi-agent orchestration; introduces MASBENCH evaluation. NextBigFuture: '2026 is Breakthrough Year for Reliable AI World Models and Continual Learning Prototypes.' Agentic AI era: dynamic model routing is must-have; most multi-agent failures stem from weak reasoning architecture, not weak models."
   },
   "uap": {
-    "findings": "119th Congress H.R.1187 UAP Transparency Act: requires President to direct all federal agencies to declassify UAP records and publish on agency websites. Joint House Oversight hearing 'Unidentified Anomalous Phenomena: Exposing the Truth' (Subcommittees on Cybersecurity/IT/Government Innovation and National Security/Border/Foreign Affairs) — focused on DoD/IC lack of transparency. Separate hearing: 'Restoring Public Trust Through UAP Transparency and Whistleblower Protection' — examined AARO transparency failures and whistleblower protection mechanisms. FY2026 NDAA requires Pentagon to brief Congress on UAP intercept operations since 2004 involving integrated military commands (North American defense focus). Connecticut state HB-05422 introduced Feb 2026. Maj. Gen. McCasland (ret.) — linked to To the Stars organization — disappeared Feb 2026; included in FBI scientist investigation."
+    "findings": "February 2026: Trump signed executive order directing UAP records declassification — 300-day deadline. Agencies must release materials, provide redacted versions, or submit reviewable justifications for continued classification. Described as 'most significant executive action on UAP transparency in US history.' Congressional hearings: Joint subcommittee hearing 'Unidentified Anomalous Phenomena: Exposing the Truth'; 'Restoring Public Trust Through UAP Transparency and Whistleblower Protection' (examining AARO). FY2026 NDAA: Pentagon must brief lawmakers on UAP intercepts by integrated military commands since 2004. H.R.1187 UAP Transparency Act introduced in 119th Congress. FBI investigating deaths/disappearances of 10+ scientists with govt ties (some online speculation links to UAP programs); incl. retired USAF Maj. Gen. McCasland (disappeared Albuquerque, Feb 2026). IAEA chief: peace without nuclear oversight is an 'illusion.'"
   },
   "newyorker": {
     "available": true,
-    "title": "When Soul Food Met Daniel Boulud",
-    "section": "collab dept.",
-    "dek": "The Harlem franchise Charles Pan-Fried Chicken invited a bunch of chefs to take over for the weekend. Up next: oxtails from Lana Lagomarsini. Zach Helfand writes.",
-    "author": "Zach Helfand",
-    "url": "https://www.newyorker.com/magazine/2026/04/27/when-soul-food-met-daniel-boulud",
-    "pub_date": "2026-04-27",
-    "text": "Last week, Quié, who has the build of a refrigerator and the energy of a hummingbird, was at the Charles Pan-Fried Chicken on 145th Street, preparing for another collaboration. He was inviting celebrated chefs to take over for one weekend each month. The meals are open to anyone, to-go, and cost twenty-five dollars. \"It's not a money-maker. At all,\" Quié said. \"But it's not about that. It's like when Jay-Z brought Oprah to Brooklyn.\"\nThis weekend's chef, Lana Lagomarsini, met Quié at a picnic table outside. She was there to test her dish: tamarind barbecue-glazed oxtails with chowchow, which would pair with Quié's Rasta pasta. Lagomarsini, a semifinalist on \"Top Chef,\" has worked at Gramercy Tavern, Momofuku Ko, and Francis Mallmann's Garzón, in Uruguay. She joined an ongoing lineup—ten chefs so far—that has included Ayo Balogun, of the Dept of Culture, in Bed-Stuy, and Serigne Mbaye, whose New Orleans restaurant, Dakar NOLA, is considered among the best in the country. \"This is like the Justice League,\" Quié said.\nLagomarsini laughed. \"I'm just regular-degular.\"\n\"No, you are in the catalogue of dopeness,\" Quié said.\nLagomarsini, who wore gold earrings and has arm tattoos, got organized. Quié kept getting up, sitting down, calling out to people in the street, checking on the kitchen, and whipping out his phone to film promotional videos. Lagomarsini seemed used to it: chefs.\nShe lives nearby. \"I come here myself once a week,\" she said. \"There's a three-piece, you get two sides, and it's eighteen bucks. It's very shareable, but also not shareable, you know?\" Lagomarsini's cooking celebrates the Black diaspora. \"I get a kick out of tracking down recipes of old Black chefs,\" she said. She has unearthed dishes by Thomas Downing, known in the nineteenth century as the Oyster King of New York, and by James Hemings, born into slavery, who was Thomas Jefferson's chef in France and helped introduce America to macaroni and cheese. Lagomarsini also discovered material about her ancestors. \"I found out for sure my family was enslaved,\" she said. \"I found the name of our owners, and where the family is. They're still alive.\" This summer, she's opening her first restaurant, a fourteen-seat supper club on the Upper East Side. She named it Creola, after her grandmother.\nQuié popped out of the kitchen and said, \"Showtime!\" There were four burners going. Quié had prepped Lagomarsini's dishes and was working on an Alfredo sauce. \"I based it off Olive Garden's,\" he said. They assessed the oxtails: too small. \"I want huge oxtails for the weekend,\" Quié said.\nThe final side dish was Gabriel's cornbread, made with plantains and drizzled with cane-sugar-infused honey. Growing up in Harlem, Quié idolized Gabriel, the son of sharecroppers and one of twenty kids. \"Same parents, by the way,\" Quié said. \"Everyone had chores. His job was to catch the chicken, kill the chicken, pluck the chicken.\" During the pandemic, Quié was furloughed from a Dave & Buster's. He approached Gabriel, who is seventy-eight, about cooking for him. Gabriel told him he'd had to close the restaurant. \"I was, like, 'Nah,' \" Quié said. They partnered to bring it back.\nLagomarsini slathered the oxtails with the glaze, which was dangerously sticky. \"It's a blessing and a curse,\" she said. \"One time it spilled all over the trunk of my car.\" Quié attended to two burners while running around recording Lagomarsini on his phone. Lagomarsini dolloped more glaze and said, \"Want me to plate up, chef?\"\nShe displayed the dish as Quié directed her through a promo. \"How do I say this properly—you're gonna describe it sexy-like,\" he said. They returned to the picnic table to taste. Lagomarsini offered a bite to Quié's nephew Poppa, who works at the restaurant. He shyly declined.\n\"Boss, please!\" Quié said. \"Grab a fork.\" Poppa sat down. \"All right, try the oxtail first,\" Quié said. \"Sauce. Now eat the chowchow. Now take another oxtail. Pasta now. O.K., now you can have the cornbread.\"\nQuié was del [TRUNCATED]",
-    "source": "The New Yorker"
+    "title": "The Anatomy of a Failure",
+    "section": "paris postcard",
+    "dek": "From spray-on condoms to radioactive wrinkle cream, “Flops?!” at the Musée des Arts et Métiers, in Paris, puts terrible inventions in the spotlight.",
+    "url": "https://www.newyorker.com/magazine/2026/04/27/the-anatomy-of-a-failure",
+    "source": "The New Yorker",
+    "text": "“We thought it would be interesting to show that which we never show,” Marjolaine Schuch, who co-curated “Flops?!,” explained recently. “All the stuff that gets shoved under the carpet.” The show originated at a design museum in Saint-Étienne; Musée des Arts et Métiers has supplemented it with lemons from its permanent collection, such as the ten-hour decimal-time clock, used during the French Revolution. “This is the Pascaline,” Schuch said, pointing to what looked like a jewelry box covered in brass gears—an early, not entirely dependable, calculating machine conceived by Blaise Pascal. In mounting the show, Schuch and her team committed a gaffe of their own. “We didn’t include the dates of the inventions, and we immediately started getting all kinds of comments,” she confessed. The Pascaline’s label bore evidence of their cleanup job: a rubber-stamped addition reading “1642.”\nNearby, a screen displayed e-mails between the investors Paul Graham and Fred Wilson: “I am not sure they can take on the hotel market,” Wilson writes, deciding against investing in Airbnb. Graham published the exchange on his blog in 2011, as a testament to the fact that even successful people don’t always get it right. That such a blunder might be shrugged off and even celebrated, rather than shamefully shunted away, struck Schuch as a very American notion. (Anyone who has witnessed a French schoolchild’s horror of committing “fautes” will agree.) “In France, we never talk about these steps, this groundwork, these impasses,” Schuch said. “This was an opportunity to demystify and de-dramatize failure, this idea that making a mistake is something rather serious from which one doesn’t necessarily recover.”\nNot every downfall has an upside, as early adopters of Tho-Radia, a line of thorium- and radium-based face creams, promoted by Dr. Alfred Curie—no relation to Marie—soon learned. And then there’s London’s “Walkie-Talkie” building: a skyscraper whose convex shape caught the sun like a magnifying glass, melting cars. In addition to such “dangerous flops,” the exhibit features inventions that fizzled because they were expensive and unnecessary (the Juicero juicing machine), poorly designed (the Vasa, a Swedish warship that sunk on its maiden voyage), or simply ahead of their time (La Jamais Contente, a speedy electric car that came out in 1899). “Everybody forgets that electric vehicles were invented at the same time as combustion-powered vehicles,” Schuch said. A case nearby contained an old Michelin guide, listing charging stations in every city.\nOf all the categories of fuckups, perhaps the most jaw-dropping is the “faux pas,” demonstrating, according to the museum’s literature, “at best tactlessness, and, at worst, bad intentions.” A crowd gawked at such specimens as a hollow golf club that one can urinate into and the pastel-toned Bic for Her ballpoint pen, designed “to fit comfortably into a woman’s hand” (though perhaps not into her wallet, as the product cost up to seventy per cent more than non-gendered pens). In 2014, Zara released a blue-and-white-striped child’s shirt embellished with a yellow star. It was meant to evoke a sheriff’s uniform, but, for many, it called to mind concentration camps.\nSchuch led the way through a room wallpapered with whimsical non-starters dreamed up by the artist Jacques Carelman: a sinuous Ping-Pong table, transparent playing cards. A section devoted to transportation offered such wonders of disappointment as a shuttle bus, proposed for the La Défense district near Paris, that progressed twice as slowly as a person on foot. The food-processing sector proved equally inadequate: Colgate lasagna, anyone? Schuch paused in front of a Tetra Pak carton of Côtes du Rhône, noting that while such packaging had gone over fine in Nordic countries, French consumers had rejected it vehemently. “Wine in a carton,” she said, shaking her head. “It’s impossible, psychologically.”\nIn the final gallery, a line had formed in front of [TRUNCATED]"
   },
   "vault_insight": {
     "available": false,
-    "reason": "queue empty"
+    "note": "Vault queue is empty as of 2026-04-23. No pending insights to surface."
   },
   "enriched_articles": [
     {
-      "title": "These Middle Eastern News Sites Are U.S. Government Propaganda Operations",
-      "url": "https://theintercept.com/2026/04/20/pentagon-middle-eastern-news-propaganda-iran/",
-      "source": "The Intercept",
-      "author": "Sam Biddle",
-      "date": "2026-04-20",
+      "url": "https://www.propublica.org/article/caught-in-crackdown-ice-cbp-doj-trump-arrests-convictions",
+      "source": "ProPublica / FRONTLINE",
+      "title": "Caught in the Crackdown",
       "fetch_failed": false,
-      "text": "The sites — Al-Fassel and Pishtaz News — disclose U.S. funding only in hard-to-find 'About' pages, not on social media platforms, violating platform policies requiring state-backed media labels. Both outlets appear connected to the Trans-Regional Web Initiative (TRWI), a Pentagon psychological operations program started in 2008 by Special Operations Command. After being defunded by Congress in 2014, many TRWI sites rebranded with vague funding disclosures. Content patterns include heavy reliance on CENTCOM press releases, AI-generated news anchors, heavily biased coverage favoring U.S./Israeli positions on Iran and Gaza, and limited substantive reach (Al-Fassel: ~2,400 X followers; Pishtaz: 132 X followers). While technically 'overt' propaganda due to buried disclosures, these sites function deceptively by using journalism as camouflage. Verbatim disclosure language: 'a product of an international media organization publicly funded from the budget of the United States Government.'"
+      "text": "Over 1/3 of 300+ arrests at Trump immigration sweeps collapsed — charges dismissed or defendants acquitted (vs. 90%+ typical federal conviction rate). Key case: Marine vet Alejandro Orellana arrested for distributing water/face shields; charges dropped within weeks. Border Patrol chief Gregory Bovino instructed agents to 'arrest as many people that touch you.' Cole Sheridan (Chicago): falsely accused of assaulting Bovino; dismissed after video surfaced. Expert federal defender: 'We've never had a situation where it seems like you arrest first and then try to justify the reasons later.' Even failed prosecutions produce chilling effect — arrested individuals report lasting trauma and job loss from federal charges and DHS social media posts."
     },
     {
-      "title": "FBI Investigating Possible Links Between Deaths and Disappearances of at Least 10 Scientists",
       "url": "https://www.scientificamerican.com/article/fbi-investigating-possible-links-between-deaths-and-disappearances-of-at-least-10-scientists/",
       "source": "Scientific American",
-      "date": "2026-04",
+      "title": "FBI Investigating Possible Links Between Deaths and Disappearances of At Least 10 Scientists",
       "fetch_failed": false,
-      "text": "The FBI has launched a coordinated investigation into potential connections among at least 10 deaths and disappearances of scientists linked to government projects, following public attention from President Trump and Republican lawmakers. The investigation involves multiple agencies including the Department of Energy, Pentagon, and state/local law enforcement. One prominent case concerns retired Air Force Maj. Gen. William Neil McCasland, who disappeared from his Albuquerque home in February 2026 with his gun and wallet. McCasland's wife countered online speculation, stating it was 'quite unlikely that he was taken to extract very dated secrets from him,' noting her husband had retired 13 years prior. She also dismissed connections to his involvement with To the Stars, an organization promoting theories about aliens and UFOs. Officials emphasize there is currently no concrete evidence connecting the incidents beyond the researchers' government ties and the fact that none occurred before 2022. NASA stated that 'nothing related to NASA indicates a national security threat' and pledged cooperation with investigators. House Oversight Committee also conducting separate inquiry."
+      "text": "FBI investigating potential connections among deaths/disappearances of 10+ scientists with ties to government projects or sensitive information. Prompted by Trump and Republican lawmakers highlighting cases. FBI coordinating with Dept of Energy, Pentagon, state/local law enforcement. House Oversight Committee also investigating. Most recent case: retired USAF Maj. Gen. William Neil McCasland disappeared from Albuquerque home, February 2026. McCasland's wife: 'quite unlikely that he was taken to extract very dated secrets' (retired 13 years ago). No confirmed connections beyond government affiliations. No cases before 2022. NASA: 'nothing related to NASA indicates a national security threat.' Dept of Energy examining nuclear scientist cases. Some online speculation links McCasland to 'To the Stars' UAP organization — wife dismissed link."
     },
     {
-      "title": "Lobbying Firms Took In a Record $5 Billion in 2025",
-      "url": "https://www.opensecrets.org/news/2026/01/lobbying-firms-took-in-a-record-5-billion-in-2025/",
+      "url": "https://www.opensecrets.org/news/2026/04/2026-ballot-measures-4-reforms-targeting-campaign-finance-and-dark-money",
       "source": "OpenSecrets",
-      "date": "2026-01-29",
-      "fetch_failed": false,
-      "text": "Lobbying spending reached an unprecedented $5.08 billion in 2025, representing a 14 percent increase from the previous year — the largest jump since quarterly disclosures began in 2008. 15,768 organizations lobbied, up nearly 12 percent from 2024. Ballard Partners led all firms with a record $88.1 million in revenue, tripling its 2024 earnings. The firm benefits from leadership ties to the Trump administration, including White House Chief of Staff Susie Wiles and Attorney General Pam Bondi as former employees. Brownstein Hyatt and BGR Group followed at approximately $71 million each. Checkmate Government Relations — launched with $70,000 in late 2024 — earned $22.2 million in its first full year, leveraging connections to Trump Jr. and administration insiders. Healthcare led lobbying investment at $868 million, with pharmaceutical and hospital organizations navigating Medicaid cuts. Trade-related lobbying surged 432% as tariff concerns mounted."
+      "title": "2026 Ballot Measures: 4 Reforms Targeting Campaign Finance and Dark Money",
+      "fetch_failed": true,
+      "text": "Fetch failed (403). Summary from search: 4 ballot measures in Alaska, California, and Missouri targeting campaign finance reform and dark money in November 2026 elections. California legislature referred statute to repeal 1988 ban on public campaign financing. OpenSecrets launched 'State of Disclosure' series examining enforcement across all 50 states."
     },
     {
-      "title": "Memeorandum top stories — April 23, 2026",
-      "url": "https://www.memeorandum.com/",
-      "source": "Memeorandum",
-      "date": "2026-04-23",
+      "url": "https://kottke.org/26/04/0048773-everyone-is-blaming-ai-fo",
+      "source": "Kottke.org",
+      "title": "Everyone Is Blaming AI for the Water Crisis. We're Looking at the Wrong Culprit",
       "fetch_failed": false,
-      "text": "Virginia redistricting referendum blocked by court — judge halted certification of voter-approved congressional map benefiting Democrats, ruled referendum and enabling legislation unconstitutional; AG pledged appeal. Navy Secretary John Phelan departed Trump administration after 13 months amid tensions with Pete Hegseth; Undersecretary Hung Cao acting. FBI examined NYT reporter following coverage of Kash Patel's girlfriend; FBI not pursuing charges, raises press freedom concerns. DHS counterterrorism official placed on administrative leave over 'sugar daddy' allegations. Kalshi suspended and fined three congressional candidates for 'political insider trading' on their own campaigns — platform's first enforcement actions."
+      "text": "Environmental policy expert challenges AI water-blame narrative with empirical field data. Finding: researcher's one drive to Colorado River field work used more than 20x the water of all AI use over 11 weeks. Conclusion: personal activities and travel dwarf AI's water footprint. AI is a convenient scapegoat for systemic water issues — conventional human activities represent the more significant consumption concern. Source: Outside Online article featuring Colorado River environmental specialist's field measurements."
     },
     {
-      "title": "Texas Banned Abortion. Then Sepsis Rates Soared.",
-      "url": "https://www.propublica.org/article/texas-abortion-ban-sepsis-maternal-mortality-analysis",
-      "source": "ProPublica",
-      "date": "2025-2026",
+      "url": "https://www.getdisclosure.app/intel/uap-disclosure-act-2026-timeline/",
+      "source": "DISCLOSURE (getdisclosure.app)",
+      "title": "The UAP Disclosure Act Timeline — 2023 to 2026",
       "fetch_failed": false,
-      "text": "Pregnancy became far more dangerous in Texas after the state banned abortion in 2021. The rate of sepsis shot up more than 50% for women hospitalized when they lost their pregnancies in the second trimester. The surge was most pronounced for patients whose fetus may still have had a heartbeat when they arrived at the hospital. ProPublica previously reported on two such cases where miscarrying women died of sepsis after doctors delayed evacuating their uteruses — doing so would have been considered an abortion. Dozens more pregnant and postpartum women died in Texas hospitals than in pre-pandemic baseline years, as the national maternal mortality rate dropped. ProPublica analyzed seven years of Texas hospital discharge data. 'This is exactly what we predicted would happen and exactly what we were afraid would happen,' said Dr. Lorie Harper, maternal-fetal medicine specialist in Austin. Texas law threatens up to 99 years in prison for providing an abortion. The ban includes a 'medical emergency' exception but its definition has been subject to confusion and debate. The analysis comes as Texas legislators consider amending the abortion ban."
+      "text": "Timeline from David Grusch July 2023 Congressional testimony (alleged US govt 'multi-decade UAP crash retrieval/reverse-engineering program') through 2026. Dec 2023: UAP Disclosure Act proposed as NDAA amendment (Presidential Review Board modeled on JFK Records Act). June 2024: AARO historical findings contradicted Grusch claims. February 2026: Trump EO directing UAP records declassification — 300-day deadline; agencies release, redact, or justify. Described as 'most significant executive action on UAP transparency in US history.' Outcome contingent on review board independence — risk of functioning as delay tactic vs. genuine disclosure."
     }
   ]
 }
