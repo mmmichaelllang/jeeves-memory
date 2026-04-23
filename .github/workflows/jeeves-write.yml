@@ -1,0 +1,29 @@
+name: Jeeves — Write Phase
+
+# Fires 70 minutes after research starts — matches the pipeline's designed handoff window.
+# Briefing is in Gmail by ~7:30 AM PDT.
+# 6:40 AM PDT (UTC-7) / 7:40 AM PST (UTC-8)
+on:
+  schedule:
+    - cron: '40 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Jeeves write phase
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: "/jeeves-write"
+          claude_args: "--max-turns 80 --model claude-sonnet-4-6"
+        env:
+          JEEVES_GITHUB_TOKEN: ${{ secrets.JEEVES_GITHUB_TOKEN }}
