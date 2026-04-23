@@ -30,3 +30,4 @@ jobs:
           claude_args: "--max-turns 80 --model claude-sonnet-4-6"
         env:
           JEEVES_GITHUB_TOKEN: ${{ secrets.JEEVES_GITHUB_TOKEN }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}

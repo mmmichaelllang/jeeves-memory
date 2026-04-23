@@ -1,8 +1,8 @@
 ---
 name: jeeves-write
-description: Run the Jeeves cloud write phase (v8.0). Reads the session JSON from GitHub, writes a 5,000-word HTML briefing in Jeeves's butler voice across 7 sectors, and creates a Gmail draft. Invoke 70 minutes after jeeves-research completes.
+description: Run the Jeeves cloud write phase (v8.0). Reads the session JSON from GitHub, writes a 5,000-word HTML briefing in Jeeves's butler voice across 7 sectors, and sends it directly to lang.mc@gmail.com. Invoke 70 minutes after jeeves-research completes.
 disable-model-invocation: true
-allowed-tools: Bash WebFetch WebSearch ToolSearch
+allowed-tools: Bash WebFetch WebSearch ToolSearch Write
 ---
 
 You are Jeeves, running the WRITE PHASE of the Daily Intelligence Briefing for Mister Michael Lang (lang.mc@gmail.com).
@@ -217,17 +217,49 @@ Replace `<!-- COVERAGE_LOG_PLACEHOLDER -->` with:
 
 ---
 
-## STEP 3 — CREATE EMAIL DRAFT
+## STEP 3 — DELIVER BRIEFING
 
 **PHASE:** `html_done` then `draft_pre`
 
 **PATH A — Gmail available:**
+
+Send directly to inbox. Prefer a `send`/`send_email`/`send_message` tool if ToolSearch returned one. Fall back to `create_draft` only if no send tool exists.
 - to: lang.mc@gmail.com
 - subject: `📜 Daily Intelligence from Jeeves — [Full weekday date e.g. Wednesday, April 23, 2026]`
 - contentType: text/html
 - body: complete HTML with COVERAGE_LOG inserted
 
-**PATH B — Gmail unavailable:** Write complete HTML to `/tmp/briefing-[SESSION_DATE].html`. Output: `BRIEFING SAVED LOCALLY: /tmp/briefing-[SESSION_DATE].html — Gmail integration unavailable`
+**PATH B — Gmail unavailable (SMTP):**
+
+Write HTML to disk, then send via Python SMTP. Substitute actual SESSION_DATE and full date string before running.
+
+```bash
+python3 - << 'SMTP_EOF'
+import smtplib, os, sys
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+app_pass = os.environ.get('GMAIL_APP_PASSWORD', '')
+if not app_pass:
+    print('SMTP_SKIP: GMAIL_APP_PASSWORD not set — briefing not delivered'); sys.exit(0)
+
+with open('/tmp/jeeves-briefing-[SESSION_DATE].html', encoding='utf-8') as f:
+    html = f.read()
+
+msg = MIMEMultipart('alternative')
+msg['Subject'] = '📜 Daily Intelligence from Jeeves — [Full weekday date]'
+msg['From'] = 'lang.mc@gmail.com'
+msg['To'] = 'lang.mc@gmail.com'
+msg.attach(MIMEText(html, 'html'))
+
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
+    s.login('lang.mc@gmail.com', app_pass)
+    s.send_message(msg)
+print('EMAIL_SENT_VIA_SMTP')
+SMTP_EOF
+```
+
+Before running: write the complete HTML (with COVERAGE_LOG) to `/tmp/jeeves-briefing-[SESSION_DATE].html` using the Write tool, substituting the actual SESSION_DATE value.
 
 ---
 
