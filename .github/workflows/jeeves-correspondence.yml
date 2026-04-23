@@ -27,3 +27,5 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: "/jeeves-correspondence"
           claude_args: "--max-turns 40 --model claude-haiku-4-5-20251001"
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}

@@ -1,8 +1,8 @@
 ---
 name: jeeves-correspondence
-description: Run the Jeeves correspondence phase (v3.0 cloud, Gmail only). Sweeps Gmail (last 60 days), classifies messages by action type, weaves in five profane butler asides, and delivers a 1,500-word correspondence briefing as a Gmail draft. Invoke independently of the daily intelligence pipeline.
+description: Run the Jeeves correspondence phase (v3.0 cloud, Gmail only). Sweeps Gmail (last 60 days), classifies messages by action type, weaves in five profane butler asides, and sends a 1,500-word correspondence briefing directly to lang.mc@gmail.com. Invoke independently of the daily intelligence pipeline.
 disable-model-invocation: true
-allowed-tools: Bash WebFetch WebSearch ToolSearch
+allowed-tools: Bash WebFetch WebSearch ToolSearch Write
 ---
 
 # CORRESPONDENCE FROM JEEVES — CLOUD ROUTINE (v3.0)
@@ -183,14 +183,15 @@ Example:
 
 ---
 
-## STEP 5 — DELIVER TO GMAIL AS DRAFT
+## STEP 5 — DELIVER CORRESPONDENCE BRIEFING
 
-Use `gmail_create_draft`:
+**PATH A — Gmail available:**
 
+Send directly to inbox. Prefer a `send`/`send_email`/`send_message` tool if ToolSearch returned one. Fall back to `create_draft` only if no send tool exists.
 - **to**: `lang.mc@gmail.com`
 - **subject**: `📫 Correspondence — [Today's Full Date]` (e.g. `"📫 Correspondence — Friday, April 18, 2026"`)
 - **contentType**: `text/html`
-- **body**: Full briefing in HTML scaffold:
+- **body**: Full briefing in HTML scaffold below. All styling in `<head>`. No external stylesheets. Valid HTML.
 
 ```html
 <!DOCTYPE html>
@@ -219,7 +220,37 @@ Use `gmail_create_draft`:
 </html>
 ```
 
-All styling in `<head>`. No external stylesheets. Valid HTML.
+**PATH B — Gmail unavailable (SMTP):**
+
+Write HTML to disk, then send via Python SMTP. Substitute actual TODAY date string before running.
+
+```bash
+python3 - << 'SMTP_EOF'
+import smtplib, os, sys
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+app_pass = os.environ.get('GMAIL_APP_PASSWORD', '')
+if not app_pass:
+    print('SMTP_SKIP: GMAIL_APP_PASSWORD not set — correspondence not delivered'); sys.exit(0)
+
+with open('/tmp/jeeves-correspondence-[TODAY].html', encoding='utf-8') as f:
+    html = f.read()
+
+msg = MIMEMultipart('alternative')
+msg['Subject'] = '📫 Correspondence — [Today Full Date]'
+msg['From'] = 'lang.mc@gmail.com'
+msg['To'] = 'lang.mc@gmail.com'
+msg.attach(MIMEText(html, 'html'))
+
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
+    s.login('lang.mc@gmail.com', app_pass)
+    s.send_message(msg)
+print('EMAIL_SENT_VIA_SMTP')
+SMTP_EOF
+```
+
+Before running: write the complete HTML to `/tmp/jeeves-correspondence-[TODAY].html` using the Write tool, substituting the actual TODAY value.
 
 ---
 
