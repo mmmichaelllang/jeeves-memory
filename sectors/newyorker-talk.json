@@ -1,9 +1,9 @@
 {
   "sector": "newyorker-talk",
   "enabled": true,
-  "output_section": "Sector 7 — Talk of the Town",
+  "output_section": "Sector 7 \u2014 Talk of the Town",
   "heading": "The Talk of the Town",
-  "description": "The New Yorker's Talk of the Town, fetched verbatim via authenticated Jina reader. Traversed backwards in time — most recent first, each article featured once and never repeated.",
+  "description": "The New Yorker's Talk of the Town, fetched verbatim via authenticated Jina reader. Traversed backwards in time \u2014 most recent first, each article featured once and never repeated.",
   "jina_config": {
     "key_file": "/Users/frederickyudin/Documents/Claude/Scheduled/News-Jeeves/config/jina-api-key.txt",
     "toc_url": "https://www.newyorker.com/magazine/talk-of-the-town",
@@ -20,7 +20,7 @@
       "url": "https://www.newyorker.com/magazine/2026/04/20/pay-later",
       "first_covered": "2026-04-15",
       "last_referenced": "2026-04-15",
-      "one_line_summary": "E. Tammy Kim on deferred financial pain — buy-now-pay-later economy and its structural costs to working families."
+      "one_line_summary": "E. Tammy Kim on deferred financial pain \u2014 buy-now-pay-later economy and its structural costs to working families."
     },
     {
       "id": "bird-flu-canada-geese-apr13-2026",
@@ -30,7 +30,7 @@
       "url": "",
       "first_covered": "2026-04-15",
       "last_referenced": "2026-04-15",
-      "one_line_summary": "Talk of the Town piece on avian flu spread via migratory Canada geese — ecological anxiety in the urban-wild interface."
+      "one_line_summary": "Talk of the Town piece on avian flu spread via migratory Canada geese \u2014 ecological anxiety in the urban-wild interface."
     },
     {
       "id": "when-soul-food-met-daniel-boulud-apr27-2026",
@@ -40,7 +40,7 @@
       "url": "https://www.newyorker.com/magazine/2026/04/27/when-soul-food-met-daniel-boulud",
       "first_covered": "2026-04-23",
       "last_referenced": "2026-04-23",
-      "one_line_summary": "Zach Helfand on Charles Pan-Fried Chicken's monthly chef collaborations — Lana Lagomarsini's oxtails meet Harlem's soul food heritage."
+      "one_line_summary": "Zach Helfand on Charles Pan-Fried Chicken's monthly chef collaborations \u2014 Lana Lagomarsini's oxtails meet Harlem's soul food heritage."
     },
     {
       "id": "anatomy-of-a-failure-apr27-2026",
@@ -50,8 +50,18 @@
       "url": "https://www.newyorker.com/magazine/2026/04/27/the-anatomy-of-a-failure",
       "first_covered": "2026-04-23",
       "last_referenced": "2026-04-23",
-      "one_line_summary": "Paris Postcard on 'Flops?!' at Musée des Arts et Métiers — inventions from spray-on condoms to radioactive wrinkle cream celebrated in their glorious failure."
+      "one_line_summary": "Paris Postcard on Flops?! at Mus\u00e9e des Arts et M\u00e9tiers \u2014 inventions from spray-on condoms to radioactive wrinkle cream celebrated in their glorious failure."
+    },
+    {
+      "id": "popes-trump-mightve-liked-apr27-2026",
+      "title": "The Popes That Trump Might've Liked",
+      "author_or_venue": "Jane Bua / The New Yorker",
+      "pub_date": "2026-04-27",
+      "url": "https://www.newyorker.com/magazine/2026/04/27/the-popes-that-trump-mightve-liked",
+      "first_covered": "2026-04-24",
+      "last_referenced": "2026-04-24",
+      "one_line_summary": "Jane Bua surveys papal history for the tough-guy pontiffs Donald Trump might approve of \u2014 Urban VI, Stephen VI, Alexander VI."
     }
   ],
-  "last_updated": "2026-04-23"
+  "last_updated": "2026-04-24"
 }
