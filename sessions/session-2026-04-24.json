@@ -1,0 +1,197 @@
+{
+  "date": "2026-04-24",
+  "status": "complete",
+  "dedup": {
+    "covered_urls": [],
+    "covered_headlines": [],
+    "note": "GMAIL_AVAILABLE=false; dedup set empty"
+  },
+  "correspondence": {
+    "found": false,
+    "fallback_used": true,
+    "text": "No correspondence integrations available. Gmail, iMessage tools not found in this environment."
+  },
+  "weather": "Mostly sunny to partly cloudy in Edmonds, WA. High 67°F/low 46°F. Possible showers and slight chance of thunderstorms in the evening; chance of rain late evening with 0.10-0.25 inch accumulation possible. Secondary forecast: partly cloudy, high 55°F/low 44°F.",
+  "local_news": [
+    {
+      "source": "My Edmonds News / City of Edmonds",
+      "headline": "Edmonds City Council April 2026 activity",
+      "findings": "April 7 meeting: approved personnel changes, contract approvals, budget amendments by unanimous vote; two executive sessions. Separately: council approved key contracts, dropped potential tree litigation, proclaimed April 9 Local News Day. Movies in the Park returning summer 2026; Waterfront Center hosted community events April 17. NAACP Snohomish County Freedom Fund Gala April 25, theme 'Turning Dreams Into Reality.'"
+    },
+    {
+      "source": "My Edmonds News / Edmonds Police Department",
+      "headline": "Edmonds public safety - late March to April 2026",
+      "findings": "Late March - early April blotter: suspicious circumstances at closed business; identity theft/unauthorized money transfer; theft from local businesses; man arrested for disorderly conduct, resisting arrest, and assault; DUI booking; warrant arrests; woman arrested for grocery store theft. Overall: Edmonds crime rate significantly below national violent crime average; slightly above national property crime average."
+    },
+    {
+      "source": "My Edmonds News",
+      "headline": "Edmonds community notes",
+      "findings": "Edmonds Fishing Pier underwater scuba maintenance event April 19, 11am-4pm. Edmonds School District Board of Directors passed policy changes and discussed key operations at April 14 regular business meeting."
+    }
+  ],
+  "career": {
+    "teacher_jobs": "224-340 high school English teacher openings in Seattle metro area per Glassdoor/Indeed. Edmonds SD always accepting applications (edmonds.wednet.edu). SPS posts 'Teacher Pools' by subject in late fall with hiring timeline updates, career fairs. Districts actively hiring: Edmonds, Mukilteo, Shoreline, Northshore, Everett and others. Apply via SchoolSpring, Indeed, ZipRecruiter, Glassdoor, or direct district HR pages. No specific high-school English opening announcements found for April 2026.",
+    "choir_auditions": "Puget Soundworks: 'RESIST' performances April 25-26, 2026 (Sat 3pm/7pm, Sun 3pm) at Behnke Center for Contemporary Performance, Seattle. Auditioned adult community choir, 100 members, queer-centered. Seattle Peace Chorus: spring 2026 auditions by arrangement, 20-min slots. Seattle Pro Musica: auditions each August for next season. Seattle Men's/Women's Chorus: September 2026 auditions for 2026-27 season."
+  },
+  "family": {
+    "toddler_activities": "Edmonds Library (Sno-Isle Libraries): Toddler Storytime Thursdays 9-9:45am with Cami - stories, music, movements, followed by play or art activity. Online Family Pajama Storytime Tuesdays 7-7:30pm. Also: Preschool Storytime (3-5 yrs), Baby Storytime (newborn-18 months). Kindermusik music classes for parents and babies/toddlers available in Edmonds. Sno-Isle serves Edmonds, Lynnwood, Mill Creek, Mountlake Terrace, Mukilteo branches."
+  },
+  "global_news": [
+    {
+      "source": "CNN / NYT / Al Jazeera",
+      "headline": "US-Israel war on Iran — Day 56",
+      "findings": "Trump orders Navy to 'shoot and kill' boats laying Hormuz mines; Pentagon seizes second Iranian oil tanker in Indian Ocean. Three US carriers now in region. Iran FM Araghchi travels to Islamabad/Muscat/Moscow amid talks deadlock. Trump extends Lebanon-Israel ceasefire 3 weeks after White House talks. Brent crude $106/barrel (+5%). Navy Secretary Phelan fired over battleship timeline failure."
+    },
+    {
+      "source": "BBC / Associated reporting",
+      "headline": "EU Ukraine aid; AI crackdown; synagogue plot",
+      "findings": "EU approves $106B loan package for Ukraine, ending months of political deadlock. Trump admin vows crackdown on foreign AI exploitation of US models, targeting China. Two arrested in Texas in alleged synagogue attack plot (planned vehicle attack on congregation). European airlines canceling tens of thousands of flights due to soaring jet fuel costs; energy authorities warn of possible shortage."
+    },
+    {
+      "source": "Memeorandum aggregation",
+      "headline": "US domestic politics — Trump, SCOTUS, midterms",
+      "findings": "Trump approval falls to 35%, record -46 on price handling; 55% support impeachment per new poll. Virginia voters approve redistricting, potentially flipping 4 House seats for Democrats ahead of midterms. FBI Director Kash Patel unable to log into internal computer, believed locked out. Cabinet shake-up: Lutnick, Chavez-DeRemer named as vulnerable. Trump reportedly leaning toward replacing Justices Alito and Thomas."
+    },
+    {
+      "source": "NPR",
+      "headline": "Hormuz seafarers stranded; marijuana reclassification; Georgia wildfires",
+      "findings": "Hormuz blockade stranding thousands of seafarers. Trump admin reclassifies medical marijuana from Schedule I to Schedule III (AG Blanche). Wildfires fueled by drought spreading in Georgia. 12,000+ Iranian students/nationals facing potential deportation, Democrats urge halt. Pope Leo XIV condemns killing of protesters in Iran."
+    },
+    {
+      "source": "The Guardian / ProPublica / The Intercept",
+      "headline": "Press freedom, oil profits, immigration crackdown",
+      "findings": "Top oil and gas companies making $30M/hour in windfall profits from Iran war. ProPublica/FRONTLINE: 300+ arrested at anti-ICE protests; 1/3 of cases collapsed - 75 dismissed in Chicago alone, 8 CA acquittals; officers' statements contradicted by video. FBI Director suing The Atlantic for defamation. Palantir NYC Health contract cancelled after Intercept coverage."
+    }
+  ],
+  "intellectual_journals": [
+    {
+      "source": "New York Review of Books",
+      "headline": "April 23 issue; May preview",
+      "findings": "April 23: Iran coverage, China's economy, Muriel Spark, tennis. David Adjaye sexual misconduct allegations amid three completed buildings. May preview: Fintan O'Toole 'The Right Amount of Crazy'; Jed Perl on Whitney Biennial 'New Humans' and 'Art for Our Age of Chaos.'"
+    },
+    {
+      "source": "The Marginalian (Maria Popova)",
+      "headline": "Oliver Sacks on gratitude; Marianne Moore on writing",
+      "findings": "April 23: Oliver Sacks's final reflections on gratitude, dignity of dying, old age as 'enlargement not shrinking.' Marianne Moore on three elements of persuasive writing. April 17: Mary Oliver's advice on writing. April 15: Le Guin on living fully and resistance to change."
+    },
+    {
+      "source": "Kottke.org",
+      "headline": "Artemis II Moon eclipse; pancreatic cancer vaccine; music",
+      "findings": "Artemis II crew photographed solar eclipse from Moon — 54 minutes of totality during lunar flyby. Pancreatic cancer mRNA vaccine trial: nearly 90% of immune responders alive 6+ years after final treatment. Nine Inch Nails + Boys Noize: 'Nine Inch Noize' album released April 17. Boards of Canada 'Inferno' due May 28."
+    },
+    {
+      "source": "Scientific American",
+      "headline": "April/May 2026 issues",
+      "findings": "April: algal blooms in Rockies from wind-borne pollution and rising heat; young people faring better than prior generations; dark-matter-free galaxy mystery. May cover: chronic inflammation's role in cardiovascular disease; colchicine as inexpensive treatment; altermagnets could change physics and computing."
+    },
+    {
+      "source": "London Review of Books",
+      "headline": "Vol. 48 No. 7, April 23 2026",
+      "findings": "Holbein and Henry James at the National Gallery. 'The Language Puzzle: How We Talked Our Way out of the Stone Age' by Steven Mithen. Four new 2026 podcast series: Narrative Poems, Nature in Crisis, London Revisited, Who's Afraid of Realism?"
+    },
+    {
+      "source": "Arts & Letters Daily",
+      "headline": "Recent highlights — April 2026",
+      "findings": "April 23: new DSM makes hypochondria nearly undiagnosable though 'disease persists as character type'; JG Ballard's unsettling genius. April 22: Cass Sunstein — 'liberalism isn't Voldemort.' April 17: why AI can't smell (e-nose = fridge-sized, $500k, 6-hour sample time). April 16: Helen DeWitt declined $175k prize over strings attached."
+    },
+    {
+      "source": "Big Think",
+      "headline": "Ancient DNA, Roman propaganda, anti-fragility",
+      "findings": "Harvard geneticist David Reich: your ancestors aren't who you think (ancient DNA). Mary Beard: Roman triumph as ancient world's most effective propaganda. Brad Stulberg: over-optimizing life creates fragility not resilience. Mind-body feedback loop research: three scientists on brain-body connection."
+    },
+    {
+      "source": "Jacobin",
+      "headline": "Pentagon consolidation; Puerto Rico; Soviet economics; AI deregulation",
+      "findings": "April 23: Pentagon budgets rise as arms industry automates and consolidates. Puerto Rico's colonial retention via US economic threats and repression. Soviet economist Yakov Kronrod's democratic economic vision too radical for Kremlin. Documents show Trump deployed AI tool to accelerate deregulation. John Roberts weaponizes shadow docket for corpora [TRUNCATED]"
+    },
+    {
+      "source": "OpenSecrets",
+      "headline": "Lobbying records; ICE-tech lobby; crypto conflict",
+      "findings": "Lobbying industry topped $5B in 2025 for first time, up 14% in Trump's second term; firms with Trump ties showed biggest revenue gains. ICE-linked tech/data analytics companies sharply increased federal lobbying. Intuit and H&R Block spent $7M+ lobbying in 2025. Six senators accuse Deputy AG Todd Blanche of 'glaring' crypto conflict of interest cit [TRUNCATED]"
+    }
+  ],
+  "wearable_ai": [
+    {
+      "source": "Qualcomm / MWC 2026",
+      "headline": "Snapdragon Wear Elite — dedicated NPU for wearables",
+      "findings": "Qualcomm Snapdragon Wear Elite (MWC 2026): dedicated NPU enables real-time voice interaction, personalized health coaching, satellite messaging — all processed locally on-device. Sub-25ms latency via edge AI. Marks shift from cloud-dependent processing to local inference across wearable form factors: watches, pins, pendants."
+    },
+    {
+      "source": "Plaud / Limitless / Bee / Omi",
+      "headline": "AI note-taker and always-on pendant ecosystem",
+      "findings": "Plaud NotePin: 1.5M+ users; wearable AI voice recorder auto-transcribes recordings into structured notes, summaries, action items. Limitless AI Pendant (acquired by Meta): always-on recording for conversation memory. Bee: screenless always-on AI wearable building personal daily summaries, reminders, insights. Omi: similar always-on assistant with task support."
+    },
+    {
+      "source": "Memories.ai / CES 2026",
+      "headline": "LUCI Pin — AI lifelogging camera pin",
+      "findings": "LUCI Pin by Memories.ai (CES 2026 standout): 12MP ultra-wide lens, dual microphones, 4-hour continuous HD recording. Pairs with local Hub device for all processing — indexing, tagging, searchable memory — entirely on-device, no cloud required. Analysts noted it outshines smart glasses for discretion and battery longevity."
+    },
+    {
+      "source": "Apple / 9to5Mac",
+      "headline": "Apple accelerating three new wearable AI products",
+      "findings": "Apple 'accelerating' development of: smart glasses, AI pendant, and camera-equipped AirPods. 2026 firmware trend across category: 'Consent Mode' using local Voice ID to automatically mute recording when unrecognized voices detected — addressing core privacy objection to always-on devices."
+    }
+  ],
+  "triadic_ontology": {
+    "findings": "Perichoresis (Greek: 'rotation'): theological doctrine of Trinity's mutual interpenetration — Father, Son, Holy Spirit coinhere without merging. Key modern scholars: Jürgen Moltmann (emphasizes communal love/relationality over shared substance), Miroslav Volf, John Zizioulas, Richard Rohr. Gregory Scott Gorsuch (PhilPapers): 'Perichoresis as Hermeneutical Key to Ontology: Social Constructionism, Kierkegaard, and Trinitarian Theology.' PhilArchive papers: 'Relational Ontologies and Trinitarian Metaphysics' and 'Troubles with Trinitarian (Relational) Theism.' Institutional: Verlag Karl Alber launches series 'Studies on Triadic Ontology and Trinitarian Philosophy' (TRIERTIUM conference, Nov 2025). Bamberg school: Heinrich Beck and Erwin Schadel — 30 volumes on Triadics and Ontodynamics at Lang-Verlag. Implication: if humans bear imago Dei of a Trinitarian God, fundamental human ontology would be relational and perichoretic in structure."
+  },
+  "ai_systems": {
+    "findings": "2026 marks decisive pivot to agentic AI: autonomous entities reasoning, planning, executing workflows without constant human intervention. Key breakthrough: orchestration — coordinating dozens/hundreds of agents. Average enterprise now runs 12 AI agents (expected 20 by 2027). GraphRAG (knowledge graph + RAG) emerging as coordination hub; prevents agents operating blindly by providing shared semantic memory. Multimodal agentic systems: see screens, hear voices, understand physical environments. Waymo: 450k weekly paid rides, fully driverless in Miami, Dallas, Houston, Orlando — nearly double prior levels. NVIDIA Physical AI trains models for industrial robots. Market: $9B in 2026 growing to $139B by 2034 (40%+ CAGR). IDC: AI copilots in 80% of enterprise apps by 2026. Critical gap: observability — reconstructing multi-agent decision chains for compliance is 'technically non-trivial.' Observability platforms logging/replaying agent reasoning chains emerging as critical infrastructure."
+  },
+  "uap": {
+    "findings": "H.R.1187 UAP Transparency Act (119th Congress, 2025-2026): requires President to direct all federal agencies to declassify UAP records and publish on agency public websites. FY2026 NDAA: Pentagon must brief Congress on UAP intercepts since 2004 by North American integrated military commands — one of three UAP provisions. House joint hearing 'Unidentified Anomalous Phenomena: Exposing the Truth' (Subcommittees on Cybersecurity/IT and National Security/Border). Task Force on Declassification hearing: 'Restoring Public Trust Through UAP Transparency and Whistleblower Protection.' Defense Secretary Hegseth: Pentagon 'working on identifying and releasing government files,' pledges full compliance with presidential directive. State-level: Connecticut raised bill No. 5422 supported by Disclosure Foundation. Mearsheimer assessment: 'no signs of quick end' to related geopolitical tensions."
+  },
+  "newyorker": {
+    "available": true,
+    "url": "https://www.newyorker.com/magazine/2026/04/27/the-popes-that-trump-mightve-liked",
+    "title": "The Popes That Trump Might've Liked",
+    "section": "peace on earth dept.",
+    "dek": "The President thinks Pope Leo XIV is a wuss. Meet some real tough-guy Pontiffs who might have fit the bill. Jane Bua writes.",
+    "author": "Jane Bua",
+    "pub_date": "2026-04-27",
+    "source": "The New Yorker",
+    "text": "Pope Urban VI, who Poped from 1378 to 1389, was as tough as they come. He was so tough that he arrested half a dozen cardinals, confined them in an old cistern, and tortured them, after hearing a rumor that they were plotting to get rid of him. (As Trump once said, \"When somebody challenges you unfairly, fight back.\") Only one cardinal survived—smells like a snitch—and Urban was apparently disappointed by how little the other captive cardinals had screamed.\n\nAs far as tough guys go, Pope Stephen VI (896-97) is up there, too. Like many strong leaders, he hated his predecessor, Formosus. In the mid-890s, Formosus supported King Arnulf, the leader of the Franks, in his invasion of Italy, then crowned Arnulf Roman Emperor—despite there already being a Roman Emperor. Even after Formosus died, Stephen VI, his replacement, thought that the dead Pope hadn't been sufficiently punished for this betrayal, so he exhumed Formosus' body, dressed it up \"Weekend at Bernie's\" style, and put it on trial. Formosus' corpse was found guilty of violating papal law. It was also accused of perjury, as many men—dead, or President—have been. Perhaps Formosus was just the victim of a witch hunt.\n\nPope Alexander VI (1492-1503) is another Pontiff who might have passed muster with Trump. Much like the President, he was a family man and a nepo baby. His uncle had been Pope and had personally made Alexander a cardinal. Then, when Alexander ascended to the papacy, he made at least nine relatives cardinals. He knew how to keep his family close—to God, of course. Even more up Trump's alley, Alexander VI was a businessman. During his papal candidacy, he supposedly promised a rival cardinal multiple mules laden with bags of silver in exchange for supporting his bid. (\"Leverage,\" Trump has remarked. \"Don't make deals without it.\") It is said that, in 1501, Pope Alexander's son Cesare threw a party that became known as the Banquet of Chestnuts.",
+    "fetch_method": "stdlib_python"
+  },
+  "vault_insight": {
+    "available": false,
+    "reason": "Queue is empty — no pending insights in vault-insights.json"
+  },
+  "enriched_articles": [
+    {
+      "url": "https://www.aljazeera.com/news/2026/4/24/iran-war-whats-happening-on-day-56-after-trump-extended-ceasefire",
+      "source": "Al Jazeera",
+      "title": "Iran war: What's happening on day 56 after Trump extended ceasefire",
+      "text": "Day 56 of US-Israel war on Iran. Ceasefire status: Trump extended Lebanon-Israel ceasefire 3 weeks after White House talks; violations reported — Israeli strike killed 3 in south Lebanon, Hezbollah responded with rockets. USS George H.W. Bush arrived, now 3 US carriers in region. Diplomatic: Iran FM Araghchi traveling to Islamabad, Muscat, Moscow amid US talks deadlock. Trump: 'could make a deal right now' but no urgency; clarified US would NOT use nuclear weapons against Iran. Iran denied internal divisions. Economic: Brent crude topped $106/barrel (+5%), first time above $100 in two weeks. Humanitarian: 12,000+ Iranian students/nationals facing potential deportation; Democrats urge halt; Pope Leo XIV condemned killings of Iranian protesters. UNDP: Hormuz closure disrupting fertilizer/fuel supplies, threatening crop yields. Navy Secretary Phelan fired over battleship timeline failure.",
+      "fetch_failed": false
+    },
+    {
+      "url": "https://www.propublica.org/article/caught-in-crackdown-ice-cbp-doj-trump-arrests-convictions",
+      "source": "ProPublica / FRONTLINE",
+      "title": "Caught in the Crackdown: As Arrests at Anti-ICE Protests Piled Up, Prosecutions Crumbled",
+      "text": "ProPublica/FRONTLINE investigation 'Caught in the Crackdown': 300+ people arrested at anti-ICE protests, accused of assaulting/interfering with law enforcement. Collapse rate extraordinary for federal system (normally 90%+ conviction rate): 75 of 109 Chicago-area charges dismissed, 8 California defendants acquitted at trial. Video evidence repeatedly contradicted arresting officers' statements. Former DOJ attorney: 'pattern and practice of illegal arrests.' Border Patrol Chief Bovino instructed officers to 'arrest as many people that touch you as you want.' Notable cases: Alejandro Orellana arrested for distributing water/face shields (conspiracy charge dropped); Cole Sheridan charged with assaulting Chief Bovino — bystander video proved innocence; Rebecca Ringstrom arrested for livestreaming ICE vehicle, lost job despite weak evidence. DHS ran coordinated social media campaigns with influencers posting false accusations against protesters. Even failed prosecutions create devastating financial/reputational consequences, chilling First Amendment rights.",
+      "fetch_failed": false
+    },
+    {
+      "url": "https://www.themarginalian.org/2026/04/23/oliver-sacks-gratitude-book/",
+      "source": "The Marginalian",
+      "title": "Oliver Sacks on Gratitude, the Measure of Living, and the Dignity of Dying",
+      "text": "Oliver Sacks's Gratitude (posthumous): final reflections on life, aging, and dying consciously. Key themes: Sacks approaches 80th birthday with wonder over dread — 'I'm glad I'm not dead!' despite acknowledged regrets (unfulfilled travels, shyness, limited languages). Old age as 'enlargement not shrinking': accumulated experience enables comprehending what a century truly means. Upon terminal diagnosis: distinguishes detachment from indifference — consciously releasing 'factitious urgencies' (news cycles, petty arguments) to deepen friendships, writing, travel, insight. 'Intercourse with the world': writer-reader communion as distinctive privilege of the sentient life. Invokes David Hume's calm response to mortality — dying consciously as continuation of living with heightened intentionality. Central insight: gratitude and dignity don't fade with mortality; they can intensify when consciousness turns toward life's temporary but precious nature.",
+      "fetch_failed": false
+    },
+    {
+      "url": "https://tech.david-cheong.com/memories-ai-luci-wearable-pin-ces2026/",
+      "source": "Tech Sharing / Memories.ai",
+      "title": "Memories.ai Project LUCI: Why This AI Wearable Pin Outshines Smart Glasses at CES 2026",
+      "text": "",
+      "fetch_failed": true
+    },
+    {
+      "url": "https://aeon.co/essays/why-little-red-dots-pose-a-big-mystery-about-the-universe",
+      "source": "Aeon",
+      "title": "Why 'little red dots' pose a big mystery about the Universe",
+      "text": "",
+      "fetch_failed": true
+    }
+  ]
+}
