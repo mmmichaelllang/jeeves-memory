@@ -1,0 +1,201 @@
+{
+  "date": "2026-04-26",
+  "status": "complete",
+  "dedup": {
+    "covered_urls": [],
+    "covered_headlines": [],
+    "note": "GMAIL_AVAILABLE=false; dedup set empty"
+  },
+  "correspondence": {
+    "found": false,
+    "fallback_used": true,
+    "text": "No correspondence integrations available."
+  },
+  "weather": "Edmonds WA, April 26 2026: Abundant sunshine, high 62F, NNW winds 10-15 mph. Tonight: Clear skies, low near 40F, NE winds 5-10 mph.",
+  "local_news": [
+    {
+      "topic": "Edmonds City Council",
+      "findings": "April 7 meeting: unanimous approval of personnel changes, contracts, budget amendments; council voted 5-1 to dismiss City counterpetition in Redelfs matter (Councilmember Susan Paine voting no); Mayor Mike Rosen proclaimed April 9 as Local News Day. Regular meetings Tuesdays 7PM. Source: myedmondsnews.com"
+    },
+    {
+      "topic": "Local Events & Sports",
+      "findings": "This week: Kiwanis Citizen of Year nominations open; Online Deep Dive into EVs April 27 7pm via Zoom; YWCA 'Community in Bloom' May 13; free medical/dental/vision services in Seattle. Sports: Edmonds-Woodway softball defeated Lynnwood 21-1; girls tennis defeated Mountlake Terrace 6-1; Lynnwood defeated Marysville Pilchuck 16-14 baseball; Viking Track & Field Classic at Lake Stevens HS."
+    },
+    {
+      "topic": "Edmonds Public Safety",
+      "findings": "Police blotter March 30 - April 5, 2026: suspicious circumstances at closed business, identity theft, money stolen at local businesses, disorderly conduct arrest, assault arrest, DUI arrest, warrant arrest following traffic stop. Full blotter: myedmondsnews.com/2026/04/edmonds-police-blotter-march-30-to-april-5-2026/"
+    },
+    {
+      "topic": "Nearby Choir Performances",
+      "findings": "TODAY (April 26): Kirkland Choral Society, 3pm at Bastyr University Chapel, Kenmore WA (~100 auditioned singers). Puget Soundworks (all-gender, queer-centered): April 25 3pm & 7pm, April 26 3pm at Behnke Center for Contemporary Performance, Seattle. Seattle Pro Musica auditions held each August (auditions@seattlepromusica.org). Seattle Girls Choir placement auditions June 6 for 2026-2027."
+    }
+  ],
+  "career": {
+    "job_market": "340 Seattle-area HS English teacher jobs as of March 2026 (Glassdoor); $52k-$148k range (ZipRecruiter). Key portals: WEA district job pages (washingtonea.org), Mukilteo SchoolSpring (mukilteo.schoolspring.com), Bellevue BSD PowerSchool (bsd405.tedk12.com). WA State Teaching Certificate required.",
+    "seattle_public_schools": "SPS Teacher Pools open for external candidates. Check seattleschools.org/departments/hr/careers/ weekly; create profile and subscribe to 'Teacher' category alerts. Must hold or be eligible for WA Teaching Certificate by August. Also listed on Indeed and Glassdoor (224-340 area HS English teacher jobs as of March 2026)."
+  },
+  "family": {
+    "toddler_activities": "Edmonds Library (650 Main St, 425-771-1933) April 2026: Toddler Storytime (18mo-3yr) Thursdays 9-9:45am with music/movement/art; Baby Storytime (newborn-18mo) Tuesdays 9-9:45am; Preschool Storytime (3-5yr) Wednesdays 10-10:45am; Online Family Pajama Storytime Tuesdays 7-7:30pm (registration required). Full calendar: sno-isle.bibliocommons.com."
+  },
+  "global_news": [
+    {
+      "source": "CNN/Multiple",
+      "headline": "Shooting at White House Correspondents' Dinner; Trump and Vance evacuated safely",
+      "url": "https://www.cnn.com/2026/04/25/politics/trump-rushed-white-house-correspondents-dinner",
+      "findings": "April 25, 2026: Cole Tomas Allen (31, Torrance CA) charged through security checkpoint at Washington Hilton with shotgun, handgun, multiple knives. Trump, Vance, RFK Jr., Oz, Speaker Johnson all evacuated safely. Charged: 2 counts using firearm + assault on federal officer (AG Pirro). No casualties. Caltech/CSU-DH grad, part-time C2 Education tutor, indie game developer. Donated $25 to Harris Oct 2024. Motive unknown; acted alone."
+    },
+    {
+      "source": "CNN",
+      "headline": "Navy Secretary Phelan fired during active Iran naval blockade",
+      "url": "https://www.cnn.com/2026/04/22/politics/john-phelan-navy-secretary-leaving",
+      "findings": "Defense Secretary Hegseth fired Navy Secretary Phelan during active Iran naval blockade. He also fired Army chief of staff Randy George. Hegseth ended soldier vaccine mandate — a protocol dating to General Washington, 1777. Pattern of 'general unseriousness' in MAGA cabinet."
+    },
+    {
+      "source": "CNN",
+      "headline": "Roommate charged in murders of two USF doctoral students",
+      "url": "https://www.cnn.com/2026/04/24/us/usf-students-missing-dead",
+      "findings": "A roommate was charged with killing two University of South Florida doctoral students after one body was found. Investigation ongoing."
+    },
+    {
+      "source": "NPR",
+      "headline": "Speaker Johnson unveils new spy powers extension plan after 2 failed votes",
+      "url": "https://www.npr.org/2026/04/24/nx-s1-5797964/after-2-failed-votes-mike-johnson-unveils-new-plan-to-extend-key-u-s-spy-powers",
+      "findings": "Speaker Johnson proposed a new mechanism to extend key U.S. surveillance authorities (likely Section 702/FISA) after two prior House votes failed. New compromise structure not detailed in available snippets."
+    },
+    {
+      "source": "NPR",
+      "headline": "Rare interview: RSS leader speaks to NPR (world's largest right-wing organization)",
+      "url": "https://www.npr.org/2026/04/25/nx-s1-5795781/india-rss-rashtriya-swayamsevak-sangh-interview-hindu-nationalist",
+      "findings": "NPR obtained a rare interview with a senior leader of India's Rashtriya Swayamsevak Sangh (RSS), described as the world's largest right-wing organization and ideological parent of India's ruling BJP under PM Modi."
+    }
+  ],
+  "intellectual_journals": [
+    {
+      "source": "NYRB",
+      "url": "https://www.nybooks.com/issues/2026/04/23/",
+      "findings": "April 23, 2026: India's response to West's war on Iran; two young tennis stars reviving the sport; Shenzhen and China's economy; Frances Wilson's 'Electric Spark' on Muriel Spark; 2026 Whitney Biennial and 'New Humans: Memories of the Future' at New Museum."
+    },
+    {
+      "source": "The New Yorker",
+      "url": "https://www.newyorker.com/",
+      "findings": "Ronan Farrow: 'Sam Altman May Control Our Future—Can He Be Trusted?' (Apr 13). JD Vance's Hungary trip and Iran war comments. Health influencers hawking unapproved treatments and the future of the FDA."
+    },
+    {
+      "source": "Aeon",
+      "url": "https://aeon.co/essays",
+      "findings": "'In solarpunk cities of the future, tech follows nature's lead' (Feb 10, 2026) — ecofuturist urban design. 'When we turned time into a line, we reimagined past and future' (Jan 26) — philosophy of linear time and its mathematical origins."
+    },
+    {
+      "source": "The Marginalian",
+      "url": "https://www.themarginalian.org/",
+      "findings": "'The Bird That Is Your Life' (Apr 24, Emily Ogden). 'Marianne Moore on Three Elements of Persuasive Writing' (Apr 23). 'Alhazen on Critical Thinking: The First Scientist's Guide to Truth' (Apr 22). Marginalian Editions: 'The Dark Wood of the Golden Birds' (May 26)."
+    },
+    {
+      "source": "Kottke.org",
+      "url": "https://kottke.org/",
+      "findings": "'Traitors to the Project of Patriarchy' (Apr). Papyrus Iliad fragment found in Egyptian tomb (Apr 24). mRNA pancreatic cancer vaccine trials (~90% survival rate). NASA Curiosity detects organic molecules on Mars. Silo Season 3 premieres July 3."
+    },
+    {
+      "source": "ProPublica",
+      "url": "https://www.propublica.org/",
+      "findings": "Trump effort to 'take over' 2026 midterms: 75+ career officials replaced with election deniers. Federal agents fired tear gas at immigration-sweep protesters (Apr 20/FRONTLINE). Todd Blanche crypto conflict at DOJ ($159K+ assets when he ended crypto investigations)."
+    },
+    {
+      "source": "The Intercept",
+      "url": "https://theintercept.com/",
+      "findings": "Palantir's $130M+ IRS data-mining contract aggregating tax/bank/crypto/comms data. Kash Patel admitted 2 alcohol-related arrests (public records). Congressional #MeToo: Swalwell and midterm implications (Apr 24)."
+    },
+    {
+      "source": "Scientific American",
+      "url": "https://www.scientificamerican.com/issue/sa/2026/05-01/",
+      "findings": "May 2026 cover 'Your Heart In Flames': chronic inflammation, cardiovascular disease, colchicine as treatment. Altermagnets in physics/computing. Dinosaur extinction survivors. Declining freshwater mussels. AI and data privacy."
+    },
+    {
+      "source": "London Review of Books",
+      "url": "https://www.lrb.co.uk/",
+      "findings": "April 23 issue: 'Holbein and Henry James'; 'The Language Puzzle' by Steven Mithen; 'Surf's Up: Brian Wilson and the Beach Boys' by Peter Doggett. Four new 2026 series (Nature in Crisis, London Revisited). 45th anniversary vinyl singles."
+    },
+    {
+      "source": "Arts & Letters Daily",
+      "url": "https://www.aldaily.com/",
+      "findings": "Recent (Apr 2026): chess grandmasters and paranoia; Malcolm Cowley shaping the literary canon; DSM changes making hypochondria diagnosis difficult; essays on AI and art, Thomas De Quincey, the em dash, and cognitive health."
+    },
+    {
+      "source": "Jacobin",
+      "url": "https://jacobin.com/",
+      "findings": "Americans raiding 401(k)s post-pandemic. Elon Musk/tech oligarchs' vision of elite sovereignty. San Francisco tenant organizers vs tech-fueled displacement. Issue 61 Dossier out. SNP recovery under Starmer. Amazon logistics blocking worker organizing."
+    },
+    {
+      "source": "OpenSecrets",
+      "url": "https://www.opensecrets.org/",
+      "findings": "2026 midterm ad spending projected $10.8B — 20%+ above 2022, most expensive midterm cycle ever. Lobbying hit $5B record in 2025 (+14% in Trump's second term). Apr 2026: 4 ballot measures targeting dark money; 3 states expanding public campaign financing."
+    }
+  ],
+  "wearable_ai": [
+    {
+      "topic": "Apple AI Wearables",
+      "findings": "Apple accelerating 3 AI wearables: smart glasses, AI pin (thin circular disc, 2 cameras, speaker, 3 mics), AirPods with cameras. OpenAI also developing AI hardware. Anker THUS chip enables on-device AI models on wearables with <25ms latency, breaking prior cloud-dependency rule."
+    },
+    {
+      "topic": "Pendant/Pin Lifelogging Devices",
+      "findings": "Memories.ai LUCI Pin: 12MP camera, dual mics, 4hr continuous HD recording (CES 2026 debut). Limitless Pendant: ambient audio to notes/meetings. Plaud NotePin: clip-on memory capsule. Looki L1 (CES 2026): passive moment capture. Pebble Index ring: on-device LLM audio-to-text."
+    },
+    {
+      "topic": "AI Tools for High School Teachers 2026",
+      "findings": "68% of K-12 teachers use AI tools weekly (RAND Jan 2026, up from 29%). MagicSchool AI generates differentiated lesson plans and Bloom's taxonomy stems for English. Brisk Teaching Chrome extension. AI saves 10-14 hrs/week. 81% HS students used AI for education; only 42% received formal ethical guidance."
+    }
+  ],
+  "triadic_ontology": {
+    "findings": "2026 PhilArchive: 'Relational Ontologies and Trinitarian Metaphysics' (MIGROA-2); Mark Pelley 'Triune Agape as the Ground of Being' (PELTAA-8). PhilPapers: Gregory Scott Gorsuch 'Perichoresis as Hermeneutical Key to Ontology: Social Constructionism, Kierkegaard, and Trinitarian Theology.' Czech Triertium initiative (Feb 2026): Matteo Raffaelli on new Trinitarian ontology rooted in pansophy tradition. Core argument: only triadic structure sustains unity without collapse, distinction without division, self-giving without external dependence. Perichoresis (coinherence of Father/Son/Spirit) held to have ontological priority. ResearchGate: 'Perichoresis and Projection: A Response to Kilby's Trinitarian Minimalism.' Also: Robert Dryer on Infinite Being and Communion triangulating Divine Simplicity, Actus Purus, and Perichoresis."
+  },
+  "ai_systems": {
+    "findings": "2026 multi-agent research highlights: CORAL (self-evolving agents via shared persistent memory, 3-10x improvement over fixed baselines); DyTopo (dynamic agent-to-agent topology rewiring via semantic matching); MAS-Orchestra (orchestration via function-calling RL with system-level reasoning). KEY 2026 FINDING: Single-agent LLMs outperform multi-agent systems under equal reasoning-token budgets (arxiv 2604.02460) — information-theoretic argument that single-agent setups are more token-efficient for multi-hop reasoning. Nature Biomedical Engineering: multi-agent LLM framework for autonomous biomedical data analysis, 77% on BioMed-AQA benchmark. VoltAgent/awesome-ai-agent-papers curates 2026 AI agent papers on GitHub. ScienceDirect: coordinated LLM multi-agent systems for collaborative QA generation."
+  },
+  "uap": {
+    "findings": "H.R. 1187 (119th Congress 2025-2026): UAP Transparency Act introduced. House Oversight Committee hearings: 'Unidentified Anomalous Phenomena: Exposing the Truth' and 'Restoring Public Trust Through UAP Transparency and Whistleblower Protection.' FY2026 NDAA: Congress mandated Pentagon briefings on UAP/military intercepts around North America (DefenseScoop, Dec 2025). Connecticut S.B. 5422 (Feb 2026): testimony supporting Disclosure Foundation. UAP Disclosure Tracker: uapdisclosure.info/hearings. getdisclosure.app tracking full 2023-2026 timeline. Congress.gov records House event 116282 (118th): 'Implications on National Security, Public Safety, and Government Transparency.'"
+  },
+  "newyorker": {
+    "available": true,
+    "title": "Donald Trump's Spring Cleaning",
+    "section": "comment",
+    "dek": "Benjamin Wallace-Wells on Pam Bondi, Kristi Noem, Lori Chavez-DeRemer, and why people are leaving in the midst of a war.",
+    "url": "https://www.newyorker.com/magazine/2026/05/04/donald-trumps-spring-cleaning",
+    "source": "The New Yorker",
+    "pub_date": "2026-05-04",
+    "text": "The President is also reportedly annoyed with his National Intelligence director, Tulsi Gabbard, and with his Commerce Secretary and friend, Howard Lutnick, about, as Politico put it, \"how much Lutnick's family has been profiting off their association with the President's brand.\" The atmosphere is one of discontent and distraction. A month into the Iran war, Defense Secretary Pete Hegseth fired the Army chief of staff, Randy George. Then, after reciting a prayer that Hegseth said was inspired by Scripture but seemed directly lifted from \"Pulp Fiction,\" last week he ended a vaccine mandate for soldiers—a protocol initiated by General George Washington, in 1777—and fired the Secretary of the Navy, John Phelan, during a naval blockade.\n\nWhen a group of senior figures in an Administration depart, it's natural to suspect political dark arts—that one faction has forced the exit of another. But there is no such obvious distinction now: those who have been pushed out and those who so far remain are all hard-line MAGA. Instead, scandals have provided rolling revelations of a general unseriousness. Noem was fired after a scorched-earth immigration-enforcement regime had alienated much of the public, and amid reports that she had spent nearly two hundred million dollars of department funds to purchase two luxury jets, and two hundred million to create an ad campaign, largely starring herself. Chavez-DeRemer is the subject of an internal investigation based on a whistle-blower complaint accusing her of having an affair with a member of her security detail, of using government funds for personal travel, and of drinking on the job; her husband was banned from department headquarters following allegations of sexual misconduct toward staffers, which he has denied. Patel, who earlier this year was found to have assigned F.B.I. officers to protect his girlfriend, a country singer, last week sued The Atlantic for defamation after it reported that his security detail has often had trouble rousing him for work following nights out drinking, and on one occasion called for \"breaching equipment\" to break down a door and wake him.\n\nThat these staffing changes and scandals involve figures from such disparate parts of the Administration, and are coming just months ahead of the midterm elections, suggests a more generalized crisis. Sixty-seven per cent of Americans disapprove of the job that Trump is doing, according to an A.P.-NORC poll published last week, and part of the story of both his plummeting numbers and the chaos in the Administration is the ongoing crisis of conservative expertise. Trump's first term was marked by its dependence on officials skeptical of his aims. This time, Trump went for loyalty. But what they produced was hype—promises of transformation far too expansive to deliver. Musk initially pledged two trillion dollars in savings from DOGE; when Politico surveyed effects last August, it found about $1.4 billion in spending cuts. The government deported more than 675,000 people, but getting to that number involved broad violent sweeps and expulsion of people in the country legally. The war has been a cascading mess. Contained within all these fiascoes is a subtly different conservative movement. The theme of the first Trump term was an outsider revolt; the theme of the second is its own entitlement. The President got what he most wanted—a White House filled with loyalists. But that has turned out to be not at all what he needed."
+  },
+  "vault_insight": {
+    "available": false,
+    "reason": "Queue is empty — vault-insights.json queue[] has no pending items as of 2026-04-15."
+  },
+  "enriched_articles": [
+    {
+      "title": "Shooting at White House Correspondents' Dinner: Cole Tomas Allen Charged",
+      "url": "https://www.cnn.com/2026/04/25/politics/trump-rushed-white-house-correspondents-dinner",
+      "source": "CNN",
+      "fetch_failed": false,
+      "text": "Shooting at White House Correspondents' Dinner, April 25, 2026. Suspect Cole Tomas Allen, 31, Torrance CA: charged through security checkpoint at Washington Hilton with shotgun, handgun, and multiple knives. Trump, Vance, RFK Jr., Dr. Oz, Speaker Johnson all evacuated safely by Secret Service. Allen subdued by authorities. Charged with 2 counts using a firearm + 1 count assault on federal officer (per U.S. Attorney Jeanine Pirro). No reported casualties. CNN anchor Wolf Blitzer was \"a few feet away.\" Trump posted on Truth Social praising Secret Service. Background: Allen holds Caltech B.S. mechanical engineering (2017) and CSU-DH M.S. computer science (2025); part-time tutor at C2 Education (\"Teacher of the Month\" Dec 2024); indie game developer (published \"Bohrdom\" on Steam). Donated $25 to Kamala Harris campaign Oct 2024. FBI searched his Torrance home overnight. Motive unknown; believed to have acted alone."
+    },
+    {
+      "title": "Palantir Is Helping Trump's IRS Conduct 'Massive-Scale' Data Mining",
+      "url": "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+      "source": "The Intercept",
+      "fetch_failed": false,
+      "text": "Palantir has received $130M+ from the IRS since 2018 to operate its Lead and Case Analytics platform for the IRS Criminal Investigation division. The platform aggregates: individual tax returns, ACA information, bank statements, Treasury FinCEN data, cryptocurrency wallet data (BTC/ETH/LTC/XRP), communications metadata (calls/texts/emails), and IP addresses. Can \"search and visualize connections from millions of records with thousands of links.\" American Oversight director Chioma Chukwu: \"The real concern is the consolidation of vast amounts of sensitive personal data into a single system with minimal transparency—especially one built and operated by a contractor like Palantir.\" Additional concern: IRS Criminal Investigations has recently pivoted toward investigating \"left-leaning groups.\" Contract context: current Trump administration relationship with Palantir's Peter Thiel; ongoing surveillance expansion."
+    },
+    {
+      "title": "Inside Trump's Effort to 'Take Over' the Midterm Elections",
+      "url": "https://www.propublica.org/article/trump-midterm-elections-takeover",
+      "source": "ProPublica",
+      "fetch_failed": false,
+      "text": "ProPublica investigation: Trump has dismantled federal election safeguards by replacing 75+ career officials with loyalists. At least 24 Trump appointees now occupy election-related positions; 10 actively worked to reverse 2020 results. CISA lost ~30 election-focused employees; Foreign Malign Influence Center eliminated; FBI's public corruption team disbanded; DOJ Public Integrity Section reduced from 36 to 2 lawyers; Civil Rights voting section lost nearly all 30 career lawyers. 'Team America' DHS group implements election EOs; led by David Harvilicz (co-founded AI company with someone behind Antrim County, MI claims). Fulton County: Trump election-security dir. Kurt Olsen initiated FBI raid on 2020 ballots; predecessor Paul Brown found insufficient evidence and was then pushed out. 11 appointees tied to Election Integrity Network (Cleta Mitchell). State officials say trust is \"absolutely demolished.\" Courts have blocked portions of Trump's March 2025 election EO."
+    },
+    {
+      "title": "Rare Interview: Leader of India's RSS Speaks to NPR",
+      "url": "https://www.npr.org/2026/04/25/nx-s1-5795781/india-rss-rashtriya-swayamsevak-sangh-interview-hindu-nationalist",
+      "source": "NPR",
+      "fetch_failed": true,
+      "text": ""
+    }
+  ]
+}
