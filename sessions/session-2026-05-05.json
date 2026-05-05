@@ -1,0 +1,186 @@
+{
+  "date": "2026-05-05",
+  "status": "complete",
+  "dedup": {
+    "covered_urls": [],
+    "covered_headlines": []
+  },
+  "correspondence": {
+    "found": true,
+    "fallback_used": false,
+    "text": "📫 Correspondence — Tuesday, May 5, 2026. From: Jacky@paulv.co.za to Timothy (timothy@alpha.co.za) CC: michael.language@gmail.com. Subject: Re: Carscan | Language MH | ALPHAESS194983 [PVENTER-0287136]. Snippet: 'Good day Timothy, I trust that my email will find you well. Mr Language is currently abroad and not able to do the car scanning. He did send me pictures of both the vehicles that will provide you with [what you need].' Dated 2026-05-05T06:04:21Z. Relates to vehicle inspection/scanning for ALPHAESS194983. Also in inbox: Two Apple receipts (iCloud+, ElevenReader, May 4). Google new PC welcome email. Google security alerts re: Opal access and new Mac sign-in. Several GitHub pipeline failure notifications (jeeves-memory and jeeves-unchained)."
+  },
+  "weather": "Edmonds WA — 2026-05-05 5:17am local: Overcast, 53.1°F (11.7°C), wind S 4.7 mph (gust 8.3 mph), humidity 89%, pressure 1014 mb, visibility 9 mi, no precipitation, UV 0. May norms: highs 58-65°F. Previous day (May 4) reached 76°F under sunshine; today's overcast southerly flow suggests cooler, possibly light rain.",
+  "local_news": [
+    {
+      "source": "local",
+      "findings": "Edmonds City Council meets TONIGHT (Tue May 5, 6pm, Public Safety Complex, 250 5th Ave N). Key vote: Mayor Rosen's appointment of Stephanie Lucash as city administrator (currently deputy city manager, City of Kenmore; $226,068 base salary). WA Lottery: $4.8M Lotto jackpot ticket purchased at WinCo Foods, 21900 Hwy 99, Edmonds — WinCo receives retailer bonus. Candidate filing for 2026 ballot continues through Fri May 8, 5pm. Edmonds SD: 2026-27 School Year Calendar released; state testing begins soon."
+    },
+    {
+      "source": "city_council",
+      "findings": "Council agenda tonight (May 5, 6pm): Vote on Stephanie Lucash as city administrator. Check myedmondsnews.com and edmondswa.primegov.com for agenda and remote ZOOM access. Second key item: proposal to unpause volunteer Edmonds Salary Commission for 2027-28 biennium."
+    },
+    {
+      "source": "public_safety",
+      "findings": "Edmonds Police March 2026: 2,124 calls for service, 250 case reports, 317 traffic stops, 104 arrests. Crime grade A-; violent crime down 0.9%, property crime up 14.6% YoY. All neighborhoods A+ or A. Non-emergency: 425-407-3999. Online reporting: edmondswa.gov."
+    }
+  ],
+  "career": {
+    "district_jobs": "Edmonds SD: Summer School Teacher posting active at Lynnwood ($30.80/hr). 2026-27 hiring cycle underway; check edmonds.wednet.edu. Indeed: 136 HS English teacher jobs Seattle area; 117 Snohomish area. Glassdoor: 540 statewide WA positions. ZipRecruiter: avg $67,757/yr ($52K-$148K range). SchoolSpring aggregates regional postings; WEA lists district job pages at washingtonea.org.",
+    "sps_jobs": "SPS hiring cycle active for 2026-27. Teacher pools posted by subject; WA State Teaching Certificate required by August. Direct: seattleschools.org/departments/hr/careers. ZipRecruiter avg $67,757/yr. Also check Mukilteo SD, Everett SD, Lake Stevens SD portals."
+  },
+  "family": {
+    "choir": "NW Repertory Singers 25th anniversary season auditions (Carmina Burana + chamber orchestra). Seattle Pro Musica: August 2026 auditions (auditions@seattlepromusica.org). Seattle Men's/Women's Chorus: September 2026. Choral Arts NW: July auditions. seattlesings.org for Greater Seattle Choral Consortium openings.",
+    "toddler": "Sno-Isle Edmonds Library: Toddler Storytime with Cami May 7 (10:00-10:45am). Baby Storytime and Preschool Storytime also available. Free; no library card required. sno-isle.org/locations/edmonds/. Kindermusik classes for parents+babies/toddlers in Edmonds. Edmonds Marina Beach and Meadowdale Beach Park open."
+  },
+  "global_news": [
+    {
+      "source": "BBC",
+      "findings": "BBC May 5: 'Rivals circle Starmer' as UK PM faces internal pressure; bid to reopen Hormuz pushes region 'to the brink.' US targeting Iranian boats as Trump launches 'Project Freedom' to reopen strait. Boeing 737-8K5 with 183 passengers forced into emergency landing at Findel airport. Man dead after seaplane flips during takeoff on Montreal's South Shore."
+    },
+    {
+      "source": "CNN",
+      "findings": "CNN live May 5: Fragile US-Iran ceasefire being tested — both sides fired shots in Strait of Hormuz; Trump won't say if ceasefire still in effect. US stocks bounce as traders track whether truce holds. Rudy Giuliani (81) hospitalized critical but stable condition, recovering from pneumonia; taken off ventilator (May 4-5)."
+    },
+    {
+      "source": "Guardian",
+      "findings": "Guardian live May 5: 'We have not even begun,' Iran warns US amid Hormuz escalation. US targets Iranian boats; Iran blames 'US military adventurism' for UAE attacks. Hormuz tensions push fragile ceasefire 'to the brink.' UK: Starmer's rivals circling. Palestinian suffering losing global attention amid Iran war."
+    },
+    {
+      "source": "NPR",
+      "findings": "NPR May 5: Alabama holding special session to redraw congressional maps after SCOTUS VRA ruling. Minneapolis immigrants still feeling sting of Operation Metro Surge crackdown. US starts operation to reopen Strait of Hormuz. SCOTUS gives mifepristone one-week reprieve. Trump approves 'Keystone Light' Canadian pipeline permit. Indiana election tests Trump's political power."
+    },
+    {
+      "source": "NYT",
+      "findings": "NYT May 5: Opinion — 'When You Think of It, We Shouldn't Even Have an Election.' Redistricting arms race following SCOTUS VRA ruling. Ukraine: Putin and Zelensky both unilaterally declare conflicting 2-day ceasefires. Rudy Giuliani hospitalized critical condition. Blake Lively and Justin Baldoni settle 'It Ends With Us' lawsuit."
+    },
+    {
+      "source": "AlJazeera",
+      "findings": "Al Jazeera May 5: 'US military adventurism responsible for new attacks on UAE, says Iran.' Iran launched missile and drone attack on Fujairah oil refinery, injuring 3 Indian nationals. UAE condemns 'unprovoked Iranian terrorist attack.' Two drones struck ADNOC tanker in Hormuz. US warship part of 'Project Freedom' naval forces. US official: China 'funding' Iran. Israel-Hezbollah exchange attacks in southern Lebanon."
+    },
+    {
+      "source": "Memeorandum",
+      "findings": "Memeorandum May 5 AM: Fighting flares in Iran war as UAE and ships attacked (WSJ). SCOTUS restores mifepristone access through telehealth/mail/pharmacies (AP). Redistricting arms race after VRA ruling (Politico). US allies look to Europe for post-Trump global order (Bloomberg). Democrats banking on long-shot Iowa midterm win. Trump: 'Shouldn't Even Have an Election' (NYT). Rudy Giuliani hospitalized critical condition. Blake Lively-Baldoni lawsuit settled."
+    }
+  ],
+  "intellectual_journals": [
+    {
+      "source": "NYRB",
+      "findings": "NYRB May 14, 2026: Coco Fusco, 'A Vital Unconscious' on Wifredo Lam's synthesis of European modernism and Afro-Cuban consciousness. Jed Perl, 'Art for Our Age of Chaos': Whitney Biennial and New Museum's 'New Humans: Memories of the Future.' Mark O'Connell, 'London's Brutal Underground' on Patrick Radden Keefe's London Falling. Online May 2: Daniel Lefferts, 'Mystery Brain.' May 28 issue TOC live at nybooks.com."
+    },
+    {
+      "source": "NewYorker",
+      "findings": "New Yorker May 4 reporting: 'Can the EPA Survive Lee Zeldin?'; 'What Happens When Someone Throws a Message in a Bottle Into the Sea?'; 'The Sqirl Redemption Arc'; 'How Long Can Martha Graham's Dance Revolution Last?'; 'Half Man' (HBO review). Poems: 'Tompkins Square'; 'A Theory on the Origin of Language.' Goings On: Oneohtrix Point Never; Cory Doctorow on ultra-rich."
+    },
+    {
+      "source": "Aeon",
+      "findings": "Aeon May 5: 'Why creativity shines out on the edge of things' (Charles Foster) — brilliance and kindness at margins, not centres; nature more generative at edges. Recent: 'Why reality is more than the sum of its particles' — emergent entities (phonons) are patterns, not elementary. 'To be is to participate' — Lévy-Bruhl: personhood emerges from living with others."
+    },
+    {
+      "source": "Marginalian",
+      "findings": "Marginalian (Maria Popova) May 3: 'A small poem about our largest learning: how to forgive.' Annie Dillard turns 81 (May 5): post on Dillard's 'Unselfconsciousness' — 'identities and opinions are the least interesting things about us.' Free, ad-free, AI-free. themarginalian.org."
+    },
+    {
+      "source": "Kottke",
+      "findings": "Kottke.org May 2026: Boards of Canada returning — new album, listening parties May 22 (NYC, Tokyo, London). A 55-minute mix of BOC B-sides and rarities posted. GDT Nature Photographer of the Year 2026 winners. 'The Soul of a New Machine does a better job challenging AI hype than most current criticism.'"
+    },
+    {
+      "source": "ProPublica",
+      "findings": "ProPublica May 5: 'Prosecutors Had a Drugs-for-Votes Scheme Locked Up. Under Trump, They Were Told Not to Pursue Charges.' Gang 'Los Tiburones' mandated Puerto Rico prisoners' political affiliations and who to vote for; inmates showed ballots to gang leaders. Civil Rights Commission denied prison access during 2024 election. Involves Resident Commissioner González-Colón. Trump admin halted prosecution. Trump called PR 'one of the most corrupt places on earth.'"
+    },
+    {
+      "source": "Intercept",
+      "findings": "Intercept (recent): FBI multiplied immigration employees 23x in first 9 months of second Trump term; 9,000+ redirected from national security to immigration. Palantir/IRS: 'massive-scale' data mining ($130M+ contract). State Dept shifting to explicit Christian messaging. FBI investigating links between deaths/disappearances of at least 10 scientists with government ties."
+    },
+    {
+      "source": "ScientificAmerican",
+      "findings": "ScientificAmerican (recent): FBI investigating possible links between deaths/disappearances of at least 10 scientists with government ties (DOE, Pentagon, House Oversight). Trump admin terminated 100+ scientific advisory committees. Individual dark points on a light wave can move faster than the wave itself. Altermagnets: new class discovered. Birds survived K-Pg extinction — scientists now know why."
+    },
+    {
+      "source": "LRB",
+      "findings": "LRB vol 48 no 8: Laleh Khalili, 'Dr Freezelove: Who Owns the Arctic?' — history from 1867 Alaska purchase to present geopolitical contest. Lorraine Daston, 'Everywhere and Nowhere: Climate Proxies' — proxies in climatology; history of climate zones used to justify racial hierarchies. T.J. Clark on De Kooning; William Davies on hyperpolitics."
+    },
+    {
+      "source": "ArtsLetters",
+      "findings": "Arts & Letters Daily May 5: 'AI anxiety predates AI.' Kierkegaard vs. Copenhagen tabloid press. Jerry Saltz's 40,000 slides of 1990s art world. Francis Bacon's 'sound houses' → Star Wars cantina: why sci-fi imagines alien music the way it does. aldaily.com (17,000+ articles since 1998)."
+    },
+    {
+      "source": "BigThink",
+      "findings": "BigThink: Mark Manson — modern life confuses comfort/stimulation for fulfillment; hedonia vs. eudaimonia as most important psychological distinction. Oldest bones in Britain share almost no DNA with anyone alive today — undermines ethnic 'homeland' claims. Artemis II raises questions about NASA/NSF science cuts amid Iran war."
+    },
+    {
+      "source": "Jacobin",
+      "findings": "Jacobin: 'Stop the AI Build-Out' — working-class communities rising against Big Tech data center boom; Bernie/AOC AI Data Center Moratorium Act. Class dealignment structural despite Trump unpopularity (war + tariff inflation). Bhaskar Sunkara wins 2026 Ellen Meiksins Wood Prize."
+    },
+    {
+      "source": "OpenSecrets",
+      "findings": "OpenSecrets: 2026 midterms projected $10.8B political ad spending (20%+ above 2022). Q1 2026 lobbying: $1.4B (highest quarterly since reporting mandated). ICE-tied tech companies sharply increased lobbying. Campaign Legal Center + OpenSecrets won FEC lawsuit Jan 30, 2026."
+    }
+  ],
+  "wearable_ai": [
+    {
+      "query": "AI voice hardware 2026",
+      "findings": "OpenAI building audio-first hardware (Jony Ive design, ~2026-27); voice AI market projected $47.5B by 2034 (34.8% CAGR). CES 2026: Motorola Project Maxwell screenless lifelogging concept. Yuanfudao 'Xiaoyuan' next-gen AI learning device (China). On-device processing trend for privacy/reliability. ElevenLabs, Murf AI, Amazon Polly as top voice generators."
+    },
+    {
+      "query": "wearable AI pendants pins lifelogging",
+      "findings": "2026 wearable AI: Bee (Amazon-acquired, $49, ambient lifelogging), Limitless pendant (Meta-acquired, discontinued), Omi ($89, open-source, 24-hr battery), Plaud NotePin (press-to-record clip). Classover + Marbella AI (Harvard-incubated) partner for AI education. Amazon Bee: 'turns your moments into meaning.' Motorola Project Maxwell as CES 2026 lifelogging demo."
+    },
+    {
+      "query": "AI tools classroom teacher productivity",
+      "findings": "60% of K-12 teachers used AI in 2024-25 (up from 46%). SchoolAI: avg 5.9 hrs/week saved. MagicSchool: 80+ tools, 7-10 hrs/week saved. 74% save time differentiating via AI. 86% use AI detection tools (experts warn of inaccuracy). MCP protocol enabling multi-tool AI workflows for teachers."
+    },
+    {
+      "query": "AI-assisted lesson plans high school English",
+      "findings": "GradeWithAI history lesson plan generator: free, standards-aligned, I Do/We Do/You Do model. SchoolAI HS templates: critical thinking, inquiry-driven, complex texts, Socratic seminar. Hello History: students converse with historical figures. ACM CAIS 2026: compound LLM agent design study; Glia human-inspired AI for educational systems design."
+    },
+    {
+      "query": "best EdTech resources teachers",
+      "findings": "AI agent frameworks 2026: LangGraph, CrewAI, LlamaIndex. MCP most traction for agent interoperability. Multi-agent architectures: orchestrated, peer-to-peer, hierarchical. AI governance: human-in-the-loop, permission systems, logging, kill switches, risk tiers."
+    }
+  ],
+  "triadic_ontology": {
+    "findings": "Limited new triadic ontology scholarship in May 2026 searches. Carried forward: Verlag Karl Alber 'Studies on Triadic Ontology and Trinitarian Philosophy' series (ed. Enders, Falque, Milbank, Coda, Rojek). TRIERTIUM (Trier/Olomouc): seminars on Erwin Schadel's Bamberg School and Structural Ontic Realism. Damiano Migliorini: divine persons as 'subsisting relations' (Aquinas + analytic theology). Eventist-Infinitesimal Ontology (PhilPapers): entities as fundamentally events with irreducibly triadic relationality; speculative analogy with perichoresis. June 2026 Rome conference: 'Nature Lost, Nature Regained' (New Trinitarian Ontologies, Triertium, St. Mary Seminary)."
+  },
+  "ai_systems": {
+    "findings": "AI multi-agent May 2026: GitHub masamasa59/ai-agent-papers (1.3K stars) tracking biweekly — deep research, skills, memory, self-evolving agents as top trends. ACM CAIS 2026: compound LLM agent design in adversarial POMDP (context + reasoning + hierarchy). Glia: human-inspired AI for automated systems design/optimization. BCG 'OpenClaw and New Wave of AI Agents.' CogitX full loop: perception → reasoning → planning → memory → action → orchestration. MCP dominant interoperability protocol; LangGraph, CrewAI, LlamaIndex top frameworks. Governance: human-in-the-loop, kill switches, permission systems, risk tiers."
+  },
+  "uap": {
+    "findings": "UAP Apr-May 2026: AARO FY2025 report published Apr 9 — 2,000+ active cases; no conclusive extraterrestrial evidence. White House registered alien.gov and aliens.gov domains (March 2026); sites remain dark. Senate Intel hearing Apr 22 pressed AARO on classification. House Oversight hearing May 12: lawmakers demand 46 UAP videos; April 14 deadline missed (Rep. Luna). Whistleblowers claim AARO holds undisclosed video recordings; Robert Bigelow non-human material claim (unverified). Former AARO director Kirkpatrick: 'no bombshell alien evidence.' JD Vance 'obsessed' with UFOs (believes demons). Trump Apr 29: hinted 'imminent release' of UFO files. Guardian: UFO watchers say 'never been closer.'"
+  },
+  "newyorker": {
+    "available": true,
+    "title": "Talk of the Town — May 4, 2026: Ellen Burstyn's Inner Library",
+    "text": "New Yorker May 4, 2026 — Talk of the Town (five pieces):\n\n1. 'Donald Trump's Spring Cleaning' (Benjamin Wallace-Wells): Cabinet turnover — Pam Bondi fired as AG; revolving door of Trump's second-term personnel purges accelerating into spring 2026.\n\n2. 'Reverend Billy Takes On Norman Foster's New Monolith': After midnight on Earth Day, Billy Talen dragged his pulpit to JPMorgan Chase's new Norman Foster-designed global HQ on Madison for a 24-hour sermon on fossil fuel ties. Stop Shopping Choir set up live stream in the rain. 'It's go-time, Billy,' said his wife/director Savitri Durkee. Now touring as Neil Young's opening act; writes for Young's Times-Contrarian. 'The only way we're going to start an effective movement is if each of us goes to the limit of our capabilities.' As night fell, voice dropped to a rasp: 'I'm not sure we cracked the culture. But we had a vision, and we did what we could.' ♦\n\n3. 'Medallions, Movement, and Mamdani at MOMA PS1': Mayor Zohran Mamdani proclaimed 'My brother, we are in City Hall now!' to Richard Chow — a Myanmar cabdriver he hunger-struck with for 15 days in 2021 for taxi-medallion debt relief. Chow's brother Kenny's body found in East River 2018 after medallion debt.\n\n4. 'Patrick Ball's Path to Broadway and Becky Shaw': Patrick Ball (The Pitt, NBC's acclaimed ER successor) appearing in Gina Gionfriddo's play Becky Shaw on Broadway.\n\n5. 'Ellen Burstyn's Inner Library': Burstyn, 93, on a life organized around poetry. Her anthology 'Poetry Says It Better' spotted in NYC. Author talk with Pamela Anderson at The Westport Library for National Poetry Month. Poetry as a form of knowledge that outlasts memory.",
+    "source": "The New Yorker",
+    "url": "https://www.newyorker.com/magazine/2026/05/04",
+    "fetch_method": "tavily_extract"
+  },
+  "vault_insight": {
+    "available": false,
+    "insight": "",
+    "context": "",
+    "note_path": ""
+  },
+  "enriched_articles": [
+    {
+      "url": "https://www.propublica.org/article/drugs-for-votes-trump-puerto-rico-election-fraud",
+      "title": "Prosecutors Had a Drugs-for-Votes Scheme 'Locked Up.' Under Trump, They Were Told Not to Pursue Charges.",
+      "text": "ProPublica (Raquel Rutledge, May 5, 2026): Gang 'Los Tiburones' in Puerto Rico mandated prisoners' political affiliations and 'who to vote for in primary and general elections.' Inmates had to show their ballots to gang leaders to avoid punishment. The indictment alleged connections with government officials 'for the purpose of reducing prison sentences.' Puerto Rico's Civil Rights Commission reported 'serious difficulties' gaining prison access during 2024 general election; sought court order but much of the day had already passed. Investigators had solid evidence; Trump administration told prosecutors not to pursue charges. DOJ: seizure 'not about any election in particular.' Involves Resident Commissioner González-Colón. Trump called PR 'one of the most corrupt places on earth.'",
+      "fetch_method": "tavily_extract"
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2026-05-04/vtti-oil-facility-in-fujairah-struck-in-aerial-attack",
+      "title": "Fujairah Oil Terminal Struck in Latest Iran Attacks on UAE",
+      "text": "Bloomberg (Ruth Liao and Anthony Di Paola, May 4-5, 2026): An oil terminal in Fujairah, UAE was hit in an Iranian aerial attack amid an uptick of strikes near the Strait of Hormuz. The VTTI facility — jointly owned by IFM Global Infrastructure Fund, Vitol Group and Abu Dhabi National Energy Co. — was struck. UAE condemned 'unprovoked Iranian terrorist attack targeting civilian areas.' Three Indian nationals injured. Two drones also struck an ADNOC-affiliated tanker transiting Hormuz. Iran blamed US 'military adventurism' and accused US of staging incident 'to create pretext for illegal shipping transit.' UAE prepared to exercise 'full and legitimate right to respond.' Attack marks first since US-Iran ceasefire began April 8, 2026.",
+      "fetch_method": "tavily_search"
+    },
+    {
+      "url": "https://defensescoop.com/2026/03/18/white-house-registers-new-alien-gov-domains-ufo-uap/",
+      "title": "White House Registers alien.gov and aliens.gov Domains for UAP Transparency",
+      "text": "DefenseScoop (March 18, 2026): The White House registered alien.gov and aliens.gov as a symbolic UAP transparency step following Trump's February 2026 directive to release all government UAP/UFO/alien files. As of May 2026, sites remain dark. AARO FY2025 report (April 9, 2026): 2,000+ active cases, no conclusive extraterrestrial evidence. Rep. Luna demanded 46 UAP videos; April 14 deadline missed. House Oversight hearing May 12: whistleblowers claim AARO holds undisclosed video recordings; Robert Bigelow alleged non-human material acquisition (unverified). Former AARO director Kirkpatrick: 'no bombshell alien evidence.' JD Vance 'obsessed' with UFOs (believes demons). Trump April 29: hinted 'imminent release' of UAP files. Guardian April 12: UFO watchers say 'never been closer' to evidence.",
+      "fetch_method": "tavily_search"
+    }
+  ],
+  "write_complete": false
+}
